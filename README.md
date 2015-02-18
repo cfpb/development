@@ -20,7 +20,10 @@ and will initially focus on our core competencies:
 
 ### Deliverables
 
-The initial deliverable will be a Markdown file containing a written version of the proposed standards. In addition to the Markdown file, we may also want to include linting configurations and example files.
+The initial deliverable will be a Markdown file 
+containing a written version of the proposed standards. 
+In addition to the Markdown file, we may also want to include 
+linting configurations and example files.
 
 ### Proposed timeline
 
