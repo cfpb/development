@@ -6,7 +6,13 @@
 ----
 ## Standards and styles
 
-Over the coming months we'll be establishing standards and style guides for working with the front-end of CFPB sites and applications. As we do so, we'll be discussing these standards in the [issues](https://github.com/cfpb/front-end/issues) of this repository and posting final documents here, with the final goal of building something similar to the [CFPB Design Manual](http://cfpb.github.io/design-manual/). As a team, we'll be sharing responsibility for this process and will initially focus on our core competencies:
+Over the coming months we'll be establishing standards and style guides 
+for working with the front-end of CFPB sites and applications. 
+As we do so, we'll be discussing these standards in the [issues](https://github.com/cfpb/front-end/issues) 
+of this repository and posting final documents here, 
+with the final goal of building something similar to the [CFPB Design Manual](http://cfpb.github.io/design-manual/). 
+As a team, we'll be sharing responsibility for this process
+and will initially focus on our core competencies:
 
 - HTML & template standards and styles
 - CSS/LESS standards and styles
