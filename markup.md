@@ -35,6 +35,23 @@ For example:
 All HTML will be written in HTML5.
 
 
+### Semantic line breaks in source code
+
+Notice strange line breaks in the source code?
+It's intentional.
+Semantic line breaks help reduce the numbers of diffs in code reviews.
+
+
+```
+Notice strange line breaks in the source code?
+It's intentional.
+Semantic line breaks help reduce the numbers of diffs in code reviews.`
+
+```
+
+[Read more about Semantic line breaks](http://rhodesmill.org/brandon/2012/one-sentence-per-line/)
+
+
 #### Validation
 
 All pages should be verified against the [W3C validator](http://validator.w3.org/) to ensure that
@@ -121,7 +138,7 @@ and JavaScript files as `text/css` and `text/javascript` are their respective de
 ### Semantic Elements
 
 Use semantic elements whenever possible. 
-Tags like `<div>` and `<span>` are great for layout but tell the browser nothing about content.
+Tags like `<div>` and `<span>` are great for layout but tell the browser nothing about content and require additional markup to make them keyboard accessibile.
 
   - Paragraphs of text should always be placed in a `<p>` tag. Never use multiple `<br>` tags.
   - Items in list form should always be in `<ul>`, `<ol>`, or `<dl>`. Never use a set of 
@@ -221,7 +238,10 @@ The visual order should be preserved with float: right; on each button.
 
 ```
 
-[Check out cf-forms for patterns around forms in Capital Framework](https://github.com/cfpb/cf-forms)
+** More about forms**
+
++ [cf-forms: Form patterns in Capital Framework](https://github.com/cfpb/cf-forms) 
++ [CFPB Design Manual on Effective Forms](http://cfpb.github.io/design-manual/guides/effective-forms.html)
 
 
 ### Tables
@@ -271,7 +291,46 @@ You want the browser to load the footer before a table full of data.)
 
 ## Accessibility
 
-Your website should aim to meet [Level AA of the WCAG 2.0 rules](http://www.w3.org/TR/WCAG/).
+Your website should aim to meet [Level AA of the WCAG 2.0 rules](http://www.w3.org/TR/WCAG/). 
+
+[Read more about accessibility at CFPB Design Manual](http://cfpb.github.io/design-manual/guides/accessible-interfaces.html)
+
+### ARIA Landmarks
+
+Aria landmark roles can be used by assistive technology to navigate a website.
+
+A few examples of some of the more prominent landmark roles from <a11yproject.com>
+
++ `<header role="banner">`  
+A region of the page that is site focused. Typically your global page header.
+
++ `<nav role="navigation">` 
+Contains navigational links.
+
++ `<main role="main">`  
+Focal content of document. Use only once.
+
++ `<article role="article">` 
+Represents an independent item of content. Use only once on outermost element of this type.
+
++ `<aside role="complementary">` 
+Supporting section related to the main content even when separated.
+
++ `<footer role="contentinfo">` 
+Contains information about the document (meta info, copyright, company info, etc).
+
++ `<form role="search">`
+Add a `search` role to your primary search form. 
+
+[More about WAI-ARIA in HTML from w3c](http://www.w3.org/TR/aria-in-html/)
+
+
+### Header Flow and Hierarchy
+
+Many screenreaders use heading tags (i.e. `<h1>`, `<h2>`, etc) to navigate websites.
+Make sure these heading tags are in order to avoid confusion.
+
+Test for header flow using the WAVE Toolbar.
 
 ### Testing For Accessibility
 
