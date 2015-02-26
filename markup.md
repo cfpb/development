@@ -30,23 +30,6 @@ For example:
 </html>
 ```
 
-### Syntax
-
-- Use semantic elements whenever possible. 
-Tags like `<div>` and `<span>` are great for layout but tell the browser nothing about content.
-  - Paragraphs of text should always be placed in a `<p>` tag. Never use multiple `<br>` tags.
-  - Items in list form should always be in `<ul>`, `<ol>`, or `<dl>`. Never use a set of 
-  `<div>` or `<p>`.
-  - Use an HTML5 Shiv to "teach" older browsers how to handle elements like `<header>`, `<article>`, etc.
-- Use double quotes, never single quotes, on attributes.
-  - Even though quotes around attributes are optional, always use quotes around attributes 
-  for readability.
-- Don't omit optional closing tags (e.g. `</li>` or `</body>`).
-- Avoid trailing slashes in self-closing elements. For example, `<br>`, `<hr>`, `<img>`, and `<input>`.
-- Use closing tag comments, like `<!-- /.element -->`, sparringly. These add to page load time and overuse counter-acts their purpose.
-- Don't set `tabindex` manually; rely on the browser to set the order.
-
-
 ### HTML5 Specification
 
 All HTML will be written in HTML5.
@@ -103,7 +86,7 @@ encoding matches that of the document (generally utf-8).
 
 ``` html
 <head>
-<meta charset="utf-8">
+    <meta charset="utf-8">
 </head>
 ```
 
@@ -127,13 +110,36 @@ and JavaScript files as `text/css` and `text/javascript` are their respective de
 <script src="/path/file.js"></script>
 ```
 
-#### HTML5 spec links
+**HTML5 spec links**
 - [Using link](http://www.w3.org/TR/2011/WD-html5-20110525/semantics.html#the-link-element)
 - [Using style](http://www.w3.org/TR/2011/WD-html5-20110525/semantics.html#the-style-element)
 - [Using script](http://www.w3.org/TR/2011/WD-html5-20110525/scripting-1.html#the-script-element)
 
 
-## Boolean attributes
+## Syntax
+
+### Semantic Elements
+
+Use semantic elements whenever possible. 
+Tags like `<div>` and `<span>` are great for layout but tell the browser nothing about content.
+
+  - Paragraphs of text should always be placed in a `<p>` tag. Never use multiple `<br>` tags.
+  - Items in list form should always be in `<ul>`, `<ol>`, or `<dl>`. Never use a set of 
+  `<div>` or `<p>`.
+  - Use an HTML5 Shiv to "teach" older browsers how to handle elements like `<header>`, `<article>`, etc.
+
+
+### Quotes
+
+Always use double quotes, never single quotes, on attributes
+
+HTML5 allows the use of unquoted attribute values (e.g., `rel=stylesheet`), but for interoperability
+between editors and tools, as well as readability, we require the use of double quoted values.
+
+_The exception to this is boolean attributes covered below._
+
+
+### Boolean attributes
 
 Many attributes don't require a value to be set, like `disabled` or `checked`, so don't set them.
 
@@ -150,21 +156,13 @@ Many attributes don't require a value to be set, like `disabled` or `checked`, s
 _For more information, read the [WhatWG section](http://www.whatwg.org/specs/web-apps/current-work/multipage/common-microsyntaxes.html#boolean-attributes)._
 
 
-## Quotes
-
-HTML5 allows the use of unquoted attribute values (e.g., `rel=stylesheet`), but for interoperability
-between editors and tools, as well as readability, we require the use of double quoted values.
-
-_The exception to this is boolean attributes covered above._
-
-
-## Self-closing Elements
+### Self-closing Elements
 
 HTML elements that do not have matching closing tags (e.g., `<hr>` and `<br>`) should not be closed
 with a trailing slash (i.e., do not use `<hr />` or `<br />`).
 
 
-## Case
+### Case
 
 Elements and attributes should be written in lowercase. Attribute values intended for humans to
 read (such as `title` or `alt`) should be in mixed case, but otherwise they should also be in 
@@ -173,7 +171,7 @@ lowercase.
 For class or ID names refer to the CSS standards.
 
 
-## Reducing markup
+### Reducing markup
 
 Whenever possible, avoid superfluous parent elements when writing HTML. Many times this requires iteration and refactoring, but produces less HTML. For example:
 
@@ -186,6 +184,13 @@ Whenever possible, avoid superfluous parent elements when writing HTML. Many tim
 <!-- Better -->
 <img class="avatar" src="...">
 ```
+
+
+### Other
+- Don't omit optional closing tags (e.g. `</li>` or `</body>`).
+- Use closing tag comments, like `<!-- /.element -->`, sparringly. These add to page load time and overuse counter-acts their purpose
+- Don't set `tabindex` manually; rely on the browser to set the order.
+
 
 ## Patterns for 
 
