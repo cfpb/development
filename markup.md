@@ -31,12 +31,12 @@ that level. For example:
 ``` html
 <html>
 <head>
-<title>Page title</title>
+    <title>Page title</title>
 </head>
 <body>
-<div class="wrapper">
-<h1>Heading here</h1>
-</div>
+    <div class="wrapper">
+        <h1>Heading here</h1>
+    </div>
 </body>
 </html>
 ```
@@ -187,38 +187,95 @@ Whenever possible, avoid superfluous parent elements when writing HTML. Many tim
 
 ## Forms
 
+When designing forms, think about form validation and good markup to ensure users with screenreaders can access them.
+
+**General**
+- Make sure the form follows a logical layout when navigating with a keyboard
 - Lean towards radio or checkbox lists instead of select menus.
+- When using radio buttons or checkbox lists, use the `<fieldset>` tag to group your elements together and describe the group with `<legend>`. 
+
+**Labels**
 - When possible, wrap radio and checkbox inputs and their text in `<label>`s to reduce the need for
-`for` attributesâ€”wrapping automatically associates the two.
+`for` attribute wrapping automatically associates the two.
+- Never use the placeholder attribute for essential text or inplace of the `<label>` tags/
+
+**Buttons** 
 - Form buttons should always include an explicit `type`. Use primary buttons for the 
 `type="submit"` button and regular buttons for `type="button"`.
 - The primary form button must come first in the DOM, especially for forms with 
 multiple submit buttons. The visual order should be preserved with float: right; on each button.
 
+``` html
+  <label>First Name<input type="text"></input></label>
+
+```
+
+[Check out cf-forms for patterns around forms in Capital Framework](https://github.com/cfpb/cf-forms)
+
 
 ## Tables
 
-Make use of `<thead>`, `<tfoot>`, `<tbody>`, and `<th>` tags (and scope attribute) when appropriate. (Note: `<tfoot>` goes above `<tbody>` for speed reasons. You want the browser to load the footer before a table full of data.)
+First off, never use tables for layout purposes. Tables are for data. 
+
+Make use of `<thead>`, `<tfoot>`, `<tbody>`, and `<th>` tags (and scope attribute) when appropriate. Without this markup, screen readers will identify tables as layout tables instead of data tables.
+
+(Note: `<tfoot>` goes above `<tbody>` for speed reasons. You want the browser to load the footer before a table full of data.)
 
 ``` html
-<table summary="This is a chart of invoices for 2011.">
-<thead>
-<tr>
-<th scope="col">Table header 1</th>
-<th scope="col">Table header 2</th>
-</tr>
-</thead>
-<tfoot>
-<tr>
-<td>Table footer 1</td>
-<td>Table footer 2</td>
-</tr>
-</tfoot>
-<tbody>
-<tr>
-<td>Table data 1</td>
-<td>Table data 2</td>
-</tr>
-</tbody>
+<table summary="This is a table of Scrabble score's from yesterday's game.">
+    <thead>
+        <tr>
+            <th scope="col">Player</th>
+            <th scope="col">Scrabble Score</th>
+        </tr>
+    </thead>
+    <tfoot>
+        <tr>
+            <th scope="row">All Players</td>
+            <td>484</td>
+        </tr>
+    </tfoot>
+    <tbody>
+        <tr>
+            <th scope="row">Aaron</td>
+            <td>136</td>
+        </tr>
+        <tr>
+            <th scope="row">Sam</td>
+            <td>105</td>
+        </tr>
+        <tr>
+          <th scope="row">Xochitl</td>
+          <td>243</td>
+        </tr>
+    </tbody>
 </table>
 ```
+
+[Read more about tables at It's Tired in Here](http://itstiredinhere.com/accessibility/#tables).
+
+# Accessibility
+
+Your website should aim to meet [Level AA of the WCAG 2.0 rules](http://www.w3.org/TR/WCAG/).
+
+
+## Testing For Accessibility
+
+### Keyboard Test
+
+You don't need any special hardware for your first accesibility test. Just take away your mouse.
+
+1. Type in the web address of the website you'd like to test in your URL bar.
+2. Hit `enter`.
+3. Using only your keyboard, navigate to different parts of your website using the `tab`, `shift + tab` and `enter` keys.
+
+You should be able to tab to all interactive elements like form fields, links and buttons. The order of elements, especially navigation elements, should make logical sense. 
+
+[Read more about keyboard testing on WebAIM](http://webaim.org/techniques/keyboard/).
+
+### Screen reader testing
+
+### Other testing tools
+
+
+
