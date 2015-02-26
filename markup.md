@@ -286,9 +286,25 @@ The order of elements, especially navigation elements, should make logical sense
 
 [Read more about keyboard testing on WebAIM](http://webaim.org/techniques/keyboard/).
 
-#### Screen reader testing
+
+#### Screenreader testing
+
+Using a screenreader can be a great way to experience how screenreader users experience your webpages. WebAIM has a fantastic series and guide for using screenreaders for accesibility testing purposes.
+
++ [Using Voiceover to evaluate web accesibility](http://webaim.org/articles/voiceover/) - Learn how to use the built-in screenreader program on Macs and iOS products.
++ [Using NVDA to evaluate web accesibility](http://webaim.org/articles/nvda/) - Learn how to use NVDA, a free and open source screenreader for Windows.
+
+[Read more about screenreader testing on WebAIM](http://webaim.org/articles/screenreader_testing/)
+
 
 #### Other testing tools
 
+**[WAVE web accessibility evaluation tool by WebAIM](http://wave.webaim.org/)** - WAVE will detect missing accessibility tags and poor practices and explain their impact. They also have a toolbar extension.
+
+**[Chrome Accessibility Developer Tools](https://chrome.google.com/webstore/detail/accessibility-developer-t/fpkknkljclfencbdbgkenhalefipecmb?hl=en)** - A Chrome extension that adds an additional section to your developer tools to examine accesibility properties. Comes with audits to examine contrast, incorrect markup and other common errors.
+
+**[Contrast Ratio Tool](http://leaverou.github.io/contrast-ratio/)** - Tests for contrast ratio based on the WCAG 2.0 guidelines on color contrast.
+
+**[Colorblind Web Page Filter](http://colorfilter.wickline.org/)** - Applies coverage filters on webpages to test against different types of color blindness
 
 
