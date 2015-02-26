@@ -1,32 +1,21 @@
 # HTML Coding Standards
 
-This documents outlines HTML code standards. The intent of the HTML standards is to foster 
+This documents outlines HTML code standards. 
+The intent of the HTML standards is to foster 
 cross-browser compatibility, accessibility, simplicity and maintainability.
 
+## Coding Style
 
-## Syntax
+### Indentation
 
-- Use soft tabs with four spaces to guarantee code renders the same in any environment.
-- Nested elements should be indented once (four spaces).
-- Paragraphs of text should always be placed in a `<p>` tag. Never use multiple `<br>` tags.
-- Items in list form should always be in `<ul>`, `<ol>`, or `<dl>`. Never use a set of 
-`<div>` or `<p>`.
-- Every form input that has text attached should utilize a `<label>` tag-especially `radio` or 
-`checkbox` elements.
-- Even though quotes around attributes are optional, always use quotes around attributes 
-for readability.
-- Always use double quotes, never single quotes, on attributes.
-- Donâ€™t omit optional closing tags (e.g. `</li>` or `</body>`).
-- Avoid trailing slashes in self-closing elements. For example, `<br>`, `<hr>`, `<img>`, and `<input>`.
-- Use closing tag comments, like `<!-- /.element -->`,sparringly. These add to page load time and overuse counter-acts their purpose.
-- Don't set `tabindex` manuallyâ€”rely on the browser to set the order.
+HTML should be indented to reflect logical structure. 
+However, to avoid extreme levels of indentation, 
+do not indent for the `<html>`, `<head>`, or `<body>` tags; 
+start indenting after that level. 
 
+Use soft tabs with four spaces to guarantee code renders the same in every environment.
 
-## Indentation
-
-HTML should be indented to reflect logical structure. However, to avoid extreme levels of
-indentation, do not indent for the `<html>`, `<head>`, or `<body>` tags; start indenting after
-that level. For example:
+For example:
 
 ``` html
 <html>
@@ -41,29 +30,44 @@ that level. For example:
 </html>
 ```
 
+### Syntax
 
-## HTML5 Specification
+- Use semantic elements whenever possible. 
+Tags like `<div>` and `<span>` are great for layout but tell the browser nothing about content.
+  - Paragraphs of text should always be placed in a `<p>` tag. Never use multiple `<br>` tags.
+  - Items in list form should always be in `<ul>`, `<ol>`, or `<dl>`. Never use a set of 
+  `<div>` or `<p>`.
+  - Use an HTML5 Shiv to "teach" older browsers how to handle elements like `<header>`, `<article>`, etc.
+- Use double quotes, never single quotes, on attributes.
+  - Even though quotes around attributes are optional, always use quotes around attributes 
+  for readability.
+- Don't omit optional closing tags (e.g. `</li>` or `</body>`).
+- Avoid trailing slashes in self-closing elements. For example, `<br>`, `<hr>`, `<img>`, and `<input>`.
+- Use closing tag comments, like `<!-- /.element -->`, sparringly. These add to page load time and overuse counter-acts their purpose.
+- Don't set `tabindex` manually; rely on the browser to set the order.
+
+
+### HTML5 Specification
 
 All HTML will be written in HTML5.
 
 
-## Validation
+#### Validation
 
 All pages should be verified against the [W3C validator](http://validator.w3.org/) to ensure that
-the markup is well formed. This is not in itself a guarantee of good code, but it helps to eliminate problems which can be avoided via automation. It should not be considered a substitute for
-manual code review.
-
-
-## Accessibility
-
-We work hard to make our sites and services as accessible and usable as we can for everyone who needs to use them.
+the markup is well formed. 
+This is not in itself a guarantee of good code, 
+but it helps to eliminate problems which can be avoided via automation. 
+It should not be considered a substitute for manual code review.
 
 
 ## Head
 
 ### Doctype
 
-Always use a proper doctype that triggers standards mode in your browser. Quirks mode should always be avoided.
+Always use a proper doctype that triggers standards mode in your browser. 
+Quirks mode should always be avoided.
+
 For simplicity, use the html5 doctype:
 
 
@@ -80,8 +84,7 @@ From the HTML5 spec:
 document's language. This aids speech synthesis tools to determine what pronunciations to use, 
 translation tools to determine what rules to use, and so forth.
 
-Read more about the `lang` attribute 
-[in the spec](http://www.w3.org/html/wg/drafts/html/master/semantics.html#the-html-element).
+[Read more about the `lang` attribute in the spec](http://www.w3.org/html/wg/drafts/html/master/semantics.html#the-html-element).
 
 Head to Sitepoint for a [list of language codes](http://reference.sitepoint.com/html/lang-codes).
 
@@ -184,10 +187,12 @@ Whenever possible, avoid superfluous parent elements when writing HTML. Many tim
 <img class="avatar" src="...">
 ```
 
+## Patterns for 
 
-## Forms
+### Forms
 
-When designing forms, think about form validation and good markup to ensure users with screenreaders can access them.
+When designing forms, 
+think about form validation and good markup to ensure users with screenreaders can access them.
 
 **General**
 - Make sure the form follows a logical layout when navigating with a keyboard
@@ -200,26 +205,31 @@ When designing forms, think about form validation and good markup to ensure user
 - Never use the placeholder attribute for essential text or inplace of the `<label>` tags/
 
 **Buttons** 
-- Form buttons should always include an explicit `type`. Use primary buttons for the 
-`type="submit"` button and regular buttons for `type="button"`.
-- The primary form button must come first in the DOM, especially for forms with 
-multiple submit buttons. The visual order should be preserved with float: right; on each button.
+- Form buttons should always include an explicit `type`. 
+Use primary buttons for the `type="submit"` button and regular buttons for `type="button"`.
+- The primary form button must come first in the DOM, 
+especially for forms with multiple submit buttons. 
+The visual order should be preserved with float: right; on each button.
 
 ``` html
-  <label>First Name<input type="text"></input></label>
+  <label>First Name<input type="text"></label>
 
 ```
 
 [Check out cf-forms for patterns around forms in Capital Framework](https://github.com/cfpb/cf-forms)
 
 
-## Tables
+### Tables
 
-First off, never use tables for layout purposes. Tables are for data. 
+First off, never use tables for layout purposes. 
+Tables are for data. 
 
-Make use of `<thead>`, `<tfoot>`, `<tbody>`, and `<th>` tags (and scope attribute) when appropriate. Without this markup, screen readers will identify tables as layout tables instead of data tables.
+Make use of `<thead>`, `<tfoot>`, `<tbody>`, and `<th>` tags (and scope attribute) when appropriate. 
+Without this markup, screen readers will identify tables as layout tables instead of data tables.
 
-(Note: `<tfoot>` goes above `<tbody>` for speed reasons. You want the browser to load the footer before a table full of data.)
+(Note: 
+`<tfoot>` goes above `<tbody>` for speed reasons. 
+You want the browser to load the footer before a table full of data.)
 
 ``` html
 <table summary="This is a table of Scrabble score's from yesterday's game.">
@@ -254,28 +264,31 @@ Make use of `<thead>`, `<tfoot>`, `<tbody>`, and `<th>` tags (and scope attribut
 
 [Read more about tables at It's Tired in Here](http://itstiredinhere.com/accessibility/#tables).
 
-# Accessibility
+## Accessibility
 
 Your website should aim to meet [Level AA of the WCAG 2.0 rules](http://www.w3.org/TR/WCAG/).
 
+### Testing For Accessibility
 
-## Testing For Accessibility
+#### Keyboard Test
 
-### Keyboard Test
-
-You don't need any special hardware for your first accesibility test. Just take away your mouse.
+You don't need any special hardware for your first accesibility test. 
+Just take away your mouse.
 
 1. Type in the web address of the website you'd like to test in your URL bar.
 2. Hit `enter`.
-3. Using only your keyboard, navigate to different parts of your website using the `tab`, `shift + tab` and `enter` keys.
+3. Using only your keyboard, 
+navigate to different parts of your website using the `tab`, `shift + tab` and `enter` keys.
 
-You should be able to tab to all interactive elements like form fields, links and buttons. The order of elements, especially navigation elements, should make logical sense. 
+You should be able to tab to all interactive elements 
+like form fields, links and buttons. 
+The order of elements, especially navigation elements, should make logical sense. 
 
 [Read more about keyboard testing on WebAIM](http://webaim.org/techniques/keyboard/).
 
-### Screen reader testing
+#### Screen reader testing
 
-### Other testing tools
+#### Other testing tools
 
 
 
