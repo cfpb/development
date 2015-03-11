@@ -6,6 +6,11 @@ cross-browser compatibility, accessibility, simplicity and maintainability.
 
 ## Coding Style
 
+### HTML5 Specification
+
+All HTML will be written in HTML5.
+
+
 ### Indentation
 
 HTML should be indented to reflect logical structure. 
@@ -30,11 +35,6 @@ For example:
 </html>
 ```
 
-### HTML5 Specification
-
-All HTML will be written in HTML5.
-
-
 ### Semantic line breaks in source code
 
 Notice strange line breaks in the source code?
@@ -45,14 +45,13 @@ Semantic line breaks help reduce the numbers of diffs in code reviews.
 ```
 Notice strange line breaks in the source code?
 It's intentional.
-Semantic line breaks help reduce the numbers of diffs in code reviews.`
-
+Semantic line breaks help reduce the numbers of diffs in code reviews.
 ```
 
 [Read more about Semantic line breaks](http://rhodesmill.org/brandon/2012/one-sentence-per-line/)
 
 
-#### Validation
+### Validation
 
 All pages should be verified against the [W3C validator](http://validator.w3.org/) to ensure that
 the markup is well formed. 
@@ -295,9 +294,21 @@ Your website should aim to meet [Level AA of the WCAG 2.0 rules](http://www.w3.o
 
 [Read more about accessibility at CFPB Design Manual](http://cfpb.github.io/design-manual/guides/accessible-interfaces.html)
 
+### When to use ARIA
+
+From the [A11yProject.com](http://a11yproject.com/posts/getting-started-aria/)
+
+> Native HTML semantics should still be used whenever possible, but ARIA is useful when certain design patterns or interactions make it impossible to do so. For example, a complex tabbed-interface has no semantic equivalent with HTML, but a `role="tablist"` and its related attributes can be added to provide this detail to screen readers. ARIA is also useful to describe newer HTML elements that may not yet have full cross-browser support or be understood by screen readers.
+
+
 ### ARIA Landmarks
 
 Aria landmark roles can be used by assistive technology to navigate a website.
+HTML5 is moving towards including some of the functions in elements like `main`,
+but [accessibility support for HTML5 elements is still lacking in some browsers](http://www.html5accessibility.com/).
+For now, including both the HTML5 element and the ARIA landmark
+(ex: `main` and `role="main"`)
+is recommended.
 
 A few examples of some of the more prominent landmark roles from <a11yproject.com>
 
@@ -330,7 +341,19 @@ Add a `search` role to your primary search form.
 Many screenreaders use heading tags (i.e. `<h1>`, `<h2>`, etc) to navigate websites.
 Make sure these heading tags are in order to avoid confusion.
 
+You can also label `<section>`s with the `aria-labelledby=""` property.
+
+``` html
+<section aria-labelledby="KittensHeader">
+  <h2 id="KittensHeader">All Abbout Kittens</h2>
+  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+</section>
+```
+
+[Read more about aria-labelledby at MDN](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute)
+
 Test for header flow using the WAVE Toolbar.
+
 
 ### Testing For Accessibility
 
