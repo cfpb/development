@@ -1,4 +1,10 @@
-# HTML Coding Standards
+**TABLE OF CONTENTS**
+
++ [HTML Standards](#html-standards)
++ [Accessibility](#accessibility)
++ [Tools and Linters](#tools-and-linters)
+
+# HTML Standards
 
 This documents outlines HTML code standards. 
 The intent of the HTML standards is to foster 
@@ -165,7 +171,7 @@ Many attributes don't require a value to be set, like `disabled` or `checked`, s
 <input type="checkbox" value="1" checked>
 
 <select>
-<option value="1" selected>1</option>
+    <option value="1" selected>1</option>
 </select>
 ```
 
@@ -233,11 +239,24 @@ especially for forms with multiple submit buttons.
 The visual order should be preserved with float: right; on each button.
 
 ``` html
-  <label>First Name<input type="text"></label>
-
+<form action="" method="post" id="pizzaform">
+    <label>First Name<input type="text" id="pizzaform_name"></label>
+    <fieldset>
+    <legend>Favorite Pizza Topping?</legend>
+        <label>
+            <input id="pizzaform_radio-pepperoni" name="pizzaform_radio-pepperoni" type="radio" />
+            Pepperoni
+        </label>
+        <label>
+            <input id="pizzaform_radio-cheese" name="pizzaform_radio-cheese" type="radio" />
+            Cheese 
+        </label>
+    </fieldset>
+    <button type="submit">Go!</button>
+</form>
 ```
 
-** More about forms**
+**More about forms**
 
 + [cf-forms: Form patterns in Capital Framework](https://github.com/cfpb/cf-forms) 
 + [CFPB Design Manual on Effective Forms](http://cfpb.github.io/design-manual/guides/effective-forms.html)
@@ -350,9 +369,9 @@ You can also label `<section>`s with the `aria-labelledby=""` property.
 </section>
 ```
 
-[Read more about aria-labelledby at MDN](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute)
-
 Test for header flow using the WAVE Toolbar.
+
+[Read more about aria-labelledby at MDN](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute)
 
 
 ### Testing For Accessibility
@@ -404,4 +423,9 @@ Tests for contrast ratio based on the WCAG 2.0 guidelines on color contrast.
 **[Colorblind Web Page Filter](http://colorfilter.wickline.org/)** - 
 Applies coverage filters on webpages to test against different types of color blindness
 
+
+## Tools and linters
+
+- [Sublime Linter with Tidy](https://github.com/SublimeLinter/SublimeLinter-for-ST2)
+- [Grunt HTML Lint](https://www.npmjs.com/package/grunt-html)
 
