@@ -6,8 +6,8 @@
 
 # HTML Standards
 
-This documents outlines HTML code standards. 
-The intent of the HTML standards is to foster 
+This documents outlines HTML code standards.
+The intent of the HTML standards is to foster
 cross-browser compatibility, accessibility, simplicity and maintainability.
 
 ## Coding Style
@@ -19,10 +19,10 @@ All HTML will be written in HTML5.
 
 ### Indentation
 
-HTML should be indented to reflect logical structure. 
-However, to avoid extreme levels of indentation, 
-do not indent for the `<html>`, `<head>`, or `<body>` tags; 
-start indenting after that level. 
+HTML should be indented to reflect logical structure.
+However, to avoid extreme levels of indentation,
+do not indent for the `<html>`, `<head>`, or `<body>` tags;
+start indenting after that level.
 
 Use soft tabs with four spaces to guarantee code renders the same in every environment.
 
@@ -60,9 +60,9 @@ Semantic line breaks help reduce the numbers of diffs in code reviews.
 ### Validation
 
 All pages should be verified against the [W3C validator](http://validator.w3.org/) to ensure that
-the markup is well formed. 
-This is not in itself a guarantee of good code, 
-but it helps to eliminate problems which can be avoided via automation. 
+the markup is well formed.
+This is not in itself a guarantee of good code,
+but it helps to eliminate problems which can be avoided via automation.
 It should not be considered a substitute for manual code review.
 
 
@@ -70,7 +70,7 @@ It should not be considered a substitute for manual code review.
 
 ### Doctype
 
-Always use a proper doctype that triggers standards mode in your browser. 
+Always use a proper doctype that triggers standards mode in your browser.
 Quirks mode should always be avoided.
 
 For simplicity, use the html5 doctype:
@@ -85,8 +85,8 @@ For simplicity, use the html5 doctype:
 
 From the HTML5 spec:
 
-> Authors are encouraged to specify a lang attribute on the root html element, giving the 
-document's language. This aids speech synthesis tools to determine what pronunciations to use, 
+> Authors are encouraged to specify a lang attribute on the root html element, giving the
+document's language. This aids speech synthesis tools to determine what pronunciations to use,
 translation tools to determine what rules to use, and so forth.
 
 [Read more about the `lang` attribute in the spec](http://www.w3.org/html/wg/drafts/html/master/semantics.html#the-html-element).
@@ -102,8 +102,8 @@ Head to Sitepoint for a [list of language codes](http://reference.sitepoint.com/
 
 ### Character encoding
 
-Quickly and easily ensure proper rendering of your content by declaring an explicit character 
-encoding. When doing so, you may avoid using character entities in your HTML, provided their 
+Quickly and easily ensure proper rendering of your content by declaring an explicit character
+encoding. When doing so, you may avoid using character entities in your HTML, provided their
 encoding matches that of the document (generally utf-8).
 
 ``` html
@@ -115,8 +115,8 @@ encoding matches that of the document (generally utf-8).
 
 ### CSS and JavaScript includes
 
-HTML5 removed the need for the type attribute that was previously required for code validity but 
-which had no effect on browser parsing. There is no need to specify a `type` when including CSS 
+HTML5 removed the need for the type attribute that was previously required for code validity but
+which had no effect on browser parsing. There is no need to specify a `type` when including CSS
 and JavaScript files as `text/css` and `text/javascript` are their respective defaults.
 
 ``` html
@@ -142,18 +142,19 @@ and JavaScript files as `text/css` and `text/javascript` are their respective de
 
 ### Semantic Elements
 
-Use semantic elements whenever possible. 
-Tags like `<div>` and `<span>` are great for layout but tell the browser nothing about content and require additional markup to make them keyboard accessibile.
+Use semantic elements whenever possible.
+Tags like `<div>` and `<span>` are great for layout but tell the browser nothing about content and require
+additional markup to make them keyboard accessibile (also see tabindex rule in <a href="#other">Other</a>).
 
   - Paragraphs of text should always be placed in a `<p>` tag. Never use multiple `<br>` tags.
-  - Items in list form should always be in `<ul>`, `<ol>`, or `<dl>`. Never use a set of 
+  - Items in list form should always be in `<ul>`, `<ol>`, or `<dl>`. Never use a set of
   `<div>` or `<p>`.
   - Use an HTML5 Shiv to "teach" older browsers how to handle elements like `<header>`, `<article>`, etc.
 
 
 ### Quotes
 
-Always use double quotes, never single quotes, on attributes
+Always use double quotes, never single quotes, on attribute values.
 
 HTML5 allows the use of unquoted attribute values (e.g., `rel=stylesheet`), but for interoperability
 between editors and tools, as well as readability, we require the use of double quoted values.
@@ -187,10 +188,10 @@ with a trailing slash (i.e., do not use `<hr />` or `<br />`).
 ### Case
 
 Elements and attributes should be written in lowercase. Attribute values intended for humans to
-read (such as `title` or `alt`) should be in mixed case, but otherwise they should also be in 
+read (such as `title` or `alt`) should be in mixed case, but otherwise they should also be in
 lowercase.
 
-For class or ID names refer to the CSS standards.
+For class or ID naming conventions refer to the CSS standards.
 
 
 ### Reducing markup
@@ -214,28 +215,28 @@ Whenever possible, avoid superfluous parent elements when writing HTML. Many tim
 - Don't set `tabindex` manually; rely on the browser to set the order.
 
 
-## Patterns for 
+## Patterns for
 
 ### Forms
 
-When designing forms, 
+When designing forms,
 think about form validation and good markup to ensure users with screenreaders can access them.
 
 **General**
 - Make sure the form follows a logical layout when navigating with a keyboard
 - Lean towards radio or checkbox lists instead of select menus.
-- When using radio buttons or checkbox lists, use the `<fieldset>` tag to group your elements together and describe the group with `<legend>`. 
+- When using radio buttons or checkbox lists, use the `<fieldset>` tag to group your elements together and describe the group with `<legend>`.
 
 **Labels**
 - When possible, wrap radio and checkbox inputs and their text in `<label>`s to reduce the need for
-`for` attribute wrapping automatically associates the two.
-- Never use the placeholder attribute for essential text or inplace of the `<label>` tags/
+`for` attribute. Wrapping automatically associates the two.
+- Never use the placeholder attribute for essential text or in place of the `<label>` tags/
 
-**Buttons** 
-- Form buttons should always include an explicit `type`. 
+**Buttons**
+- Form buttons should always include an explicit `type`.
 Use primary buttons for the `type="submit"` button and regular buttons for `type="button"`.
-- The primary form button must come first in the DOM, 
-especially for forms with multiple submit buttons. 
+- The primary form button must come first in the DOM,
+especially for forms with multiple submit buttons.
 The visual order should be preserved with float: right; on each button.
 
 ``` html
@@ -258,20 +259,20 @@ The visual order should be preserved with float: right; on each button.
 
 **More about forms**
 
-+ [cf-forms: Form patterns in Capital Framework](https://github.com/cfpb/cf-forms) 
++ [cf-forms: Form patterns in Capital Framework](https://github.com/cfpb/cf-forms)
 + [CFPB Design Manual on Effective Forms](http://cfpb.github.io/design-manual/guides/effective-forms.html)
 
 
 ### Tables
 
-First off, never use tables for layout purposes. 
-Tables are for data. 
+First off, never use tables for layout purposes.
+Tables are for data only.
 
-Make use of `<thead>`, `<tfoot>`, `<tbody>`, and `<th>` tags (and scope attribute) when appropriate. 
+Make use of `<thead>`, `<tfoot>`, `<tbody>`, and `<th>` tags (and scope attribute) when appropriate.
 Without this markup, screen readers will identify tables as layout tables instead of data tables.
 
-(Note: 
-`<tfoot>` goes above `<tbody>` for speed reasons. 
+(Note:
+`<tfoot>` goes above `<tbody>` for speed reasons.
 You want the browser to load the footer before a table full of data.)
 
 ``` html
@@ -309,7 +310,7 @@ You want the browser to load the footer before a table full of data.)
 
 ## Accessibility
 
-Your website should aim to meet [Level AA of the WCAG 2.0 rules](http://www.w3.org/TR/WCAG/). 
+Your website should aim to meet [Level AA of the WCAG 2.0 rules](http://www.w3.org/TR/WCAG/).
 
 [Read more about accessibility at CFPB Design Manual](http://cfpb.github.io/design-manual/guides/accessible-interfaces.html)
 
@@ -331,26 +332,26 @@ is recommended.
 
 A few examples of some of the more prominent landmark roles from <a11yproject.com>
 
-+ `<header role="banner">`  
++ `<header role="banner">`
 A region of the page that is site focused. Typically your global page header.
 
-+ `<nav role="navigation">` 
++ `<nav role="navigation">`
 Contains navigational links.
 
-+ `<main role="main">`  
++ `<main role="main">`
 Focal content of document. Use only once.
 
-+ `<article role="article">` 
++ `<article role="article">`
 Represents an independent item of content. Use only once on outermost element of this type.
 
-+ `<aside role="complementary">` 
++ `<aside role="complementary">`
 Supporting section related to the main content even when separated.
 
-+ `<footer role="contentinfo">` 
++ `<footer role="contentinfo">`
 Contains information about the document (meta info, copyright, company info, etc).
 
 + `<form role="search">`
-Add a `search` role to your primary search form. 
+Add a `search` role to your primary search form.
 
 [More about WAI-ARIA in HTML from w3c](http://www.w3.org/TR/aria-in-html/)
 
@@ -378,29 +379,29 @@ Test for header flow using the WAVE Toolbar.
 
 #### Keyboard Test
 
-You don't need any special hardware for your first accesibility test. 
+You don't need any special hardware for your first accesibility test.
 Just take away your mouse.
 
 1. Type in the web address of the website you'd like to test in your URL bar.
 2. Hit `enter`.
-3. Using only your keyboard, 
+3. Using only your keyboard,
 navigate to different parts of your website using the `tab`, `shift + tab` and `enter` keys.
 
-You should be able to tab to all interactive elements 
-like form fields, links and buttons. 
-The order of elements, especially navigation elements, should make logical sense. 
+You should be able to tab to all interactive elements
+like form fields, links and buttons.
+The order of elements, especially navigation elements, should make logical sense.
 
 [Read more about keyboard testing on WebAIM](http://webaim.org/techniques/keyboard/).
 
 
 #### Screenreader testing
 
-Using a screenreader can be a great way to experience how screenreader users experience your webpages. 
+Using a screenreader can be a great way to experience how screenreader users experience your webpages.
 WebAIM has a fantastic series and guide for using screenreaders for accesibility testing purposes.
 
-+ [Using Voiceover to evaluate web accesibility](http://webaim.org/articles/voiceover/) - 
++ [Using Voiceover to evaluate web accesibility](http://webaim.org/articles/voiceover/) -
 Learn how to use the built-in screenreader program on Macs and iOS products.
-+ [Using NVDA to evaluate web accesibility](http://webaim.org/articles/nvda/) - 
++ [Using NVDA to evaluate web accesibility](http://webaim.org/articles/nvda/) -
 Learn how to use NVDA, a free and open source screenreader for Windows.
 
 [Read more about screenreader testing on WebAIM](http://webaim.org/articles/screenreader_testing/)
@@ -408,19 +409,19 @@ Learn how to use NVDA, a free and open source screenreader for Windows.
 
 #### Other testing tools
 
-**[WAVE web accessibility evaluation tool by WebAIM](http://wave.webaim.org/)** - 
-WAVE will detect missing accessibility tags and poor practices and explain their impact. 
+**[WAVE web accessibility evaluation tool by WebAIM](http://wave.webaim.org/)** -
+WAVE will detect missing accessibility tags and poor practices and explain their impact.
 They also have a toolbar extension.
 
-**[Chrome Accessibility Developer Tools](https://chrome.google.com/webstore/detail/accessibility-developer-t/fpkknkljclfencbdbgkenhalefipecmb?hl=en)** - 
-A Chrome extension that adds an additional section to your developer tools 
-to examine accesibility properties. 
+**[Chrome Accessibility Developer Tools](https://chrome.google.com/webstore/detail/accessibility-developer-t/fpkknkljclfencbdbgkenhalefipecmb?hl=en)** -
+A Chrome extension that adds an additional section to your developer tools
+to examine accesibility properties.
 Comes with audits to examine contrast, incorrect markup and other common errors.
 
-**[Contrast Ratio Tool](http://leaverou.github.io/contrast-ratio/)** - 
+**[Contrast Ratio Tool](http://leaverou.github.io/contrast-ratio/)** -
 Tests for contrast ratio based on the WCAG 2.0 guidelines on color contrast.
 
-**[Colorblind Web Page Filter](http://colorfilter.wickline.org/)** - 
+**[Colorblind Web Page Filter](http://colorfilter.wickline.org/)** -
 Applies coverage filters on webpages to test against different types of color blindness
 
 
