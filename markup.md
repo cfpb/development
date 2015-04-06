@@ -1,14 +1,17 @@
-**TABLE OF CONTENTS**
-
-+ [HTML Standards](#html-standards)
-+ [Accessibility](#accessibility)
-+ [Tools and Linters](#tools-and-linters)
-
 # HTML Standards
 
 This documents outlines HTML code standards.
 The intent of the HTML standards is to foster
 cross-browser compatibility, accessibility, simplicity and maintainability.
+
+## Table of Contents
+
+1. [Coding Style](#coding-style)
+1. [Head](#head)
+1. [Syntax](#syntax)
+1. [Patterns](#patterns-)
+1. [Accessibility](#accessibility)
+1. [Tools and Linters](#tools-and-linters)
 
 ## Coding Style
 
@@ -198,7 +201,7 @@ For class or ID naming conventions refer to the CSS standards.
 
 Whenever possible, avoid superfluous parent elements when writing HTML. Many times this requires iteration and refactoring, but produces less HTML. For example:
 
-```
+```html
 <!-- Not so great -->
 <span class="avatar">
 <img src="...">

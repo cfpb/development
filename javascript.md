@@ -30,11 +30,11 @@ This style guide aims to provide the ground rules for CFPB's JavaScript code, su
 
 ## Linting
 
-Lint your code using ESLint. [CFPB-tailored ESLint options](https://github.com/cfpb/front-end/js-standards/.eslintrc) exist.
+Lint your code using ESLint. [CFPB-tailored ESLint options](https://github.com/cfpb/front-end/blob/master/.eslintrc) exist.
 
 ## Modules
 
-This style guide assumes you're using a module system such as [CommonJS][1], [AMD][2], [ES6 Modules][3], or any other kind of module system. Modules systems provide individual scoping, avoid leaks to the `global` object, and improve code base organization by **automating dependency graph generation**, instead of having to resort to manually creating tens of `<script>` tags.
+This style guide assumes you're using a module system such as [CommonJS][1], [AMD][2], [ES6 Modules][3], or any other kind of module system. Modules systems provide individual scoping, avoid leaks to the `global` object, and improve code base organization by **automating dependency graph generation**, instead of having to resort to manually creating multiple `<script>` tags.
 
 Module systems also provide us with dependency injection patterns, which are crucial when it comes to testing individual components in isolation.
 
@@ -62,27 +62,9 @@ insert_final_newline = true
 trim_trailing_whitespace = false
 ```
 
-We recommend using 2 spaces for indentation. The `.editorconfig` file can take care of that for us and everyone would be able to create the correct tabs by pressing the tab key.
+We recommend using 2 spaces for indentation. The `.editorconfig` file can take care of that for us and everyone would be able to create the correct spacing by pressing the tab key.
 
-Spacing doesn't just entail tabbing, but also the spaces before, after, and in between arguments of a function declaration. This kind of spacing is typically highly irrelevant to get right, and it'll be hard for most teams to even arrive at a scheme that will satisfy everyone.
-
-```js
-function () {}
-```
-
-```js
-function( a, b ){}
-```
-
-```js
-function(a, b) {}
-```
-
-```js
-function (a,b) {}
-```
-
-Try to keep these differences to a minimum, but don't put much thought to it either.
+Spacing doesn't just entail tabbing, but also the spaces before, after, and in between arguments of a function declaration. Try to keep this spacing consistent throughout the codebase.
 
 Where possible, improve readability by keeping lines below the 80-character mark.
 
@@ -91,14 +73,15 @@ Where possible, improve readability by keeping lines below the 80-character mark
 - Functions, variables, methods, objects and instances should be named using `camelCase`.
 - Constructors and prototypes should use `UpperCamelCase`.
 - Symbolic constants should use `UPPERCASE`.
+- Encapsulated (private) variables and methods should use `_underscoreCamelCase`.
 
 ## Semicolons`;`
 
-The majority of JavaScript developers [prefer using semicolons][6] at the end of lines and we recommend following this practice. This choice is done to avoid potential issues with Automatic Semicolon Insertion _(ASI)_.
+We advocate for using semicolons at the end of each line. This choice is done to avoid potential issues with Automatic Semicolon Insertion _(ASI)_.
 
 ## Strings
 
-Strings should always be quoted using the same quotation mark. Use `'` or `"` consistently throughout your codebase. Ensure the team is using the same quotation mark in every portion of JavaScript that's authored. In general, we prefer to use sing quotation parks `'`.
+Strings should always be quoted using the same quotation mark. Use `'` or `"` consistently throughout your codebase. Ensure the team is using the same quotation mark in every portion of JavaScript that's authored. In general, we prefer to use single quotation marks `'`.
 
 ##### Bad
 
@@ -113,38 +96,6 @@ var message = 'oh hai ' + name + '!';
 ```
 
 Usually you'll be a happier JavaScript developer if you hack together a parameter-replacing method like [`util.format` in Node][12]. That way it'll be far easier to format your strings, and the code looks a lot cleaner too.
-
-##### Better
-
-```js
-var message = util.format('oh hai %s!', name);
-```
-
-You could implement something similar using the piece of code below.
-
-```js
-function format () {
-  var args = [].slice.call(arguments);
-  var initial = args.shift();
-
-  function replacer (text, replacement) {
-    return text.replace('%s', replacement);
-  }
-  return args.reduce(replacer, initial);
-}
-```
-
-To declare multi-line strings, particularly when talking about HTML snippets, it's sometimes best to use an array as a buffer and then join its parts. The string concatenating style may be faster but it's also much harder to keep track of.
-
-```js
-var html = [
-  '<div>',
-    format('<span class="monster">%s</span>', name),
-  '</div>'
-].join('');
-```
-
-With the array builder style, you can also push parts of the snippet and then join everything together at the end. This is in fact what some [string templating engines like Jade][13] prefer to do.
 
 ## Variable Declaration
 
@@ -232,7 +183,7 @@ if (err) {
 
 ## Equality
 
-Avoid using `==` and `!=` operators, always favor `===` and `!==`. These operators are called the "strict equality operators", while [their counterparts will attempt to cast the operands][15] into the same value type.
+Avoid using `==` and `!=` operators, always favor `===` and `!==`. These operators are called the "strict equality operators," while [their counterparts will attempt to cast the operands][15] into the same value type.
 
 ##### Bad
 
@@ -546,63 +497,18 @@ function half (text) {
 **Avoid prototypical inheritance models** unless you have a very good _performance reason_ to justify yourself.
 
 - Prototypical inheritance boosts puts need for `this` through the roof
-- It's way more verbose than using plain objects
+- It's way more verbose than using object literals
 - It causes headaches when creating `new` objects
 - Needs a closure to hide valuable private state of instances
-- Just use plain objects instead
+- Just use object literals instead
 
 ## Object Literals
 
-Instantiate using the egyptian notation `{}`. Use factories instead of constructors, here's a proposed pattern for you to implement objects in general.
-
-```js
-function util (options) {
-  // private methods and state go here
-  var foo;
-
-  function add () {
-    return foo++;
-  }
-
-  function reset () { // note that this method isn't publicly exposed
-    foo = options.start || 0;
-  }
-
-  reset();
-
-  return {
-    // public interface methods go here
-    uuid: add
-  };
-}
-```
+Instantiate using the egyptian notation `{}`. Use factories instead of constructors.
 
 ## Array Literals
 
 Instantiate using the square bracketed notation `[]`. If you have to declare a fixed-dimension array for performance reasons then it's fine to use the `new Array(length)` notation instead.
-
-It's about time you master array manipulation! [Learn about the basics][24]. It's way easier than you might think.
-
-- [`.forEach`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)
-- [`.slice`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice)
-- [`.splice`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice)
-- [`.join`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join)
-- [`.concat`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat)
-- [`.unshift`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift)
-- [`.shift`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/shift)
-- [`.push`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push)
-- [`.pop`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop)
-
-Learn and abuse the functional collection manipulation methods. These are **so** worth the trouble.
-
-- [`.filter`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
-- [`.map`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
-- [`.reduce`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce)
-- [`.reduceRight`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/reduceRight)
-- [`.some`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/some)
-- [`.every`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/every)
-- [`.sort`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
-- [`.reverse`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse)
 
 ## Regular Expressions
 
@@ -752,10 +658,7 @@ function (cb) {
 
 ## Credits
 
-The original version of this document is based on [Nicolas Bevacqua's functon qualityGuide], which is licensed under the MIT license.
-
-
-# }
+The original version of this document is based on [Nicolas Bevacqua's functon qualityGuide](https://github.com/bevacqua/js), which is licensed under the MIT license.
 
 
   [1]: http://wiki.commonjs.org/wiki/CommonJS
