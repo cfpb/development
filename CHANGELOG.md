@@ -2,10 +2,10 @@ All notable changes to this project will be documented in this file.
 We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
 
-## x.y.z - YYYY-MM-DD
+## 2015-04-06
 
 ### Added
-- Lorem ipsum dolor sit amet
+- `javascript.md` a custom fork of <https://github.com/bevacqua/js>
 
 ### Deprecated
 - Nothing.
@@ -15,3 +15,18 @@ We follow the [Semantic Versioning 2.0.0](http://semver.org/) format.
 
 ### Fixed
 - Nothing.
+
+## 2015-03-30
+
+### Added
+- initial markup standards
+
+### Deprecated
+- Nothing.
+
+### Removed
+- Nothing.
+
+### Fixed
+- Nothing.
+
