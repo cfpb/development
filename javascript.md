@@ -30,7 +30,7 @@ This style guide aims to provide the ground rules for CFPB's JavaScript code, su
 
 ## Linting
 
-Lint your code using ESLint. [CFPB-tailored ESLint options](https://github.com/cfpb/front-end/js-standards/.eslintrc) exist.
+Lint your code using ESLint. [CFPB-tailored ESLint options](https://github.com/cfpb/front-end/blob/master/.eslintrc) exist.
 
 ## Modules
 
@@ -658,7 +658,7 @@ function (cb) {
 
 ## Credits
 
-The original version of this document is based on [Nicolas Bevacqua's functon qualityGuide], which is licensed under the MIT license.
+The original version of this document is based on [Nicolas Bevacqua's functon qualityGuide](https://github.com/bevacqua/js), which is licensed under the MIT license.
 
 
   [1]: http://wiki.commonjs.org/wiki/CommonJS
