@@ -77,11 +77,11 @@ Where possible, improve readability by keeping lines below the 80-character mark
 
 ## Semicolons`;`
 
-TWe advocate for using semicolons at the end of each line. This choice is done to avoid potential issues with Automatic Semicolon Insertion _(ASI)_.
+We advocate for using semicolons at the end of each line. This choice is done to avoid potential issues with Automatic Semicolon Insertion _(ASI)_.
 
 ## Strings
 
-Strings should always be quoted using the same quotation mark. Use `'` or `"` consistently throughout your codebase. Ensure the team is using the same quotation mark in every portion of JavaScript that's authored. In general, we prefer to use sing quotation marks `'`.
+Strings should always be quoted using the same quotation mark. Use `'` or `"` consistently throughout your codebase. Ensure the team is using the same quotation mark in every portion of JavaScript that's authored. In general, we prefer to use single quotation marks `'`.
 
 ##### Bad
 
@@ -659,9 +659,6 @@ function (cb) {
 ## Credits
 
 The original version of this document is based on [Nicolas Bevacqua's functon qualityGuide], which is licensed under the MIT license.
-
-
-# }
 
 
   [1]: http://wiki.commonjs.org/wiki/CommonJS
