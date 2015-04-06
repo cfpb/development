@@ -1,8 +1,12 @@
 **TABLE OF CONTENTS**
 
-+ [HTML Standards](#html-standards)
-+ [Accessibility](#accessibility)
-+ [Tools and Linters](#tools-and-linters)
+
+1. [Coding Style](#coding-style)
+1. [Head](#head)
+1. [Syntax](#syntax)
+1. [Patterns](#patterns-)
+1. [Accessibility](#accessibility)
+1. [Tools and Linters](#tools-and-linters)
 
 # HTML Standards
 
