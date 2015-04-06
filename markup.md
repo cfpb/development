@@ -1,5 +1,10 @@
-**TABLE OF CONTENTS**
+# HTML Standards
 
+This documents outlines HTML code standards.
+The intent of the HTML standards is to foster
+cross-browser compatibility, accessibility, simplicity and maintainability.
+
+## Table of Contents
 
 1. [Coding Style](#coding-style)
 1. [Head](#head)
@@ -7,12 +12,6 @@
 1. [Patterns](#patterns-)
 1. [Accessibility](#accessibility)
 1. [Tools and Linters](#tools-and-linters)
-
-# HTML Standards
-
-This documents outlines HTML code standards.
-The intent of the HTML standards is to foster
-cross-browser compatibility, accessibility, simplicity and maintainability.
 
 ## Coding Style
 
