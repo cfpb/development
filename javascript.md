@@ -497,63 +497,18 @@ function half (text) {
 **Avoid prototypical inheritance models** unless you have a very good _performance reason_ to justify yourself.
 
 - Prototypical inheritance boosts puts need for `this` through the roof
-- It's way more verbose than using plain objects
+- It's way more verbose than using object literals
 - It causes headaches when creating `new` objects
 - Needs a closure to hide valuable private state of instances
-- Just use plain objects instead
+- Just use object literals instead
 
 ## Object Literals
 
-Instantiate using the egyptian notation `{}`. Use factories instead of constructors, here's a proposed pattern for you to implement objects in general.
-
-```js
-function util (options) {
-  // private methods and state go here
-  var foo;
-
-  function add () {
-    return foo++;
-  }
-
-  function reset () { // note that this method isn't publicly exposed
-    foo = options.start || 0;
-  }
-
-  reset();
-
-  return {
-    // public interface methods go here
-    uuid: add
-  };
-}
-```
+Instantiate using the egyptian notation `{}`. Use factories instead of constructors.
 
 ## Array Literals
 
 Instantiate using the square bracketed notation `[]`. If you have to declare a fixed-dimension array for performance reasons then it's fine to use the `new Array(length)` notation instead.
-
-It's about time you master array manipulation! [Learn about the basics][24]. It's way easier than you might think.
-
-- [`.forEach`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)
-- [`.slice`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice)
-- [`.splice`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice)
-- [`.join`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join)
-- [`.concat`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat)
-- [`.unshift`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift)
-- [`.shift`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/shift)
-- [`.push`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push)
-- [`.pop`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop)
-
-Learn and abuse the functional collection manipulation methods. These are **so** worth the trouble.
-
-- [`.filter`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
-- [`.map`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
-- [`.reduce`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce)
-- [`.reduceRight`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/reduceRight)
-- [`.some`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/some)
-- [`.every`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/every)
-- [`.sort`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
-- [`.reverse`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse)
 
 ## Regular Expressions
 
