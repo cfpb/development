@@ -62,27 +62,9 @@ insert_final_newline = true
 trim_trailing_whitespace = false
 ```
 
-We recommend using 2 spaces for indentation. The `.editorconfig` file can take care of that for us and everyone would be able to create the correct tabs by pressing the tab key.
+We recommend using 2 spaces for indentation. The `.editorconfig` file can take care of that for us and everyone would be able to create the correct spacing by pressing the tab key.
 
-Spacing doesn't just entail tabbing, but also the spaces before, after, and in between arguments of a function declaration. This kind of spacing is typically highly irrelevant to get right, and it'll be hard for most teams to even arrive at a scheme that will satisfy everyone.
-
-```js
-function () {}
-```
-
-```js
-function( a, b ){}
-```
-
-```js
-function(a, b) {}
-```
-
-```js
-function (a,b) {}
-```
-
-Try to keep these differences to a minimum, but don't put much thought to it either.
+Spacing doesn't just entail tabbing, but also the spaces before, after, and in between arguments of a function declaration. Try to keep this spacing consistent throughout the codebase.
 
 Where possible, improve readability by keeping lines below the 80-character mark.
 
@@ -91,14 +73,15 @@ Where possible, improve readability by keeping lines below the 80-character mark
 - Functions, variables, methods, objects and instances should be named using `camelCase`.
 - Constructors and prototypes should use `UpperCamelCase`.
 - Symbolic constants should use `UPPERCASE`.
+- Encapsulated (private) variables and methods should use `_underscoreCamelCase`.
 
 ## Semicolons`;`
 
-The majority of JavaScript developers [prefer using semicolons][6] at the end of lines and we recommend following this practice. This choice is done to avoid potential issues with Automatic Semicolon Insertion _(ASI)_.
+TWe advocate for using semicolons at the end of each line. This choice is done to avoid potential issues with Automatic Semicolon Insertion _(ASI)_.
 
 ## Strings
 
-Strings should always be quoted using the same quotation mark. Use `'` or `"` consistently throughout your codebase. Ensure the team is using the same quotation mark in every portion of JavaScript that's authored. In general, we prefer to use sing quotation parks `'`.
+Strings should always be quoted using the same quotation mark. Use `'` or `"` consistently throughout your codebase. Ensure the team is using the same quotation mark in every portion of JavaScript that's authored. In general, we prefer to use sing quotation marks `'`.
 
 ##### Bad
 
@@ -113,38 +96,6 @@ var message = 'oh hai ' + name + '!';
 ```
 
 Usually you'll be a happier JavaScript developer if you hack together a parameter-replacing method like [`util.format` in Node][12]. That way it'll be far easier to format your strings, and the code looks a lot cleaner too.
-
-##### Better
-
-```js
-var message = util.format('oh hai %s!', name);
-```
-
-You could implement something similar using the piece of code below.
-
-```js
-function format () {
-  var args = [].slice.call(arguments);
-  var initial = args.shift();
-
-  function replacer (text, replacement) {
-    return text.replace('%s', replacement);
-  }
-  return args.reduce(replacer, initial);
-}
-```
-
-To declare multi-line strings, particularly when talking about HTML snippets, it's sometimes best to use an array as a buffer and then join its parts. The string concatenating style may be faster but it's also much harder to keep track of.
-
-```js
-var html = [
-  '<div>',
-    format('<span class="monster">%s</span>', name),
-  '</div>'
-].join('');
-```
-
-With the array builder style, you can also push parts of the snippet and then join everything together at the end. This is in fact what some [string templating engines like Jade][13] prefer to do.
 
 ## Variable Declaration
 
@@ -232,7 +183,7 @@ if (err) {
 
 ## Equality
 
-Avoid using `==` and `!=` operators, always favor `===` and `!==`. These operators are called the "strict equality operators", while [their counterparts will attempt to cast the operands][15] into the same value type.
+Avoid using `==` and `!=` operators, always favor `===` and `!==`. These operators are called the "strict equality operators," while [their counterparts will attempt to cast the operands][15] into the same value type.
 
 ##### Bad
 
