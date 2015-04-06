@@ -198,7 +198,7 @@ For class or ID naming conventions refer to the CSS standards.
 
 Whenever possible, avoid superfluous parent elements when writing HTML. Many times this requires iteration and refactoring, but produces less HTML. For example:
 
-```
+```html
 <!-- Not so great -->
 <span class="avatar">
 <img src="...">
