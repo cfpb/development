@@ -7,7 +7,7 @@ This style guide aims to provide the ground rules for CFPB's CSS, such that it's
 1. [General Practices](#general-practices)
 1. [Property Order](#property-order)
 1. [Naming Conventions](#naming-conventions)
-1. [Styles](#styles)
+1. [Property values](#property-values)
 1. [Media Queries](#media-queries)
 1. [Less](#less)
     - [Less General Practices](#less-general-practices)
@@ -80,10 +80,10 @@ Appending an element name to a modifier class can result in a confusing class na
 
 ### `id` attribute
 
-While the `id` attribute might be fine in HTML and JavaScript, it should be **avoided entirely** inside stylesheets. Few reasons.
+While the `id` attribute might be fine in HTML and JavaScript, it should be **avoided entirely** inside stylesheets for a few reasons:
 
 - ID selectors are not reusable
-- Priority nightmares
+- Can lead to priority issues
 
 ##### Good
 
@@ -103,7 +103,7 @@ While the `id` attribute might be fine in HTML and JavaScript, it should be **av
 
 Just assign a class name to the element.
 
-## Styles
+## Property values
 
 These rules apply to your CSS property values
 
@@ -114,7 +114,6 @@ These rules apply to your CSS property values
   - Fine to use in limited cases
     - Overlays
     - Declarations of the `display: none !important;` type
-- Keep `z-index` levels in variables in a single file. **Avoids confusion** about what level should be given to an element, and arbitrarily-high `999`-style values
 - Use hex color codes `#000` unless there's an explicit need for an `rgba` declaration
 - Avoid mixing units
 - Unit-less `line-height` is preferred because it does not inherit a percentage value of its parent element, but instead is based on a multiplier of the `font-size`.
@@ -152,6 +151,7 @@ At the CFPB we use Less as our CSS preprocessor.
 
 ### Less General Practices
 
+- Organize your Less code into multiple files/modules
 - Put comments in `//` statements
 - Prefer nested selectors `.foo { .bar {} }` vs `.foo .bar {}`
   - _Only if both `.foo` and `.foo .bar` need styling_
