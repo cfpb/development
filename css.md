@@ -1,6 +1,7 @@
 # CSS & Less Guide
 
-This style guide aims to provide the ground rules for CFPB's CSS, such that it's highly readable and consistent across different developers on a team. 
+This style guide aims to provide the ground rules for CFPB's CSS, 
+such that it's highly readable and consistent across different developers on a team. 
 
 ## Table of Contents
 
@@ -18,10 +19,11 @@ This style guide aims to provide the ground rules for CFPB's CSS, such that it's
 
 - Use soft-tabs with a two space indent
 - One line per selector
-- Use a single space after the colon
 - Always end property declarations with a semicolon
 - Put spaces after `:` in property declarations
 - Put spaces before `{` in rule declarations
+- Place `{` on the same line as the (last) selector and `}` on its own line
+- 
 
 ## Property Order
 
@@ -42,6 +44,7 @@ Remaining properties are in alphabetical order.
     overflow: hidden;
 
     /* Positioning */
+    float: left;
     position: absolute;
     top: 0;
     right: 0;
@@ -76,7 +79,8 @@ Custom [BEM ("Block Element Modifier")](https://en.bem.info/method/definitions/)
 ```
 
 ### Avoid creating elements of modifiers
-Appending an element name to a modifier class can result in a confusing class name like `.list__space_item`. Avoid this in favor of using a descendant, like this: `.list__spaced .list_item`.
+Appending an element name to a modifier class can result in a confusing class name like `.list__space_item`. 
+Avoid this in favor of using a descendant, like this: `.list__spaced .list_item`.
 
 ### `id` attribute
 
@@ -143,7 +147,8 @@ These rules apply to your CSS property values
 ```
 
 ## Media Queries
-In most cases styles should be declared mobile first, then enhanced with `min-width` media queries. By doing this we create a base experience that all devices can use and one that does not require media query support.
+In most cases styles should be declared mobile first, then enhanced with `min-width` media queries. 
+By doing this we create a base experience that all devices can use and one that does not require media query support.
 
 ## Less
 
@@ -159,7 +164,8 @@ At the CFPB we use Less as our CSS preprocessor.
 
 ### Selectors and Nesting
 
-Styles shouldn't need to be nested more than three levels deep. This includes pseudo-selectors. If you find yourself going further, think about re-organizing your rules _(either the specificity needed, or the layout of the nesting)_.
+Styles shouldn't need to be nested more than three levels deep. This includes pseudo-selectors. 
+If you find yourself going further, think about re-organizing your rules _(either the specificity needed, or the layout of the nesting)_.
 
 ### Variables
 
