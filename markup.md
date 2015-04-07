@@ -12,6 +12,7 @@ cross-browser compatibility, accessibility, simplicity and maintainability.
 1. [Patterns](#patterns-)
 1. [Accessibility](#accessibility)
 1. [Tools and Linters](#tools-and-linters)
+1. [Credits](#credits)
 
 ## Coding Style
 
@@ -368,7 +369,7 @@ You can also label `<section>`s with the `aria-labelledby=""` property.
 
 ``` html
 <section aria-labelledby="KittensHeader">
-  <h2 id="KittensHeader">All Abbout Kittens</h2>
+  <h2 id="KittensHeader">All About Kittens</h2>
   <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
 </section>
 ```
@@ -433,3 +434,9 @@ Applies coverage filters on webpages to test against different types of color bl
 - [Sublime Linter with Tidy](https://github.com/SublimeLinter/SublimeLinter-for-ST2)
 - [Grunt HTML Lint](https://www.npmjs.com/package/grunt-html)
 
+
+## Credits
+
+This guide includes inspiration and guidelines from the [Github Styleguide](https://github.com/styleguide/) and [Code Guide by @mdo](http://codeguide.co/#html-syntax).
+
+Accessibility guidelines are from [a11yproject.org](a11yproject.org), [WebAIM](http://webaim.org/), and Matt Long's [It's Tired In Here accessibility guidelines](http://itstiredinhere.com/accessibility/).
