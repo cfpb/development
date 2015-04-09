@@ -11,6 +11,10 @@ A guide for front-end development at the [CFPB](http://cfpb.github.io/).
 - [CSS/Less standards](css.md)
 - [JavaScript standards](javascript.md)
 
+## Guidelines
+
+- [Publishing node modules](npm.md)
+
 ## Our Core Values
 
 - **Service**: We value that what we do is being of service to consumers, customers, and internal partners
