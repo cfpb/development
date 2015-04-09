@@ -20,8 +20,12 @@ The beauty of tiny modules is that they're easy to test! Traditionally we have u
 
 ## Publishing
 
-When publishing a module to be used in CFPB projects, we ask that you do the following:
+Before publishing your module, read through the [npm docs](https://docs.npmjs.com/getting-started/publishing-npm-packages) on how to publish a package. When publishing a package to be used in CFPB projects, we ask that you do the following:
 
 - Make sure the project is hosted in a CFPB github repo
 - Publish the project to npm using your personal account
 - Add the [CFPB](https://www.npmjs.com/~cfpb) and at least one colleague as a collaborator on the project.
+
+## Aditional Reading
+
+- [How I Write Modules](http://substack.net/how_I_write_modules) by substack
