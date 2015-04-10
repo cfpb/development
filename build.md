@@ -10,11 +10,15 @@ Every CFPB project with a non-trivial front-end should:
    1. `grunt build`
  1. These two commands (and any additional commands if there's a strong argument for them) should be stored in a frontendbuild.sh file to make things easier for our CI environments.
 
-You should avoid checking dependencies and minified assets into source control. It's common practice to keep source files in a `src` directory and compiled/minified assets in a `dist` directory.
+You should avoid checking dependencies and minified assets into source control. It's common practice to keep development files in a `src` directory and compiled/minified assets in a `dist` directory.
 
 ## Installing Node
 
-Mac: `brew install node`
+Mac: 
+
+```shell
+brew install node
+```
 
 Linux:
 
@@ -22,6 +26,7 @@ Linux:
 yum-config-manager --enable epel
 yum install nodejs -y
 ```
+
 ## Installing Grunt and Bower
 
 ```shell
@@ -32,25 +37,7 @@ npm install -g grunt-cli bower
 
 It's good practice to specify specific versions in any dependency management system such as maven, pip, ivy, npm, bower, etc. Yes, it incurs a bit of management overhead in that you have to manually change version numbers when you want to upgrade a dependency. This extra work pays off in absence of time spent tracking down unexpected changes or errors due to a version upgrade of which you were unaware.
 
-### Bad:
-
-```javascript
-"library": "~0.2.4",
-"library": "^0.2.4",
-```
-
-By default `npm install library --save` adds the `~` character. This will match the most recent minor version changes. Meaning that `~0.2.4` will match `0.2.x`.
-
-Using the `^` character will update packages to the most recent major version. Meaning that `^0.2.4` is the same as `0.3.x`, `0.4.x`, etc.
-
-
-### Good:
-
-```javascript
-"library": "0.2.4",
-```
-
-The above pegs our dependency at `0.2.4`. Any updates to this dependency will have to be done intentionally.
+When working with npm, we recommend using [npm shrinkwrap](https://docs.npmjs.com/cli/shrinkwrap).
 
 ## Building JavaScript and Less
 
