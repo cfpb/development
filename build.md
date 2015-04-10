@@ -38,13 +38,21 @@ It's good practice to specify specific versions in any dependency management sys
 
 ```javascript
 "library": "~0.2.4",
+"library": "^0.2.4",
 ```
+
+By default `npm install library --save` adds the `~` character. This will match the most recent minor version changes. Meaning that `~0.2.4` will match `0.2.x`.
+
+Using the `^` character will update packages to the most recent major version. Meaning that `^0.2.4` is the same as `0.3.x`, `0.4.x`, etc.
+
 
 ### Good:
 
 ```javascript
 "library": "0.2.4",
 ```
+
+The above pegs our dependency at `0.2.4`. Any updates to this dependency will have to be done intentionally.
 
 ## Building JavaScript and Less
 
@@ -58,6 +66,10 @@ Here are some helpful plugins for this:
 - [grunt-contrib-clean](https://github.com/gruntjs/grunt-contrib-clean) for cleaning folders
 - [grunt-contrib-watch](https://github.com/gruntjs/grunt-contrib-watch) for watching and compiling assets on the fly
 - [grunt-browserify](https://github.com/jmreidy/grunt-browserify) for using Node style CommonJS modules clientside
+
+## Capital Framework Generator
+
+Our recommended workflow is to use the [cf-generator](https://github.com/cfpb/generator-cf) Yeoman generator to scaffold out a new Capital Framework project. This generator provides a solid front-end build process and directory structure.
 
 ## Errors you may encounter
 
