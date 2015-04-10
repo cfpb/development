@@ -14,6 +14,7 @@ A guide for front-end development at the [CFPB](http://cfpb.github.io/).
 ## Guidelines
 
 - [Publishing node modules](npm.md)
+- [Building your project's front-end](build.md)
 
 ## Our Core Values
 
