@@ -1,7 +1,5 @@
 # Building your project's front-end
 
-We have a standard. Please stick to it.
-
 Every CFPB project with a non-trivial front-end should:
 
  1. Use **Grunt** to accomplish all front-end build tasks.
@@ -70,11 +68,3 @@ Here are some helpful plugins for this:
 ## Capital Framework Generator
 
 Our recommended workflow is to use the [cf-generator](https://github.com/cfpb/generator-cf) Yeoman generator to scaffold out a new Capital Framework project. This generator provides a solid front-end build process and directory structure.
-
-## Errors you may encounter
-
-1. `bower install` fails with `Unable to parse global .bowerrc file: Arguments to path.join must be strings`
-
-I've seen this on Jenkins builds. To fix:
-
-`HOME="" bower install`
