@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 
+- 'build.md': a general guideline for front-end build technology
+
+## 2015-04-08
+
+### Added
+
 - `npm.md`: a general guideline for publishing node modules
 - Added a "guides" section to the README
 
