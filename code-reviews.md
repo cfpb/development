@@ -98,7 +98,7 @@ leads to faster reviews, and less back and forth between everyone.
 
 You've got your sign-offs, now what? If you've made any review edits, it's best
 to squash them to keep the history clean (though not required). Use the merge button
-on Github (don't merge locally) and ensure any automated deployments succeed
+on GitHub (don't merge locally) and ensure any automated deployments succeed
 (typically found in the project's chat channel). If the PR included a versioned
 changed to the CHANGELOG, be sure to create and push a matching tag.
 
@@ -136,6 +136,6 @@ existing guideline.
 ## Credits
 
 - [Code Review in the Lab](http://mozillascience.github.io/codeReview/intro.html)
-- [Github Code Reviews](https://blog.codeship.com/github-code-review/)
+- [GitHub Code Reviews](https://blog.codeship.com/github-code-review/)
 - [thoughtbot Code Review Guide](https://github.com/thoughtbot/guides/blob/master/code-review/README.md)
 - [Effective Code Reviews without the Pain](http://www.developer.com/tech/article.php/3579756/Effective-Code-Reviews-Without-the-Pain.htm)
