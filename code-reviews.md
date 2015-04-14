@@ -7,15 +7,15 @@
 Code reviews are incredibly important step to the development process. Our goals
 when reviewing code are to:
 
-- expose bugs before they make it to production
-- ensure a concistent quality in the codebase
-- create an environment for sharing knowledge and developing skills
-- encourage open communication between the entire team
+- expose bugs before they make it to production;
+- ensure a consistent quality in the codebase;
+- create an environment for sharing knowledge and developing skills;
+- encourage open communication between the entire team.
 
 
-## Tips for a successfull review
+## Tips for a successful review
 
-For a code review to be successfull, we all need to be on the same page. To help
+For a code review to be successful, we all need to be on the same page. To help
 accomplish this, everyone should follow these tips.
 
 ### For everyone
@@ -75,17 +75,17 @@ accomplish this, everyone should follow these tips.
 
 Before seeking a review, you should be able to check off each of the following:
 
-[ ] Changes are limited to a single goal (no scope creep)
-[ ] Code can be automatically merged (no conflicts)
-[ ] Code follows the standards laid out in this playbook
-[ ] Passes all existing automated tests
-[ ] New functions include new tests
-[ ] New functions are documented (with a description, list of inputs, and
-    expected output)
-[ ] Placeholder code is flagged
-[ ] Visually tested in supported browsers and devices
-[ ] Project documentation has been updated (including the "Pending" section of
-    the CHANGELOG)
+- [ ] Changes are limited to a single goal (no scope creep)
+- [ ] Code can be automatically merged (no conflicts)
+- [ ] Code follows the standards laid out in this playbook
+- [ ] Passes all existing automated tests
+- [ ] New functions include new tests
+- [ ] New functions are documented (with a description, list of inputs, and
+      expected output)
+- [ ] Placeholder code is flagged
+- [ ] Visually tested in supported browsers and devices
+- [ ] Project documentation has been updated (including the "Unreleased" section of
+      the CHANGELOG)
 
 ### Opening a PR
 
@@ -107,13 +107,13 @@ changed to the CHANGELOG, be sure to create and push a matching tag.
 
 When reviewing code, you should be able to check off each of the following:
 
-[ ] Do the changes address the project's needs?
-[ ] Do the changes respect the project's existing style?
-[ ] Does the new code avoid reproducing existing functionality?
-[ ] Are functions as simple as possible?
-[ ] Is the code as efficient as possible?
-[ ] Is the usage of each function clear?
-[ ] Have edge cases been considered and tested for?
+- [ ] Do the changes address the project's needs?
+- [ ] Do the changes respect the project's existing style?
+- [ ] Does the new code avoid reproducing existing functionality?
+- [ ] Are functions as simple as possible?
+- [ ] Is the code as efficient as possible?
+- [ ] Is the usage of each function clear?
+- [ ] Have edge cases been considered and tested for?
 
 ### Commenting on code
 
