@@ -128,9 +128,9 @@ Ex:
 ```
 
 If you disagree with a guideline or there is no current guideline, open an issue in
-[this front-end repo](https://github.com/cfpb/front-end) and link back to discussion,
-rather than debating it within the review. In the meantime, follow the existing
-guideline.
+[this front-end repo](https://github.com/cfpb/front-end) and link back to the
+discussion, rather than debating it within the review. In the meantime, follow the
+existing guideline.
 
 
 ## Credits
