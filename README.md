@@ -20,9 +20,9 @@ Capital Framework is our modular front end framework.
 
 ## Guides
 
-- [Publishing node modules](npm.md)
 - [Building your project's front-end](build.md)
 - [Code review guide](code-reviews.md)
+- [Publishing node modules](npm.md)
 
 ## Tools
 
