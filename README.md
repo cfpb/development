@@ -16,6 +16,11 @@ A guide for front-end development at the [CFPB](http://cfpb.github.io/).
 - [Publishing node modules](npm.md)
 - [Building your project's front-end](build.md)
 
+## Tools
+
+- [ESLint file](.eslintrc)
+- [Browser testing checklist](browser-checklist.md)
+
 ## Our Core Values
 
 - **Service**: We value that what we do is being of service to consumers, customers, and internal partners
