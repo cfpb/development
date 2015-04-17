@@ -3,6 +3,7 @@
 - [ ] Chrome
 - [ ] Safari
 - [ ] FF
+- [ ] IE11
 - [ ] IE10
 - [ ] IE9
 - [ ] IE8
@@ -10,6 +11,7 @@
 - [ ] Opera
 - [ ] iOS8
 - [ ] Android 5
+- [ ] Chrome for Android
 - [ ] Blackberry Bold
 
 ## Accessibility
@@ -22,5 +24,3 @@
 - [ ] Is useable without CSS
 - [ ] Is useable without JS
 - [ ] Flexible from small to large screens
-- [ ] No linting errors or warnings
-- [ ] JavaScript tests are passing
