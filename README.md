@@ -11,6 +11,13 @@ A guide for front-end development at the [CFPB](http://cfpb.github.io/).
 - [CSS/Less standards](css.md)
 - [JavaScript standards](javascript.md)
 
+## Capital Framework
+
+Capital Framework is our modular front end framework.
+
+- [Capital Framework docs](http://cfpb.github.io/capital-framework/)
+- [cf-generator](https://github.com/cfpb/generator-cf)
+
 ## Guides
 
 - [Publishing node modules](npm.md)
