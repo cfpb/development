@@ -53,9 +53,6 @@ accomplish this, everyone should follow these tips.
 - Push commits based on earlier rounds of feedback as isolated commits to the
   branch. Do not squash until the branch is ready to merge. Reviewers should be
   able to read individual updates based on their earlier feedback.
-- Wait to merge the branch until it has passed Continuous Integration testing.
-  (TDDium, TravisCI, etc.)
-- Merge once you feel confident in the code and its impact on the project.
 
 ### For code reviewers
 
@@ -69,6 +66,9 @@ accomplish this, everyone should follow these tips.
   issue or offline. In the meantime, the author has the final say on the current
   implementation.
 - Sign off on the pull request with a :thumbsup: or "Ready to merge" comment.
+- Wait to merge the branch until it has passed Continuous Integration testing.
+  (TDDium, TravisCI, etc.)
+- Merge once you feel confident in the code and its impact on the project.
 
 
 ## Submitting code
@@ -93,14 +93,6 @@ Once sure your code meets the checks above, open a Pull Request for your new
 feature or bugfix following our [PR Template](https://raw.githubusercontent.com/cfpb/front-end/733397192b04551d56c847f3416b0bcdf5bab544/pr-template.md). Remember that the
 more information you provide to reviewers, the more context they will have. This
 leads to faster reviews, and less back and forth between everyone.
-
-### Ready to merge?
-
-You've got your sign-offs, now what? If you've made any review edits, it's best
-to squash them to keep the history clean (though not required). Use the merge button
-on GitHub (don't merge locally) and ensure any automated deployments succeed
-(typically found in the project's chat channel). If the PR included a versioned
-changed to the CHANGELOG, be sure to create and push a matching tag.
 
 
 ## Reviewing code
