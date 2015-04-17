@@ -11,15 +11,17 @@ A guide for front-end development at the [CFPB](http://cfpb.github.io/).
 - [CSS/Less standards](css.md)
 - [JavaScript standards](javascript.md)
 
-## Guidelines
+## Guides
 
 - [Publishing node modules](npm.md)
 - [Building your project's front-end](build.md)
+- [Code review guide](code-reviews.md)
 
 ## Tools
 
 - [ESLint file](.eslintrc)
 - [Browser testing checklist](browser-checklist.md)
+- [Pull request template](https://raw.githubusercontent.com/cfpb/front-end/master/pr-template.md)
 
 ## Our Core Values
 
