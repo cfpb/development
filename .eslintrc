@@ -376,7 +376,7 @@ rules:
   # Set a specific tab width for your code.
   indent:
     - 2
-    - 4
+    - 2
     -
       indentSwitchCase: false
 

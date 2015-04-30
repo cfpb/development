@@ -1,5 +1,11 @@
 All notable changes to this project will be documented in this file.
 
+## 2015-04-30
+
+### Fixed
+
+- `.eslintrc`: default tab width set to two space
+
 ## 2015-04-08
 
 ### Added
