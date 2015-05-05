@@ -34,6 +34,8 @@ Short description explaining the high-level reason for the pull request
 
 Include any screenshots that will make reviewing/testing easier
 
+[Preview this PR without the whitespace changes](?w=0)
+
 ## Notes
 
 - List of notes about the changes that might be necessary
