@@ -1,5 +1,11 @@
 All notable changes to this project will be documented in this file.
 
+## 2015-05-06
+
+### Added
+
+- 'testing.md': front-end testing tips
+
 ## 2015-04-30
 
 ### Fixed
