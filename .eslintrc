@@ -245,6 +245,7 @@ rules:
       exceptions:
         BinaryExpression: false
         Property: true
+        VariableDeclarator: true
 
   # Disallows use of multiline strings with a trailing backslash.
   # This rule is needed for ECMAScript environments earlier than 5.
