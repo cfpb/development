@@ -470,7 +470,7 @@ rules:
 
   # Enforce spacing between keys and values in object literal properties.
   key-spacing:
-    - 2
+    - 1
     -
       align: value
       beforeColon: false
