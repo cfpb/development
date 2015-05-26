@@ -539,12 +539,16 @@ Preferably bake `console` statements into a service that can easily be disabled 
 
 ## Comments
 
+### JSDocs
+[Use JSDocs](http://usejsdoc.org/) where applicable for JavaScript commenting.
+
+### Purpose
 Comments **aren't meant to explain what** the code does. Good **code is supposed to be self-explanatory**. If you're thinking of writing a comment to explain what a piece of code does, chances are you need to change the code itself. The exception to that rule is explaining what a regular expression does. Good comments are supposed to **explain why** code does something that may not seem to have a clear-cut purpose.
 
 ##### Bad
 
 ```js
-// create the centered container
+// Create the centered container.
 var p = $('<p/>');
 p.center(div);
 p.text('foo');
@@ -558,12 +562,14 @@ var contents = 'foo';
 container.center(parent);
 container.text(contents);
 megaphone.on('data', function (value) {
-  container.text(value); // the megaphone periodically emits updates for container
+  // The megaphone periodically emits updates for container.
+  container.text(value);
 });
 ```
 
 ```js
-var numeric = /\d+/; // one or more digits somewhere in the string
+// One or more digits somewhere in the string.
+var numeric = /\d+/;
 if (numeric.test(text)) {
   console.log('so many numbers!');
 }
