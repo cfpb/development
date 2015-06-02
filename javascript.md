@@ -1,6 +1,6 @@
 # JavaScript Guide
 
-This style guide aims to provide the ground rules for CFPB's JavaScript code, such that it's highly readable and consistent across different developers on a team. 
+This style guide aims to provide the ground rules for CFPB's JavaScript code, such that it's highly readable and consistent across different developers on a team.
 
 
 ## Table of Contents
@@ -34,7 +34,7 @@ Lint your code using ESLint. [CFPB-tailored ESLint options](https://github.com/c
 
 ## Modules
 
-This style guide assumes you're using a module system such as [CommonJS][1], [AMD][2], [ES6 Modules][3], or any other kind of module system. Modules systems provide individual scoping, avoid leaks to the `global` object, and improve code base organization by **automating dependency graph generation**, instead of having to resort to manually creating multiple `<script>` tags.
+This style guide assumes you're using a module system such as [CommonJS][1], [AMD][2], [ES6 Modules][3], or any other kind of module system. If you are using CommonJS, refer to the [CommonJS guide](javascript-modules-commonjs.md) for structuring your modules. Modules systems provide individual scoping, avoid leaks to the `global` object, and improve code base organization by **automating dependency graph generation**, instead of having to resort to manually creating multiple `<script>` tags.
 
 Module systems also provide us with dependency injection patterns, which are crucial when it comes to testing individual components in isolation.
 
@@ -71,9 +71,11 @@ Where possible, improve readability by keeping lines below the 80-character mark
 ## Naming
 
 - Functions, variables, methods, objects and instances should be named using `camelCase`.
-- Constructors and prototypes should use `UpperCamelCase`.
+- Constructors and prototypes should use `PascalCase`.
 - Symbolic constants should use `UPPERCASE`.
 - Encapsulated (private) variables and methods should use `_underscoreCamelCase`.
+- Prefix variables or properties that reference a jQuery object with `$` or `_$`
+  (depending on exposure). For example: `var $button = $( '.btn-class' );`.
 
 ## Semicolons`;`
 
