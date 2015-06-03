@@ -39,7 +39,7 @@ env:
   es6: false
 
 globals:
-# No globals outside of env settings.
+  $: false
 
 # Linting rules for ESLint.
 # 0's ignore a rule, 1's produce a warning, and 2's throw an error.

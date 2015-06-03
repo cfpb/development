@@ -1,5 +1,11 @@
 All notable changes to this project will be documented in this file.
 
+## 2015-06-02
+
+### Added
+
+- Added jQuery to list of allowed globals in `.eslintrc`
+
 ## 2015-05-06
 
 ### Added
