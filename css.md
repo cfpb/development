@@ -173,7 +173,6 @@ If you find yourself going further, think about re-organizing your rules _(eithe
 
 ### Comments
 
-### JSDocs
 [Use JSDocs](http://usejsdoc.org/) style comments for comment blocks and `//` for inline comments.
 
 **Example**
@@ -183,9 +182,10 @@ If you find yourself going further, think about re-organizing your rules _(eithe
  * Default button styles
  * @class .btn
  * @elements a, button
-*/
+ */
+ 
 .btn {
-    display: inline-block;
+  display: inline-block;
 
   &:focus {
     background-color: @btn-bg-hover;
@@ -195,12 +195,6 @@ If you find yourself going further, think about re-organizing your rules _(eithe
   }
 }
 ```
-
-
-Prefer
-
-### Purpose
-Comments **aren't meant to explain what** the code does. Good **code is supposed to be self-explanatory**. If you're thinking of writing a comment to explain what a piece of code does, chances are you need to change the code itself. The exception to that rule is explaining what a regular expression does. Good comments are supposed to **explain why** code does something that may not seem to have a clear-cut purpose.
 
 ## Credits
 
