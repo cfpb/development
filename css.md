@@ -23,7 +23,6 @@ such that it's highly readable and consistent across different developers on a t
 - Put spaces after `:` in property declarations
 - Put spaces before `{` in rule declarations
 - Place `{` on the same line as the (last) selector and `}` on its own line
--
 
 ## Property Order
 
