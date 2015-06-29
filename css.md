@@ -175,7 +175,12 @@ If you find yourself going further, think about re-organizing your rules _(eithe
 
 [Use JSDocs](http://usejsdoc.org/) style comments for comment blocks and `//` for inline comments.
 
-**Example**
+#### Purpose
+Comments **aren't meant to explain what** the code does. Good **code is supposed to be self-explanatory**.
+If you're thinking of writing a comment to explain what a piece of code does, chances are you need to change the code itself.
+Good comments are supposed to **explain why** code does something that may not seem to have a clear-cut purpose.
+
+#### Example
 
 ```less
 /**
@@ -183,7 +188,7 @@ If you find yourself going further, think about re-organizing your rules _(eithe
  * @class .btn
  * @elements a, button
  */
- 
+
 .btn {
   display: inline-block;
 
