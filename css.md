@@ -1,7 +1,7 @@
 # CSS & Less Guide
 
-This style guide aims to provide the ground rules for CFPB's CSS, 
-such that it's highly readable and consistent across different developers on a team. 
+This style guide aims to provide the ground rules for CFPB's CSS,
+such that it's highly readable and consistent across different developers on a team.
 
 ## Table of Contents
 
@@ -23,7 +23,7 @@ such that it's highly readable and consistent across different developers on a t
 - Put spaces after `:` in property declarations
 - Put spaces before `{` in rule declarations
 - Place `{` on the same line as the (last) selector and `}` on its own line
-- 
+-
 
 ## Property Order
 
@@ -79,7 +79,7 @@ Custom [BEM ("Block Element Modifier")](https://en.bem.info/method/definitions/)
 ```
 
 ### Avoid creating elements of modifiers
-Appending an element name to a modifier class can result in a confusing class name like `.list__space_item`. 
+Appending an element name to a modifier class can result in a confusing class name like `.list__space_item`.
 Avoid this in favor of using a descendant, like this: `.list__spaced .list_item`.
 
 ### `id` attribute
@@ -147,7 +147,7 @@ These rules apply to your CSS property values
 ```
 
 ## Media Queries
-In most cases styles should be declared mobile first, then enhanced with `min-width` media queries. 
+In most cases styles should be declared mobile first, then enhanced with `min-width` media queries.
 By doing this we create a base experience that all devices can use and one that does not require media query support.
 
 ## Less
@@ -157,20 +157,50 @@ At the CFPB we use Less as our CSS preprocessor.
 ### Less General Practices
 
 - Organize your Less code into multiple files/modules
-- Put comments in `//` statements
 - Prefer nested selectors `.foo { .bar {} }` vs `.foo .bar {}`
   - _Only if both `.foo` and `.foo .bar` need styling_
 - Don't nest selectors beyond 3 levels deep
 
 ### Selectors and Nesting
 
-Styles shouldn't need to be nested more than three levels deep. This includes pseudo-selectors. 
+Styles shouldn't need to be nested more than three levels deep. This includes pseudo-selectors.
 If you find yourself going further, think about re-organizing your rules _(either the specificity needed, or the layout of the nesting)_.
 
 ### Variables
 
 - Colors: (use generic variable names like recent cfgov-refresh update)
 - Breakpoints: standard variable names for commonly used breakpoints
+
+### Comments
+
+### JSDocs
+[Use JSDocs](http://usejsdoc.org/) style comments for comment blocks and `//` for inline comments.
+
+**Example**
+
+```less
+/**
+ * Default button styles
+ * @class .btn
+ * @elements a, button
+*/
+.btn {
+    display: inline-block;
+
+  &:focus {
+    background-color: @btn-bg-hover;
+    outline: 1px dotted @btn-bg;
+    // outline-offset is not supported everywhere but it adds a nice touch where it is
+    outline-offset: 1px;
+  }
+}
+```
+
+
+Prefer
+
+### Purpose
+Comments **aren't meant to explain what** the code does. Good **code is supposed to be self-explanatory**. If you're thinking of writing a comment to explain what a piece of code does, chances are you need to change the code itself. The exception to that rule is explaining what a regular expression does. Good comments are supposed to **explain why** code does something that may not seem to have a clear-cut purpose.
 
 ## Credits
 
