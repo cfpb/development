@@ -14,6 +14,7 @@ such that it's highly readable and consistent across different developers on a t
     - [Less General Practices](#less-general-practices)
     - [Selectors and Nesting](#selectors-and-nesting)
     - [Variables](#variables)
+    - [Comments](#comments)
 
 ## General Practices
 
