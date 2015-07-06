@@ -1,5 +1,11 @@
 All notable changes to this project will be documented in this file.
 
+## 2015-07-06
+
+### Changed
+
+- Updated `.eslintrc` to conform with ESLint 0.24.0.
+
 ## 2015-06-02
 
 ### Added
