@@ -71,7 +71,7 @@ accomplish this, everyone should follow these tips.
 - Merge once you feel confident in the code and its impact on the project.
 
 
-## Submitting code
+## <a name="submitting"></a>Submitting code
 
 Before seeking a review, you should be able to check off each of the following:
 
