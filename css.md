@@ -27,13 +27,26 @@ such that it's highly readable and consistent across different developers on a t
 
 ## Property Order
 
-Box model properties go first, in order from inside the box out, followed by positioning.
+Declare properties in three groups:
 
-Remaining properties are in alphabetical order.
+1. Display & box model
+   1. Changing the current `display` or `box-sizing` values
+   2. Box model properties in order from inside-out
+   3. `overflow` behavior
+2. Positioning
+   1. Changing the current `float` or `position` values
+   2. Position properties in typical CSS clockwise fashion (`top`, `bottom`, `left`, `right`), followed by `z-index`
+3. Everything else
+   - Alphabetical order
+
+We recommend this ordering so that when you first look at a component's style declaration,
+you can quickly get a sense of how a component is sized and positioned,
+which affects the flow of the rest of the page,
+and then move on to the properties that only affect that component itself.
 
 ```css
 .selector {
-    /* Display & Box Model */
+    /* Display & Box Model (mode switching, then box-model from inside out, then overflow handling) */
     display: inline-block;
     box-sizing: border-box;
     width: 100px;
@@ -43,7 +56,7 @@ Remaining properties are in alphabetical order.
     margin: 10px;
     overflow: hidden;
 
-    /* Positioning */
+    /* Positioning (mode switching, then positioning counterclockwise from top, then z-index */
     float: left;
     position: absolute;
     top: 0;
@@ -52,7 +65,7 @@ Remaining properties are in alphabetical order.
     left: 0;
     z-index: 10;
 
-    /* Other */
+    /* Other (alphabetical) */
     background: #000 url('../img/bg.png') no-repeat center top;
     color: #fff;
     cursor: pointer;
@@ -66,7 +79,8 @@ Remaining properties are in alphabetical order.
 }
 ```
 
-_N.B.: It is not necessary to include the group headings in your actual CSS. They are just for clarity in this example._
+_N.B.: It is not necessary to include the group headings in your actual CSS, or to include a blank line between groups.
+The headings and blank lines are just for added clarity in this example._
 
 ## Naming Conventions
 Custom [BEM ("Block Element Modifier")](https://en.bem.info/method/definitions/) format:
