@@ -29,11 +29,11 @@ such that it's highly readable and consistent across different developers on a t
 Declare properties in three groups:
 
 1. Display & box model
-   1. Switching `display` and/or `box-sizing`
+   1. Changing the current `display` or `box-sizing` values
    2. Box model properties in order from inside-out
    3. `overflow` behavior
 2. Positioning
-   1. Switching `float` and/or `position`
+   1. Changing the current `float` or `position` values
    2. Position properties in typical CSS clockwise fashion (`top`, `bottom`, `left`, `right`), followed by `z-index`
 3. Everything else
    - Alphabetical order
