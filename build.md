@@ -2,19 +2,20 @@
 
 Every CFPB project with a non-trivial front-end should:
 
- 1. Use **Grunt** to accomplish all front-end build tasks.
+ 1. Use **Grunt** to accomplish all front-end build tasks - [example Gruntfile](https://github.com/cfpb/generator-cf/blob/master/app/templates/_Gruntfile.js).
  1. Use **Less** as a CSS pre-processor.
  1. Use an optional **config.json** file in the same directory as the gruntfile to store build variables (internal API endpoints, PII, etc.). This file should be consumed by a Grunt task and listed in `.gitignore`.
- 1. Only require **two commands** to install dependencies and build all static assets:
+ 1. Only require **three commands** to install dependencies and build all static assets:
    1. `npm install`
+   1. `bower install`
    1. `grunt build`
- 1. These two commands (and any additional commands if there's a strong argument for them) should be stored in a frontendbuild.sh file to make things easier for our CI environments.
+ 1. These three commands (and any additional commands if there's a strong argument for them) should be stored in a [setup.sh](https://github.com/cfpb/generator-cf/blob/master/app/templates/_setup.sh) file to make things easier for our CI environments.
 
-You should avoid checking dependencies and minified assets into source control. It's common practice to keep development files in a `src` directory and compiled/minified assets in a `dist` directory.
+You should avoid checking dependencies and minified assets into source control. It's common practice to keep development files in a `src` directory and compiled/minified assets in a gitignored `dist` directory.
 
 ## Installing Node
 
-Mac: 
+Mac:
 
 ```shell
 brew install node
