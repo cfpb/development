@@ -25,6 +25,15 @@ such that it's highly readable and consistent across different developers on a t
 - Put spaces before `{` in rule declarations
 - Place `{` on the same line as the (last) selector and `}` on its own line
 
+For example:
+
+```css
+.btn,
+.btn__big {
+  color: #000;
+}
+```
+
 ## Property Order
 
 Declare properties in three groups:
