@@ -107,6 +107,8 @@ When reviewing code, you should be able to check off each of the following:
 - [ ] Is the usage of each function clear?
 - [ ] Have edge cases been considered and tested for?
 
+Use this bookmarklet code to add this checklist to your Pull Request comments: [Code Review Checklist](https://gist.github.com/cfarm/a4174fe6f775353a3115)
+
 ### Commenting on code
 
 When commenting on breaks to our style guide, reviewers should include a link back
