@@ -9,7 +9,7 @@
 - [ ] IE8
 - [ ] Opera
 - [ ] iOS 8
-- [ ] Android 4.0
+- [ ] Android 4.0+
 - [ ] Chrome for Android
 - [ ] Blackberry Bold
 
