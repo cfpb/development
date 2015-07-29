@@ -2,15 +2,14 @@
 
 - [ ] Chrome
 - [ ] Safari
-- [ ] FF
+- [ ] Firefox
 - [ ] IE11
 - [ ] IE10
 - [ ] IE9
 - [ ] IE8
-- [ ] IE7
 - [ ] Opera
-- [ ] iOS8
-- [ ] Android 5
+- [ ] iOS 8
+- [ ] Android 4.0+
 - [ ] Chrome for Android
 - [ ] Blackberry Bold
 
