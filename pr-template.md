@@ -2,43 +2,40 @@ Short description explaining the high-level reason for the pull request
 
 ## Additions
 
-- List of additions made
-- To the project
-- Within this PR
+- 
 
 ## Removals
 
-- List of removals made
-- To the project
-- Within this PR
+- 
 
 ## Changes
 
-- List of changes made
-- To the project
-- Within this PR
+- 
 
 ## Testing
 
-- List of site urls
-- Or actions to take
-- To test the changes made
+- 
 
 ## Review
 
 - @user
-- @user
-- @user
 
-## Preview
+## Screenshots
 
-Include any screenshots that will make reviewing/testing easier
 
-[Preview this PR without the whitespace changes](?w=0)
 
-## Notes
+## Todos
 
-- List of notes about the changes that might be necessary
-- For the reviewer to know ahead of time or of related Github issues
-- Ex. Known issues or items outside the scope of the review
-- Ex. Fixes #100
+- 
+
+## Checklist
+
+* [ ] Changes are limited to a single goal (no scope creep)
+* [ ] Code can be automatically merged (no conflicts)
+* [ ] Code follows the standards laid out in the [front end playbook](https://github.com/cfpb/front-end)
+* [ ] Passes all existing automated tests
+* [ ] New functions include new tests
+* [ ] New functions are documented (with a description, list of inputs, and expected output)
+* [ ] Placeholder code is flagged
+* [ ] Visually tested in supported browsers and devices 
+* [ ] Project documentation has been updated (including the "Unreleased" section of the CHANGELOG)
