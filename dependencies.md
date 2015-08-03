@@ -1,21 +1,17 @@
-# Recommended Dependencies
+# Dependencies
 
-If you're building a web site or application from scratch, you're probably doing it wrong. There are an uncountable number of open source tools at your disposal, from ready-to-use style frameworks to expansive code libraries, that can help you get your job done more easily while also serving as a common ground for other designers and developers.
-
-## Principals
-The opinions in this guide attempt to reflect 18f's core development principals of:
-
-- **Accessibility**, for users first, developers as well.
-- **Open source**, for transparency and contribution.
-(need more)
-
-## Frameworks and Libraries
+At CFPB, we strive to use the right tool for the job,
+even if we didn't invent it.
+## Frameworks and libraries
 The terms "framework" and "library" (and even "tool") are sometimes used interchangeably, but there is a not-so-subtle difference. Here's what these words mean when we use them at 18F:
 
 * **Frameworks** are collections of code that provide off-the-shelf building blocks (either visual components at the CSS level or feature-rich JavaScript objects). For instance, [Foundation] and [Bootstrap] are CSS frameworks, and [Backbone] is a JavaScript framework.
 * **Libraries** consist of the lower-level "helpers" that may serve as building blocks for custom components. [jQuery] and [Underscore] are JavaScript libraries; [Bourbon] provides both an overall structure for [Sass] projects and a slew of style helpers that can be mixed and matched.
 
-## Choosing a Tool
+
+## Popular tools
+
+## Choosing a tool
 Picking the right tool for the job can be tricky. We're working on a list of recommended tools for certain uses, but if your needs outgrow this list, here are some criteria that you can use to judge:
 
 1. **Popularity**: A project's GitHub star count can sometimes be a reliable indicator of whether other people have found this tool useful. More popular projects are usually a good pick because they're better documented, and people on your team are more likely to be familiar with them.
