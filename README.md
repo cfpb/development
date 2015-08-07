@@ -17,7 +17,7 @@ A guide for front-end development at the [CFPB](http://cfpb.github.io/).
 Capital Framework is our modular front end framework.
 
 - [Capital Framework docs](http://cfpb.github.io/capital-framework/)
-- [cf-generator](https://github.com/cfpb/generator-cf)
+- [generator-cf](https://github.com/cfpb/generator-cf)
 
 ## Guides
 
