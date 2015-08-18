@@ -10,8 +10,6 @@ cross-browser compatibility, accessibility, simplicity and maintainability.
 1. [Head](#head)
 1. [Syntax](#syntax)
 1. [Patterns](#patterns-)
-1. [Accessibility](#accessibility)
-1. [Tools and Linters](#tools-and-linters)
 1. [Credits](#credits)
 
 ## Coding Style
@@ -93,6 +91,9 @@ From the HTML5 spec:
 document's language. This aids speech synthesis tools to determine what pronunciations to use,
 translation tools to determine what rules to use, and so forth.
 
+Additionally, this is a requirement for accessibility for screenreaders to
+read the content in the correct language.
+
 [Read more about the `lang` attribute in the spec](http://www.w3.org/html/wg/drafts/html/master/semantics.html#the-html-element).
 
 Head to Sitepoint for a [list of language codes](http://reference.sitepoint.com/html/lang-codes).
@@ -100,6 +101,9 @@ Head to Sitepoint for a [list of language codes](http://reference.sitepoint.com/
 ``` html
 <html lang="en-us">
 <!-- ... -->
+<span lang="es">El Congreso estableció el CFPB para proteger
+a los consumidores mediante el cumplimiento de las leyes financieras federales
+para protección de los consumidores.</span>
 </html>
 ```
 
@@ -254,7 +258,7 @@ The visual order should be preserved with float: right; on each button.
         </label>
         <label>
             <input id="pizzaform_radio-cheese" name="pizzaform_radio-cheese" type="radio" />
-            Cheese 
+            Cheese
         </label>
     </fieldset>
     <button type="submit">Go!</button>
@@ -312,131 +316,6 @@ You want the browser to load the footer before a table full of data.)
 
 [Read more about tables at It's Tired in Here](http://itstiredinhere.com/accessibility/#tables).
 
-## Accessibility
-
-Your website should aim to meet [Level AA of the WCAG 2.0 rules](http://www.w3.org/TR/WCAG/).
-
-[Read more about accessibility at CFPB Design Manual](http://cfpb.github.io/design-manual/guides/accessible-interfaces.html)
-
-### When to use ARIA
-
-From the [A11yProject.com](http://a11yproject.com/posts/getting-started-aria/)
-
-> Native HTML semantics should still be used whenever possible, but ARIA is useful when certain design patterns or interactions make it impossible to do so. For example, a complex tabbed-interface has no semantic equivalent with HTML, but a `role="tablist"` and its related attributes can be added to provide this detail to screen readers. ARIA is also useful to describe newer HTML elements that may not yet have full cross-browser support or be understood by screen readers.
-
-
-### ARIA Landmarks
-
-Aria landmark roles can be used by assistive technology to navigate a website.
-HTML5 is moving towards including some of the functions in elements like `main`,
-but [accessibility support for HTML5 elements is still lacking in some browsers](http://www.html5accessibility.com/).
-For now, including both the HTML5 element and the ARIA landmark
-(ex: `main` and `role="main"`)
-is recommended.
-
-A few examples of some of the more prominent landmark roles from <a11yproject.com>
-
-+ `<header role="banner">`
-A region of the page that is site focused. Typically your global page header.
-
-+ `<nav role="navigation">`
-Contains navigational links.
-
-+ `<main role="main">`
-Focal content of document. Use only once.
-
-+ `<article role="article">`
-Represents an independent item of content. Use only once on outermost element of this type.
-
-+ `<aside role="complementary">`
-Supporting section related to the main content even when separated.
-
-+ `<footer role="contentinfo">`
-Contains information about the document (meta info, copyright, company info, etc).
-
-+ `<form role="search">`
-Add a `search` role to your primary search form.
-
-[More about WAI-ARIA in HTML from w3c](http://www.w3.org/TR/aria-in-html/)
-
-
-### Header Flow and Hierarchy
-
-Many screenreaders use heading tags (i.e. `<h1>`, `<h2>`, etc) to navigate websites.
-Make sure these heading tags are in order to avoid confusion.
-
-You can also label `<section>`s with the `aria-labelledby=""` property.
-
-``` html
-<section aria-labelledby="KittensHeader">
-  <h2 id="KittensHeader">All About Kittens</h2>
-  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
-</section>
-```
-
-Test for header flow using the WAVE Toolbar.
-
-[Read more about aria-labelledby at MDN](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-labelledby_attribute)
-
-
-### Testing For Accessibility
-
-#### Keyboard Test
-
-You don't need any special hardware for your first accesibility test.
-Just take away your mouse.
-
-1. Type in the web address of the website you'd like to test in your URL bar.
-2. Hit `enter`.
-3. Using only your keyboard,
-navigate to different parts of your website using the `tab`, `shift + tab` and `enter` keys.
-
-You should be able to tab to all interactive elements
-like form fields, links and buttons.
-The order of elements, especially navigation elements, should make logical sense.
-
-[Read more about keyboard testing on WebAIM](http://webaim.org/techniques/keyboard/).
-
-
-#### Screenreader testing
-
-Using a screenreader can be a great way to experience how screenreader users experience your webpages.
-WebAIM has a fantastic series and guide for using screenreaders for accesibility testing purposes.
-
-+ [Using Voiceover to evaluate web accesibility](http://webaim.org/articles/voiceover/) -
-Learn how to use the built-in screenreader program on Macs and iOS products.
-+ [Using NVDA to evaluate web accesibility](http://webaim.org/articles/nvda/) -
-Learn how to use NVDA, a free and open source screenreader for Windows.
-
-[Read more about screenreader testing on WebAIM](http://webaim.org/articles/screenreader_testing/)
-
-
-#### Other testing tools
-
-**[WAVE web accessibility evaluation tool by WebAIM](http://wave.webaim.org/)** -
-WAVE will detect missing accessibility tags and poor practices and explain their impact.
-They also have a toolbar extension.
-
-**[Chrome Accessibility Developer Tools](https://chrome.google.com/webstore/detail/accessibility-developer-t/fpkknkljclfencbdbgkenhalefipecmb?hl=en)** -
-A Chrome extension that adds an additional section to your developer tools
-to examine accesibility properties.
-Comes with audits to examine contrast, incorrect markup and other common errors.
-
-**[Contrast Ratio Tool](http://leaverou.github.io/contrast-ratio/)** -
-Tests for contrast ratio based on the WCAG 2.0 guidelines on color contrast.
-
-**[Colorblind Web Page Filter](http://colorfilter.wickline.org/)** -
-Applies coverage filters on webpages to test against different types of color blindness
-
-
-## Tools and linters
-
-- [Sublime Linter with Tidy](https://github.com/SublimeLinter/SublimeLinter-for-ST2)
-- [Grunt HTML Lint](https://www.npmjs.com/package/grunt-html)
-
-
 ## Credits
 
 This guide includes inspiration and guidelines from the [Github Styleguide](https://github.com/styleguide/) and [Code Guide by @mdo](http://codeguide.co/#html-syntax).
-
-Accessibility guidelines are from [a11yproject.org](a11yproject.org), [WebAIM](http://webaim.org/), and Matt Long's [It's Tired In Here accessibility guidelines](http://itstiredinhere.com/accessibility/).
