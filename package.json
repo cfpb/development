@@ -11,9 +11,11 @@
     "url": "git+https://github.com/cfpb/front-end.git"
   },
   "keywords": [
+    "cfpb",
     "standards",
     "eslint",
-    "gitignore"
+    "gitignore",
+    "play book"
   ],
   "author": "CFPB",
   "license": "CC0-1.0",
