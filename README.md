@@ -46,6 +46,12 @@ Capital Framework is our modular front end framework.
 - **Willingness**: We are willing to help each other with anything that is good for the team
 - **Excellence**: We believe that excellence is defined by a commitment to and practice of constant learning and improvement
 
+## This guide is npm installable!
+
+```
+npm install cfpb-front-end
+```
+
 
 ## Open source licensing info
 1. [TERMS](TERMS.md)
