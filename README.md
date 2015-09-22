@@ -8,9 +8,9 @@ A guide for front-end development at the [CFPB](http://cfpb.github.io/).
 > All code in any code-base should look like a single person typed it, no matter how many people contributed.
 > - [idiomatic.js](https://github.com/rwaldron/idiomatic.js/#all-code-in-any-code-base-should-look-like-a-single-person-typed-it-no-matter-how-many-people-contributed)
 
-- [Markup standards](markup.md)
 - [CSS/Less standards](css.md)
 - [JavaScript standards](javascript.md)
+- [Markup standards](markup.md)
 
 ## Capital Framework
 
@@ -21,14 +21,18 @@ Capital Framework is our modular front end framework.
 
 ## Guides
 
+- [Accessibility](accessibility.md)
 - [Building your project's front-end](build.md)
 - [Code review guide](code-reviews.md)
+- [CommonJS Modules](javascript-modules-commonjs.md)
 - [Publishing node modules](npm.md)
+- [Testing](testing.md)
 
 ## Tools
 
-- [ESLint file](.eslintrc)
 - [Browser testing checklist](browser-checklist.md)
+- [ESLint file](.eslintrc)
+- [gitignore sample](.gitignore)
 - [Pull request template](https://raw.githubusercontent.com/cfpb/front-end/master/pr-template.md)
 
 ## Our Core Values
