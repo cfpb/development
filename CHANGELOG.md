@@ -1,5 +1,12 @@
 All notable changes to this project will be documented in this file.
 
+## 2015-09-22
+
+### Changed
+
+- Updated `README` with full list of links.
+
+
 ## 2015-07-06
 
 ### Changed
@@ -70,4 +77,3 @@ All notable changes to this project will be documented in this file.
 
 ### Fixed
 - Nothing.
-

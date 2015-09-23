@@ -1,0 +1,26 @@
+{
+  "name": "cfpb-front-end",
+  "version": "1.1.0",
+  "description": "Front-end files and resources for the CFPB front-end development team",
+  "main": " ",
+  "scripts": {
+    "test": " "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cfpb/front-end.git"
+  },
+  "keywords": [
+    "cfpb",
+    "standards",
+    "eslint",
+    "gitignore",
+    "play book"
+  ],
+  "author": "CFPB",
+  "license": "CC0-1.0",
+  "bugs": {
+    "url": "https://github.com/cfpb/front-end/issues"
+  },
+  "homepage": "https://github.com/cfpb/front-end#readme"
+}

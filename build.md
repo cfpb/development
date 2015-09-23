@@ -2,13 +2,13 @@
 
 Every CFPB project with a non-trivial front-end should:
 
- 1. Use **Grunt** to accomplish all front-end build tasks - [example Gruntfile](https://github.com/cfpb/generator-cf/blob/master/app/templates/_Gruntfile.js).
+ 1. Use **Grunt** or **Gulp** to accomplish all front-end build tasks - [example Gruntfile](https://github.com/cfpb/generator-cf/blob/master/app/templates/_Gruntfile.js).
  1. Use **Less** as a CSS pre-processor.
- 1. Use an optional **config.json** file in the same directory as the gruntfile to store build variables (internal API endpoints, PII, etc.). This file should be consumed by a Grunt task and listed in `.gitignore`.
+ 1. Use an optional **config.json** file in the same directory as the gruntfile to store build variables (internal API endpoints, PII, etc.). This file can be consumed by a Grunt/Gulp task and listed in `.gitignore`.
  1. Only require **three commands** to install dependencies and build all static assets:
    1. `npm install`
    1. `bower install`
-   1. `grunt build`
+   1. `grunt build` or `gulp build`
  1. These three commands (and any additional commands if there's a strong argument for them) should be stored in a [setup.sh](https://github.com/cfpb/generator-cf/blob/master/app/templates/_setup.sh) file to make things easier for our CI environments.
 
 You should avoid checking dependencies and minified assets into source control. It's common practice to keep development files in a `src` directory and compiled/minified assets in a gitignored `dist` directory.
@@ -28,10 +28,10 @@ yum-config-manager --enable epel
 yum install nodejs -y
 ```
 
-## Installing Grunt and Bower
+## Installing Grunt, Gulp and Bower
 
 ```shell
-npm install -g grunt-cli bower
+npm install -g grunt-cli gulp bower
 ```
 
 ## Pegging versions
@@ -42,9 +42,9 @@ When working with npm, we recommend using [npm shrinkwrap](https://docs.npmjs.co
 
 ## Building JavaScript and Less
 
-We use [Grunt](http://gruntjs.com/) to automate the compilation of JavaScript and Less files.
+We usually use [Grunt](http://gruntjs.com/) to automate the compilation of JavaScript and Less files. Some projects are transitioning to [Gulp](http://gulpjs.com/). Either is fine.
 
-Here are some helpful plugins for this:
+Here are some helpful plugins for Grunt:
 
 - [grunt-contrib-uglify](https://github.com/gruntjs/grunt-contrib-uglify) for concatinating and minifying JS
 - [grunt-contrib-less](https://github.com/gruntjs/grunt-contrib-less) for compiling Less and CSS files
@@ -55,4 +55,4 @@ Here are some helpful plugins for this:
 
 ## Capital Framework Generator
 
-Our recommended workflow is to use the [cf-generator](https://github.com/cfpb/generator-cf) Yeoman generator to scaffold out a new Capital Framework project. This generator provides a solid front-end build process and directory structure.
+Our recommended workflow is to use the [generator-cf](https://github.com/cfpb/generator-cf) Yeoman generator to scaffold out a new Capital Framework project. This generator provides a solid front-end build process and directory structure.
