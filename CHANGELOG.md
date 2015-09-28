@@ -1,5 +1,11 @@
 All notable changes to this project will be documented in this file.
 
+## 2015-09-28
+
+### Changed
+
+- Updated ESLint quote-props to "consistent-as-needed"
+
 ## 2015-09-22
 
 ### Changed
