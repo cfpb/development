@@ -1,5 +1,11 @@
 All notable changes to this project will be documented in this file.
 
+## 2015-10-01
+
+### Changed
+
+- Updated ESLint key-spacing mode to "minimum"
+
 ## 2015-09-28
 
 ### Changed
