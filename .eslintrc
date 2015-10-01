@@ -380,7 +380,6 @@ rules:
   # Rules for STRICT MODE.
 
   # Controls location of Use Strict Directives.
-  # Ensures all function bodies are strict mode code, while global code is not.
   # Caveat: when run on pre-concatenated code, global mode may look like
   # function mode after concatenation.
   strict:
