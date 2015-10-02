@@ -15,7 +15,7 @@ A unit test verifies that a single discrete piece of your codebase works as expe
 - [Jasmine](https://github.com/jasmine/jasmine) shares basic semantics with [Mocha](http://mochajs.org), but also includes lots of nice assertion helpers, object [spies](http://jasmine.github.io/2.2/introduction.html#section-Spies), and async support.
 - [Tape](https://www.npmjs.com/package/tape) is a [TAP](http://en.wikipedia.org/wiki/Test_Anything_Protocol)-producing test harness for Node with great asynchronous support. Check out the [Testling tape guide](https://ci.testling.com/guide/tape).
 
-Check out 18f's excellent [testing cookbook](http://18f.github.io/testing-cookbook) for more best practices.
+Check out 18f's excellent [testing cookbook](https://pages.18f.gov/testing-cookbook/) for more best practices.
 
 ## Code coverage
 
