@@ -68,7 +68,7 @@ accomplish this, everyone should follow these tips.
 - If discussions turn too philosophical or academic, move the discussion to a new
   issue or offline. In the meantime, the author has the final say on the current
   implementation.
-- Don't waste time [bike-shedding](https://en.wikipedia.org/wiki/Law_of_triviality)
+- Don't waste time [bike-shedding](https://en.wikipedia.org/wiki/Law_of_triviality).
 - Sign off on the pull request with a :thumbsup: or "Ready to merge" comment.
 - Wait to merge the branch until it has passed Continuous Integration testing.
   (TDDium, TravisCI, etc.)
