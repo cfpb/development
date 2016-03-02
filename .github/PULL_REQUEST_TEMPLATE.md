@@ -2,19 +2,19 @@ Short description explaining the high-level reason for the pull request
 
 ## Additions
 
-- 
+-
 
 ## Removals
 
-- 
+-
 
 ## Changes
 
-- 
+-
 
 ## Testing
 
-- 
+-
 
 ## Review
 
@@ -23,10 +23,13 @@ Short description explaining the high-level reason for the pull request
 ## Screenshots
 
 
+## Notes
+
+-
 
 ## Todos
 
-- 
+-
 
 ## Checklist
 
@@ -37,5 +40,5 @@ Short description explaining the high-level reason for the pull request
 * [ ] New functions include new tests
 * [ ] New functions are documented (with a description, list of inputs, and expected output)
 * [ ] Placeholder code is flagged
-* [ ] Visually tested in supported browsers and devices 
+* [ ] Visually tested in supported browsers and devices
 * [ ] Project documentation has been updated (including the "Unreleased" section of the CHANGELOG)
