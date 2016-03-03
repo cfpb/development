@@ -28,6 +28,7 @@ accomplish this, everyone should follow these tips.
 - Ask questions rather than make statements. ("What do you think about...?")
 - Ask for clarification if the code or comments are unclear. ("I didn't understand.
   Can you clarify?")
+- Support opinions with reason and facts: "I recommend this approach instead because...."
 - Avoid selective ownership of code. ("mine", "not mine", "yours")
 - Avoid using terms that could be seen as referring to personal traits.
 - Be explicit, people don't always understand your intentions online.
@@ -38,6 +39,8 @@ accomplish this, everyone should follow these tips.
   If they are, use them with aplomb.
 - Talk offline if there is too much back and forth. Post a follow-up comment
   summarizing the discussion.
+- If you've paired on the code or otherwise discussed it in detail outside of the pull request, 
+  note that in the PR so it's clear to everyone that the work has had appropriate collaboration.
 - Praise team members when they create exemplary work or suggestions.
 
 ### For code submitters
@@ -65,6 +68,7 @@ accomplish this, everyone should follow these tips.
 - If discussions turn too philosophical or academic, move the discussion to a new
   issue or offline. In the meantime, the author has the final say on the current
   implementation.
+- Avoid focusing on trivial issues. This is often termed [bike-shedding](https://en.wikipedia.org/wiki/Law_of_triviality).
 - Sign off on the pull request with a :thumbsup: or "Ready to merge" comment.
 - Wait to merge the branch until it has passed Continuous Integration testing.
   (TDDium, TravisCI, etc.)
