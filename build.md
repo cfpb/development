@@ -2,7 +2,7 @@
 
 Every CFPB project with a non-trivial front end should:
 
-1. Use **Grunt** or **Gulp** to accomplish all front-end build tasks – [example Gruntfile](https://github.com/cfpb/generator-cf/blob/master/app/templates/grunt/_Gruntfile.js), example Gulpfile](https://github.com/cfpb/generator-cf/blob/master/app/templates/gulp/_gulpfile.js) and [Gulp scripts](https://github.com/cfpb/generator-cf/tree/master/app/templates/gulp/gulp).
+1. Use **Grunt** or **Gulp** to accomplish all front-end build tasks – [example Gruntfile](https://github.com/cfpb/generator-cf/blob/master/app/templates/grunt/_Gruntfile.js), [example Gulpfile](https://github.com/cfpb/generator-cf/blob/master/app/templates/gulp/_gulpfile.js) and [Gulp scripts](https://github.com/cfpb/generator-cf/tree/master/app/templates/gulp/gulp).
 1. Use **Less** as a CSS preprocessor.
 1. Use an optional `config.json` file in the project root to store build variables (internal API endpoints, PII, etc.). This file can be consumed by a Grunt/Gulp task and listed in `.gitignore`.
 1. Require a maximum of **three commands** to install dependencies and build all static assets:
