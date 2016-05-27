@@ -1,15 +1,15 @@
-# Building your project's front-end
+# Building your project's front end
 
-Every CFPB project with a non-trivial front-end should:
+Every CFPB project with a non-trivial front end should:
 
- 1. Use **Grunt** or **Gulp** to accomplish all front-end build tasks - [example Gruntfile](https://github.com/cfpb/generator-cf/blob/master/app/templates/_Gruntfile.js).
- 1. Use **Less** as a CSS pre-processor.
- 1. Use an optional **config.json** file in the same directory as the gruntfile to store build variables (internal API endpoints, PII, etc.). This file can be consumed by a Grunt/Gulp task and listed in `.gitignore`.
- 1. Only require **three commands** to install dependencies and build all static assets:
+1. Use **Grunt** or **Gulp** to accomplish all front-end build tasks – [example Gruntfile](https://github.com/cfpb/generator-cf/blob/master/app/templates/grunt/_Gruntfile.js), [example Gulpfile](https://github.com/cfpb/generator-cf/blob/master/app/templates/gulp/_gulpfile.js) and [Gulp scripts](https://github.com/cfpb/generator-cf/tree/master/app/templates/gulp/gulp).
+1. Use **Less** as a CSS preprocessor.
+1. Use an optional `config.json` file in the project root to store build variables (internal API endpoints, PII, etc.). This file can be consumed by a Grunt/Gulp task and listed in `.gitignore`.
+1. Require a maximum of **three commands** to install dependencies and build all static assets:
    1. `npm install`
-   1. `bower install`
+   1. `bower install` (if necessary – many projects are transitioning away from Bower)
    1. `grunt build` or `gulp build`
- 1. These three commands (and any additional commands if there's a strong argument for them) should be stored in a [setup.sh](https://github.com/cfpb/generator-cf/blob/master/app/templates/_setup.sh) file to make things easier for our CI environments.
+1. These three commands (and any additional commands if there's a strong argument for them) should be stored in a `setup.sh` file ([Grunt example](https://github.com/cfpb/generator-cf/blob/master/app/templates/grunt/_setup.sh), [Gulp example](https://github.com/cfpb/generator-cf/blob/master/app/templates/gulp/_setup.sh)) to make things easier for our CI environments.
 
 You should avoid checking dependencies and minified assets into source control. It's common practice to keep development files in a `src` directory and compiled/minified assets in a gitignored `dist` directory.
 
