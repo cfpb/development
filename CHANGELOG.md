@@ -1,5 +1,11 @@
 All notable changes to this project will be documented in this file.
 
+## 2016-07-20
+
+### Changed
+
+- Updated ESLint linter file to 3.1.1 compatibility.
+
 ## 2015-10-01
 
 ### Changed
