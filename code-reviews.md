@@ -45,6 +45,8 @@ accomplish this, everyone should follow these tips.
 
 ### For code submitters
 
+- Assign one reviewer to your pull request using Github's interface.
+- Reminder reviewers to respond within 1 week, otherwise you are free to merge the PR if you receive no feedback.
 - Link to the code review from the originating Jira task/issue, if applicable.
 - Remember that the code isn't you, don't get defensive when a reviewer is critical
   of the code.
@@ -59,6 +61,7 @@ accomplish this, everyone should follow these tips.
 
 ### For code reviewers
 
+- Review the code, make comments, or and/or merge within 1 week of being assigned a pull request.
 - Understand why the code is necessary (bug, user experience, refactoring)
 - Seek to understand the author's perspective.
 - Clearly communicate which ideas you feel strongly about and those you don't.
