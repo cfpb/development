@@ -18,7 +18,7 @@ such that it's highly readable and consistent across different developers on a t
 
 ## General Practices
 
-- Use soft-tabs with a two space indent
+- Use soft-tabs with a four-space indent
 - One line per selector
 - Always end property declarations with a semicolon
 - Put spaces after `:` in property declarations
