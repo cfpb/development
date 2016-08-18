@@ -45,6 +45,9 @@ accomplish this, everyone should follow these tips.
 
 ### For code submitters
 
+- Assign one reviewer to your pull request using GitHub's interface.
+- One :+1: comment from the reviewer indicates the Pull Request should be merged.
+- Remind reviewers to respond within 1 week, otherwise you are free to merge the PR if you receive no feedback.
 - Link to the code review from the originating Jira task/issue, if applicable.
 - Remember that the code isn't you, don't get defensive when a reviewer is critical
   of the code.
@@ -59,6 +62,7 @@ accomplish this, everyone should follow these tips.
 
 ### For code reviewers
 
+- Review the code, make comments, and/or merge within 1 week of being assigned a pull request.
 - Understand why the code is necessary (bug, user experience, refactoring)
 - Seek to understand the author's perspective.
 - Clearly communicate which ideas you feel strongly about and those you don't.
@@ -66,8 +70,8 @@ accomplish this, everyone should follow these tips.
 - Offer alternative implementations, but assume the author already considered
   them. ("What do you think about such-and-such here?")
 - If discussions turn too philosophical or academic, move the discussion to a new
-  issue or offline. In the meantime, the author has the final say on the current
-  implementation.
+  issue or offline. In the meantime, the **author has the final say on the current
+  implementation**.
 - Avoid focusing on trivial issues. This is often termed [bike-shedding](https://en.wikipedia.org/wiki/Law_of_triviality).
 - Sign off on the pull request with a :thumbsup: or "Ready to merge" comment.
 - Wait to merge the branch until it has passed Continuous Integration testing.
