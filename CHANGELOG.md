@@ -1,10 +1,12 @@
 All notable changes to this project will be documented in this file.
 
+## 2016-08-26
+
+- Added a starter guide to building atomically.
+
 ## 2016-08-25
 
 - Updated guidance on who reviews code and when it should be merged.
-
-##
 
 ## 2016-07-20
 
