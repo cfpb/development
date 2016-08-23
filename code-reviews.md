@@ -39,13 +39,13 @@ accomplish this, everyone should follow these tips.
   If they are, use them with aplomb.
 - Talk offline if there is too much back and forth. Post a follow-up comment
   summarizing the discussion.
-- If you've paired on the code or otherwise discussed it in detail outside of the pull request, 
+- If you've paired on the code or otherwise discussed it in detail outside of the pull request,
   note that in the PR so it's clear to everyone that the work has had appropriate collaboration.
 - Praise team members when they create exemplary work or suggestions.
 
 ### For code submitters
 
-- Assign one reviewer to your pull request using GitHub's interface.
+- Assign at least one reviewer to your pull request using GitHub's interface (either members from your project team or someone willing to pair).
 - One :+1: comment from the reviewer indicates the Pull Request should be merged.
 - Remind reviewers to respond within 1 week, otherwise you are free to merge the PR if you receive no feedback.
 - Link to the code review from the originating Jira task/issue, if applicable.
