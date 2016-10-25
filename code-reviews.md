@@ -98,7 +98,7 @@ Before seeking a review, you should be able to check off each of the following:
 ### Opening a PR
 
 Once sure your code meets the checks above, open a Pull Request for your new
-feature or bugfix following our [PR Template](https://raw.githubusercontent.com/cfpb/front-end/master/pr-template.md). You can also create a [Bookmarklet based on this template](https://gist.github.com/cfarm/b9b638943a2eea52a3a8). Remember that the
+feature or bugfix following our [Pull Request Template](https://raw.githubusercontent.com/cfpb/front-end/master/.github/PULL_REQUEST_TEMPLATE.md). You can also create a [Bookmarklet based on this template](https://gist.github.com/cfarm/b9b638943a2eea52a3a8). Remember that the
 more information you provide to reviewers, the more context they will have. This
 leads to faster reviews, and less back and forth between everyone.
 
