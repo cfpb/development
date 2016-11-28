@@ -1,7 +1,5 @@
 
-# CFPB front-end team
-
-A guide for front-end development at the [CFPB](http://cfpb.github.io/).
+> A guide for the development team at the [CFPB](http://cfpb.github.io/).
 
 ## Standards and styles
 
