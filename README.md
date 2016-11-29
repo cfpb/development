@@ -1,3 +1,4 @@
+# CFPB development team
 
 > A guide for the development team at the [CFPB](http://cfpb.github.io/).
 
