@@ -31,7 +31,7 @@ Capital Framework is our modular front end framework. New projects should start 
 - [Browser testing checklist](browser-checklist.md)
 - [ESLint file](.eslintrc)
 - [gitignore sample](.gitignore)
-- [Pull request template](https://raw.githubusercontent.com/cfpb/front-end/master/pr-template.md)
+- [Pull request template](https://raw.githubusercontent.com/cfpb/development/master/.github/PULL_REQUEST_TEMPLATE.md)
 
 ## Our Core Values
 
