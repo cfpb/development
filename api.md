@@ -2,8 +2,6 @@
 
 This document captures **CFPB's view of API best practices and standards**. We aim to incorporate as many of them as possible into our work.
 
-APIs, like other web applications, vary greatly in implementation and design, depending on the situation and the problem the application is solving.
-
 This document provides a mix of:
 
 * **High level design guidance** that individual APIs interpret to meet their needs.
@@ -57,11 +55,14 @@ Generally speaking:
 
 Some examples of these principles in action:
 
+* [CFPB's HMDA API](https://cfpb.github.io/api/hmda/)
 * [FBOpen API documentation](https://18f.github.io/fbopen/)
 * [OpenFDA example query](https://open.fda.gov/api/reference/#example-query)
 * [Sunlight Congress API methods](https://sunlightlabs.github.io/congress/#using-the-api)
 
-### Just use JSON
+### Media Types
+
+#### Use JSON
 
 [JSON](https://en.wikipedia.org/wiki/JSON) is an excellent, widely supported transport format, suitable for many web APIs.
 
@@ -73,7 +74,21 @@ General JSON guidelines:
 * **Don't use unpredictable keys**. Parsing a JSON response where keys are unpredictable (e.g. derived from data) is difficult, and adds friction for clients.
 * **Use consistent case for keys**. Whether you use `under_score` or `CamelCase` for your API keys, make sure you are consistent.
 
-### Use a consistent date format
+#### Use UTF-8
+
+Always [use UTF-8](http://utf8everywhere.org).
+
+Expect accented characters or "smart quotes" in API output, even if they're not expected.
+
+An API should tell clients to expect UTF-8 by including a charset notation in the `Content-Type` header for responses.
+
+An API that returns JSON should use:
+
+```
+Content-Type: application/json; charset=utf-8
+```
+
+#### Use a consistent date format
 
 And specifically, [use ISO 8601](https://xkcd.com/1179/), in UTC.
 
@@ -95,48 +110,28 @@ Consider whether one of your product goals is to allow a certain level of normal
 
 ### Error handling
 
+Errors should always respond with the appropriate  HTTP status code. Responses with error details should use a `4XX` status code to indicate a client-side failure (such as invalid authorization, or an invalid parameter), and a `5XX` status code to indicate server-side failure (such as an uncaught exception).
+
 Handle all errors (including otherwise uncaught exceptions) and return a data structure in the same format as the rest of the API.
 
-For example, a JSON API might provide the following when an uncaught exception occurs:
+For example, a JSON API might provide the following when a bad request is made:
 
 ```json
 {
-  "message": "Description of the error.",
-  "exception": "[detailed stacktrace]"
+  "code": 400,
+  "message": "Bad Request"
 }
 ```
-
-HTTP responses with error details should use a `4XX` status code to indicate a client-side failure (such as invalid authorization, or an invalid parameter), and a `5XX` status code to indicate server-side failure (such as an uncaught exception).
-
 
 ### Pagination
 
 If pagination is required to navigate datasets, use the method that makes the most sense for the API's data.
 
-#### Parameters
+Some general recommendations around pagination:
 
-Common patterns:
-
-* `page` and `per_page`. Intuitive for many use cases. Links to "page 2" may not always contain the same data.
-* `offset` and `limit`. This standard comes from the SQL database world, and is a good option when you need stable permalinks to result sets.
-* `since` and `limit`. Get everything "since" some ID or timestamp. Useful when it's a priority to let clients efficiently stay "in sync" with data. Generally requires result set order to be very stable.
-
-#### Metadata
-
-Include enough metadata so that clients can calculate how much data there is, and how and whether to fetch the next set of results.
-
-Example of how that might be implemented:
-
-```json
-{
-  "results": [ ... actual results ... ],
-  "pagination": {
-    "count": 2340,
-    "page": 4,
-    "per_page": 20
-  }
-}
-```
+1. Allow the API consumer to specify page sizes/limits and the offset/starting point for a page.
+2. Provide a link in a paginated response to the next page with a similar size/limit.
+3. Allow API consumers to assume that a paginated response without a link to the next page is the last page.
 
 ### Always use HTTPS
 
@@ -150,42 +145,11 @@ Any new API should use and require [HTTPS encryption](https://en.wikipedia.org/w
 HTTPS should be configured using modern best practices, including ciphers that support [forward secrecy](https://en.wikipedia.org/wiki/Forward_secrecy), and [HTTP Strict Transport Security](https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security). **This is not exhaustive**: use tools like [SSL Labs](https://www.ssllabs.com/ssltest/analyze.html) to evaluate an API's HTTPS configuration.
 
 
-#### Server Name Indication
-
-If you can, use [Server Name Indication](https://en.wikipedia.org/wiki/Server_Name_Indication) (SNI) to serve HTTPS requests.
-
-SNI is an extension to TLS, [first proposed in 2003](http://tools.ietf.org/html/rfc3546), that allows SSL certificates for multiple domains to be served from a single IP address.
-
-Using one IP address to host multiple HTTPS-enabled domains can significantly lower costs and complexity in server hosting and administration. This is especially true as IPv4 addresses become more rare and costly. SNI is a Good Idea, and it is widely supported.
-
-However, some clients and networks still do not properly support SNI. As of this writing, that includes:
-
-* Internet Explorer 8 and below on Windows XP
-* Android 2.3 (Gingerbread) and below.
-* All versions of Python 2.x (a version of Python 2.x with SNI [is planned](http://legacy.python.org/dev/peps/pep-0466/)).
-* Some enterprise network environments have been configured in some custom way that disables or interferes with SNI support. One identified network where this is the case: the White House.
-
-When implementing SSL support for an API, evaluate whether SNI support makes sense for the audience it serves.
-
-### Use UTF-8
-
-Always [use UTF-8](http://utf8everywhere.org).
-
-Expect accented characters or "smart quotes" in API output, even if they're not expected.
-
-An API should tell clients to expect UTF-8 by including a charset notation in the `Content-Type` header for responses.
-
-An API that returns JSON should use:
-
-```
-Content-Type: application/json; charset=utf-8
-```
-
 ### CORS
 
-For clients to be able to use an API from inside web browsers, the API must [enable CORS](http://enable-cors.org).
+For an API to be used from a website hosted at a different domain, the API must [enable CORS](http://enable-cors.org).
 
-For the simplest and most common use case, where the entire API should be accessible from inside the browser, enabling CORS is as simple as including this HTTP header in all responses:
+For read-only and unauthenticated use cases, where the entire API should be accessible from inside the browser, enabling CORS can be accomplished by including this HTTP header in all responses:
 
 ```
 Access-Control-Allow-Origin: *
