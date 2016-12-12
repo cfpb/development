@@ -1,7 +1,7 @@
 # CFPB API Standards
 
 This document captures **CFPB's view of API best practices and standards**. We
-aim to incorporate as many of them as possible into our work.
+aim to incorporate as many of them as possible into our work. This document is based on [18F's API Standards](https://github.com/18F/api-standards).
 
 This document provides a mix of:
 
@@ -225,10 +225,6 @@ IE8 or IE9 must be supported, use Microsoft's
 [XDomainRequest](http://blogs.msdn.com/b/ieinternals/archive/2010/05/13/xdomainrequest-restrictions-limitations-and-workarounds.aspx?Redirected=true) object
 instead of JSONP. There are [libraries](https://github.com/mapbox/corslite) to
 help with this.
-
-## Credits
-
-This document is based on [18F's API Standards](https://github.com/18F/api-standards).
 
 
 ## Public domain
