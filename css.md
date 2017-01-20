@@ -30,7 +30,7 @@ For example:
 ```css
 .btn,
 .btn__big {
-  color: #000;
+    color: #000;
 }
 ```
 
@@ -116,7 +116,7 @@ While the `id` attribute might be fine in HTML and JavaScript, it should be **av
 
 ```css
 .ur-name {
-  // ...
+    // ...
 }
 ```
 
@@ -124,7 +124,7 @@ While the `id` attribute might be fine in HTML and JavaScript, it should be **av
 
 ```css
 #ur-name {
-  // ...
+    // ...
 }
 ```
 
@@ -149,11 +149,11 @@ These rules apply to your CSS property values
 
 ```css
 .btn {
-  color: #222;
+    color: #222;
 }
 
 .btn-red {
-  color: #f00;
+    color: #f00;
 }
 ```
 
@@ -161,11 +161,11 @@ These rules apply to your CSS property values
 
 ```css
 .btn-red {
-  color: #f00 !important;
+    color: #f00 !important;
 }
 
 .btn {
-  color: #222;
+    color: #222;
 }
 ```
 
@@ -213,14 +213,14 @@ Good comments are supposed to **explain why** code does something that may not s
  */
 
 .btn {
-  display: inline-block;
+    display: inline-block;
 
-  &:focus {
-    background-color: @btn-bg-hover;
-    outline: 1px dotted @btn-bg;
-    // outline-offset is not supported everywhere but it adds a nice touch where it is
-    outline-offset: 1px;
-  }
+    &:focus {
+        background-color: @btn-bg-hover;
+        outline: 1px dotted @btn-bg;
+        // outline-offset is not supported everywhere but it adds a nice touch where it is
+        outline-offset: 1px;
+    }
 }
 ```
 
