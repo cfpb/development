@@ -2,6 +2,8 @@
 
 This document provides general guidelines for using [npm](https://www.npmjs.com/) with CFPB projects.
 
+*If you are looking for guidelines on publishing Node modules, see [npm.md](npm.md).*
+
 Show me the code! Do you prefer seeing how something works instead of
 instructions? If so, check out this pull request to the Amortize module. Each
 instruction below lives as its own commit. https://github.com/cfpb/amortize/pull/11
