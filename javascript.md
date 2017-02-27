@@ -125,7 +125,7 @@ if (foo > 1) {
 ```
 ##### Good
 
-<sub>Just because they're consistent with each other, not because of the style</sub>
+(Because they're consistent with each other, not because of the style.)
 
 ```js
 var foo = 1;
