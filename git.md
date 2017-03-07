@@ -43,6 +43,9 @@ Tell git to use it:
 git config --global commit.template ~/.gitmessage
 ```
 
+Whenever you create a new commit, use `git commit` (opposed to `git commit -m "Message"`).
+Git will open the message template in your [default editor](https://help.github.com/articles/associating-text-editors-with-git/).
+
 ### Example
 
 The template looks like this:
