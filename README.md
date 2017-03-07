@@ -27,6 +27,7 @@ Capital Framework is our modular front end framework. New projects should start 
 - [Publishing node modules](npm.md)
 - [Using node modules](npm-usage.md)
 - [Testing](testing.md)
+- [Git and GitHub](git.md)
 
 ## Tools
 
