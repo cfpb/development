@@ -31,6 +31,7 @@ Capital Framework is our modular front end framework. New projects should start 
 
 ## Tools
 
+- [Open source project template](https://github.com/cfpb/open-source-project-template)
 - [Browser testing checklist](browser-checklist.md)
 - [ESLint file](.eslintrc)
 - [gitignore sample](.gitignore)
