@@ -56,3 +56,13 @@ Here are some helpful plugins for Grunt:
 ## Capital Framework Generator
 
 Our recommended workflow is to use the [generator-cf](https://github.com/cfpb/generator-cf) Yeoman generator to scaffold out a new Capital Framework project. This generator provides a solid front-end build process and directory structure.
+
+## npm module generator
+
+For authoring node modules, our recommended workflow is to use [generator-node-cfpb](https://github.com/cfpb/generator-node-cfpb).
+npm published modules should consist of tiny, reusable components. A general guideline is that if there is a bit of JavaScript that your app is using more than once, it would probably make a great npm published module.
+
+To use the generator:
+
+1. Install it by running: `npm install -g generator-node-cfpb`
+2. cd into an empty directory, run this command and follow the prompts: `yo node-cfpb`
