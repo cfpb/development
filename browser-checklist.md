@@ -6,9 +6,9 @@
 - [ ] IE11
 - [ ] IE10
 - [ ] IE9
-- [ ] IE8
+- [ ] IE8 - No Javascript
 - [ ] Opera
-- [ ] iOS 8
+- [ ] Mobile Safari
 - [ ] Android 4.0+
 - [ ] Chrome for Android
 - [ ] Blackberry Bold
