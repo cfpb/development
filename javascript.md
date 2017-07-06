@@ -605,7 +605,7 @@ ruleOfThree(4, 2, 6);
 
 ## Polyfills
 
-Where possible use the native browser implementation and include [a polyfill that provides that behavior][27] for unsupported browsers. This makes the code easier to work with and less involved in hackery to make things just work.
+Where possible use the native browser implementation and include [a polyfill that provides that behavior][27] for unsupported browsers. This makes the code easier to work with and less involved in hackery to make things just work, the exception being Internet Explorer 8. Although we continue to support IE8, we do not support scripted interactions and rely instead on progressive enhancement to provide IE8 users with a functioning experience.
 
 If you can't patch a piece of functionality with a polyfill, then [wrap all uses of the patching code][28] in a globally available method that is accessible from everywhere in the application.
 
