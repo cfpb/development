@@ -6,7 +6,7 @@
 - [ ] IE11
 - [ ] IE10
 - [ ] IE9
-- [ ] IE8 - No Javascript
+- [ ] IE8 *
 - [ ] Opera
 - [ ] Mobile Safari
 - [ ] Android 4.0+
@@ -23,3 +23,5 @@
 - [ ] Is useable without CSS
 - [ ] Is useable without JS
 - [ ] Flexible from small to large screens
+
+* JavaScript support is not required, but essential content should be readable.
