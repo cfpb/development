@@ -1,9 +1,10 @@
 
-> A guide for the development team at the [CFPB](http://cfpb.github.io/).
+A guide for the development team at the [CFPB](https://cfpb.github.io/).
 
 ## Standards and styles
 
-> All code in any code-base should look like a single person typed it, no matter how many people contributed.
+> “All code in any code-base should look like a single person typed it, no matter how many people contributed.”
+> 
 > – [idiomatic.js](https://github.com/rwaldron/idiomatic.js/#all-code-in-any-code-base-should-look-like-a-single-person-typed-it-no-matter-how-many-people-contributed)
 
 - [API standards](standards/api.md)
