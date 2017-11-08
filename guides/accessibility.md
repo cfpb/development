@@ -32,7 +32,7 @@ By resolving issues with keyboard testing first, you can resolve other issues
 with inaccessible content with screenreaders or other assistive devices.
 
 To turn on full keyboard access on a Mac, you may need to visit
-[System Preferences >> Keyboard](img/full-keyboard-access.png).
+[System Preferences >> Keyboard](https://raw.githubusercontent.com/cfpb/development/reorg/img/enable-keyboard-access.png).
 
 The following checklist is adapted from
 [18F's Accessibility Guide](https://pages.18f.gov/accessibility/keyboard/):

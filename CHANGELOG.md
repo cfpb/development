@@ -1,5 +1,14 @@
 All notable changes to this project will be documented in this file.
 
+## 2017-11-08
+
+- Add PyPI guide
+- Organize documents and README
+
+## 2017-07-14
+
+- Updated to reflect lack of scripting support in IE 8
+
 ## 2016-08-26
 
 - Added a starter guide to building atomically.

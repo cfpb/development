@@ -2,6 +2,8 @@
 
 Whenever possible, we should write JavaScript as small modules that can be published to [npm](https://www.npmjs.com/). This document includes guidelines for authoring and publishing these modules.
 
+*If you are looking for guidelines on using Node modules, see [npm-usage.md](npm-usage.md).*
+
 The [full list of CFPB published node modules](https://www.npmjs.com/~cfpb) is availble on npm.
 
 ## Authoring
