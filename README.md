@@ -6,10 +6,10 @@
 > All code in any code-base should look like a single person typed it, no matter how many people contributed.
 > - [idiomatic.js](https://github.com/rwaldron/idiomatic.js/#all-code-in-any-code-base-should-look-like-a-single-person-typed-it-no-matter-how-many-people-contributed)
 
-- [API standards](api.md)
-- [CSS/Less standards](css.md)
-- [JavaScript standards](javascript.md)
-- [Markup standards](markup.md)
+- [API standards](standards/api.md)
+- [CSS/Less standards](standards/css.md)
+- [JavaScript standards](standards/javascript.md)
+- [Markup standards](standards/markup.md)
 
 ## Capital Framework
 
@@ -20,20 +20,21 @@ Capital Framework is our modular front end framework. New projects should start 
 
 ## Guides
 
-- [Accessibility](accessibility.md)
-- [Building your project's front-end](build.md)
-- [Code review guide](code-reviews.md)
-- [CommonJS Modules](javascript-modules-commonjs.md)
-- [Git and GitHub](git.md)
-- [Publishing node modules](npm.md)
-- [Publishing Python packages to PyPI](pypi.md)
-- [Testing](testing.md)
-- [Using node modules](npm-usage.md)
+- [Accessibility](guides/accessibility.md)
+- [Atomic Design](guides/atomic-design.md)
+- [Building your project's front-end](guides/build.md)
+- [Code review guide](guides/code-reviews.md)
+- [CommonJS Modules](guides/javascript-modules-commonjs.md)
+- [Git and GitHub](guides/git.md)
+- [Publishing node modules](guides/npm.md)
+- [Publishing Python packages to PyPI](guides/pypi.md)
+- [Testing](guides/testing.md)
+- [Using node modules](guides/npm-usage.md)
 
 ## Tools
 
 - [Open source project template](https://github.com/cfpb/open-source-project-template)
-- [Browser testing checklist](browser-checklist.md)
+- [Browser testing checklist](tools/browser-checklist.md)
 - [ESLint file](.eslintrc)
 - [gitignore sample](.gitignore)
 - [Pull request template](https://raw.githubusercontent.com/cfpb/development/master/.github/PULL_REQUEST_TEMPLATE.md)
