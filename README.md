@@ -4,7 +4,7 @@
 ## Standards and styles
 
 > All code in any code-base should look like a single person typed it, no matter how many people contributed.
-> - [idiomatic.js](https://github.com/rwaldron/idiomatic.js/#all-code-in-any-code-base-should-look-like-a-single-person-typed-it-no-matter-how-many-people-contributed)
+> – [idiomatic.js](https://github.com/rwaldron/idiomatic.js/#all-code-in-any-code-base-should-look-like-a-single-person-typed-it-no-matter-how-many-people-contributed)
 
 - [API standards](standards/api.md)
 - [CSS/Less standards](standards/css.md)
