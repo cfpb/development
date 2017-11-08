@@ -24,10 +24,11 @@ Capital Framework is our modular front end framework. New projects should start 
 - [Building your project's front-end](build.md)
 - [Code review guide](code-reviews.md)
 - [CommonJS Modules](javascript-modules-commonjs.md)
-- [Publishing node modules](npm.md)
-- [Using node modules](npm-usage.md)
-- [Testing](testing.md)
 - [Git and GitHub](git.md)
+- [Publishing node modules](npm.md)
+- [Publishing Python packages to PyPI](pypi.md)
+- [Testing](testing.md)
+- [Using node modules](npm-usage.md)
 
 ## Tools
 
