@@ -25,10 +25,13 @@ The contents of your project's `setup.py` file determine how your code is packag
 - `author_email`: should be tech@cfpb.gov.
 - `description`: short, one line description of the package. This is the headline that appears in PyPI [search results](https://pypi.org/search/?q=wagtail-sharing) and as the headline on the package page.
 - `long_description`: lengthier description that appears on PyPI. Technically this content must be in [reStructuredText](http://docutils.sourceforge.net/rst.html) format. One simple way to implement this is to read in your package's `README.rst` file [like wagtail-sharing does it](https://github.com/cfpb/wagtail-sharing/blob/master/setup.py#L34). Optionally, if you prefer to write your README in Markdown, you can do conversion using pypandoc [like wagtail-flags does it](https://github.com/cfpb/wagtail-flags/blob/master/setup.py#L5). 
-- `license`: this should be [CC0](https://creativecommons.org/share-your-work/public-domain/cc0/).
-- `classifiers`: this should consist of the list of PyPI trove classifiers that apply to your package (e.g. what Django versions it is compatible with). This ensures that your package is properly [searchable on PyPI](https://pypi.org/search/). See the full list of classifiers [here](https://pypi.python.org/pypi?%3Aaction=list_classifiers).
+- `classifiers`: this should consist of the list of PyPI trove classifiers that apply to your package, for example the Python and Django versions with which it is compatible. This ensures that your package is properly [searchable on PyPI](https://pypi.org/search/). See the full list of classifiers [here](https://pypi.python.org/pypi?%3Aaction=list_classifiers).
+  - This list should always include proper licensing information for your package. This should typically consist of both `'License :: Public Domain'` and `'License :: CC0 1.0 Universal (CC0 1.0) Public Domain Dedication'` due to our default dual licensing described [here](https://github.com/cfpb/development/blob/master/TERMS.md).
+  - When possible, licensing classifiers should be used instead of a `license` field in your `setup.py` file. See documentation [here](https://docs.python.org/3.6/distutils/setupscript.html#additional-meta-data) that states (emphasis added):
+  
+     > The license field is a text indicating the license covering the package _where the license is not a selection_ from the “License” Trove classifiers.
 
-See also [the wagtail-sharing `setup.py`](https://github.com/cfpb/wagtail-flags/blob/master/setup.py) for a good example of some of these.
+See also [the wagtail-sharing repository](https://github.com/cfpb/wagtail-flags/blob/master/setup.py) for a good example of a well-written `setup.py` file.
 
 ## Publishing
 
