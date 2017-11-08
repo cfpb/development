@@ -5,7 +5,7 @@ GitHub.com is used to share and manage our Git repositories.
 
 ## Signing commits using GPG
 
-![GitHub verified commit](img/github-verified.png)
+![GitHub verified commit](https://raw.githubusercontent.com/cfpb/development/reorg/img/github-verified.png)
 
 GPG keys are a way to sign and verify work from trusted collaborators.
 You can generate a GPG key and add the public key to your account by following
@@ -76,4 +76,4 @@ The template looks like this:
 
 Here's an example of a complete message:
 
-![Commit message screenshot](img/commit-message.png)
+![Commit message screenshot](https://raw.githubusercontent.com/cfpb/development/reorg/img/commit-message.png)
