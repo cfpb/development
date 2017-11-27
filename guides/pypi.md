@@ -16,7 +16,7 @@ publishing that distribution file to PyPI, using [twine](https://pypi.python.org
 A simple set of commands to accomplish this looks like:
 
 1. `python setup.py sdist bdist_wheel` (creates both a source distribution and a [Wheel archive](https://pip.pypa.io/en/stable/reference/pip_wheel/) of your project, and places them in a `dist` subdirectory.
-2. `twine upload dist/*.whl` (pushes your new distribution files to PyPI)
+2. `twine upload dist/*` (pushes your new distribution files to PyPI - this assumes the directory was new/empty before you ran the previous command)
 
 The contents of your project's `setup.py` file determine how your code is packaged and how it gets published on PyPI. There are a number of useful and important fields that you should include in this file:
 
