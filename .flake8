@@ -1,0 +1,15 @@
+[flake8]
+ignore = 
+    E731,
+    W503,
+
+exclude = 
+    .git,
+    .tox,
+    __pycache__,
+    gulp,
+    requirements,
+    node_modules,
+    site,
+    */jinja2,
+    */migrations/*.py,
