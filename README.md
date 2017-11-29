@@ -12,6 +12,7 @@ A guide for the development team at the [CFPB](https://cfpb.github.io/).
 - [CSS/Less standards](standards/css.md)
 - [JavaScript standards](standards/javascript.md)
 - [Markup standards](standards/markup.md)
+- [Python standards](standards/python.md)
 
 ## Guides
 

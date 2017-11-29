@@ -1,0 +1,16 @@
+[flake8]
+ignore = 
+    # Allow assigning lambda expressions
+    E731,
+    # Allow line breaks after binary operators
+    W503,
+
+exclude =
+    # Some of this are excluded for speed of directory traversal. Not all of 
+    # them have Python files we wish to ignore.
+    .git,
+    .tox,
+    __pycache__,
+    gulp,
+    node_modules,
+    */migrations/*.py,
