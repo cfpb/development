@@ -11,7 +11,6 @@
 - [ ] Mobile Safari
 - [ ] Android 4.0+
 - [ ] Chrome for Android
-- [ ] Blackberry Bold
 
 ## Accessibility
 
