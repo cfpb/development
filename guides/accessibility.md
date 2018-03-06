@@ -39,28 +39,28 @@ The following checklist is adapted from
 [18F's Accessibility Guide](https://pages.18f.gov/accessibility/keyboard/):
 
 - [ ] Using the tab, enter, and space bar, navigate the page and ensure each input/interaction can be triggered.
-    – Any forms on the page should be able to be completed using only the keyboard.
+  - Any forms on the page should be able to be completed using only the keyboard.
 - [ ] Ensure rollover / hover interactions (help text, etc) can be triggered as well.
-  – If the user cannot interact with something,
-  or get the information another way, this is a failure.
+  - If the user cannot interact with something, or get the information another way, this is a failure.
+
 - [ ] Make sure the tab order of the page is logical and follows the visual order of elements on the page.
-  – If the tab order is confusing, this is a failure.
+  - If the tab order is confusing, this is a failure.
 - [ ] Check that the focus is always visible when moving through the page with the tab key.
-  – If you lose focus, on a hidden link or other object when simply tabbing through the page, this is a failure.
+  - If you lose focus, on a hidden link or other object when simply tabbing through the page, this is a failure.
 - [ ] Make sure you can tab through the page and get back the address bar.
-  – If you ever need your mouse to get back to an element, this is a failure.
+  - If you ever need your mouse to get back to an element, this is a failure.
 - [ ] Keyboard users must be able to easily use and dismiss modal dialog boxes, lightboxes, or other pop-ups.
-  – Modal dialog boxes need to trap the keyboard. When a modal dialog box is triggered, the keyboard focus needs to immediately move to the first actionable element in the modal.
-  – The keyboard cannot use the modal dialog box until it is dismissed. When a user moves the keyboard focus past the last element in the modal dialog box, it needs to loop to the beginning of the dialog box.
-  – The keyboard user needs to be able to access all controls in the dialog box, especially the controls to dismiss the dialog.
-  – If the keyboard user cannot do all of these things, this is a failure.
-  – Ideally, the keyboard user should also be able to dismiss the modal dialog box with the Escape key.
+  - Modal dialog boxes need to trap the keyboard. When a modal dialog box is triggered, the keyboard focus needs to immediately move to the first actionable element in the modal.
+  - The keyboard cannot use the modal dialog box until it is dismissed. When a user moves the keyboard focus past the last element in the modal dialog box, it needs to loop to the beginning of the dialog box.
+  - The keyboard user needs to be able to access all controls in the dialog box, especially the controls to dismiss the dialog.
+  - If the keyboard user cannot do all of these things, this is a failure.
+  - Ideally, the keyboard user should also be able to dismiss the modal dialog box with the Escape key.
 - [ ] If an interaction reveals hidden content, ensure the focus is moved to the revealed content.
-  – If this does not happen, check for a programmatic description of the change.
+  - If this does not happen, check for a programmatic description of the change.
 - [ ] Check for title tags providing information not on the screen.
-  – Title attributes which can only be exposed by hovering the mouse over the element are a failure of keyboard access.
+  - Title attributes which can only be exposed by hovering the mouse over the element are a failure of keyboard access.
 - [ ] Check that the focus never goes to elements that won't be available to somebody using a mouse.
-  – If the keyboard focus goes to an offscreen element that has been temporarily hidden (items in a non-expanded drop-down menu, offscreen modals which haven't been triggered, etc.), this is a failure.
+  - If the keyboard focus goes to an offscreen element that has been temporarily hidden (items in a non-expanded drop-down menu, offscreen modals which haven't been triggered, etc.), this is a failure.
 
 [Read more about keyboard testing on WebAIM](https://webaim.org/techniques/keyboard/)
 
