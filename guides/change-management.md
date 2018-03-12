@@ -24,8 +24,8 @@ Without a clear idea of the process for requesting these exceptions, projects wi
 4. A facilitator for BSWG keeps track of these requests in Hubcap, alerts working group members in chat, and asks if group feels need to meet and discuss or is ready to make a recommendation based on the provided information.
     - If at least one member requests a meeting, facilitator schedules it and team meets to discuss and make a decision on recommendation.
     - If meeting is not requested, recommendation is posted in Github and sent to Adam and Jess for approval.
-5.  Decision is posted in Github. Decision should include the following:
+5. Decision is posted in Github. Decision should include the following:
     - The decision (yes/no)
     - Do we suggest this change goes for all future apps/does this change standards?
-6.  For new projects, BSWG schedules meeting with CF.gov Engineering Leadership (Adam, Jess), project team, and business customers/product owners if further discussion is required.
-7.  Do the thing.
+6. For new projects, BSWG schedules meeting with CF.gov Engineering Leadership (Adam, Jess), project team, and business customers/product owners if further discussion is required.
+7. Do the thing.
