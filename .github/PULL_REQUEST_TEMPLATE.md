@@ -14,13 +14,7 @@ Short description explaining the high-level reason for the pull request
 
 ## Testing
 
--
-
-## Review
-
-- @user
-
-[Preview this PR without the whitespace changes](?w=0)
+1.
 
 ## Screenshots
 
