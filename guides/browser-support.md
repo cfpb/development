@@ -118,14 +118,14 @@ browsers:
 
 - [cfgov-refresh](https://github.com/cfpb/cfgov-refresh/blob/master/CONTRIBUTING.md#browser-support)
 - [Capital Framework](https://github.com/cfpb/capital-framework/blob/canary/CONTRIBUTING.md#browser-support)
-- Design Manual
-- Paying for College
-- Retirement
-- Complaint
-- eRegs
-- Salesforce/Mosaic/Submit a complaint app/Complaint portal
+- [Design Manual](https://github.com/cfpb/design-manual/blob/gh-pages/CONTRIBUTING.md#browser-support)
+- [Paying for College](https://github.com/cfpb/college-costs/blob/master/CONTRIBUTING.md#browser-support)
+- [Retirement](https://github.com/cfpb/retirement/blob/master/CONTRIBUTING.md#browser-support)
+- [Complaint](https://github.com/cfpb/complaint/blob/master/CONTRIBUTING.md#browser-support)
+- [eRegs](https://github.com/cfpb/eregs-2.0/blob/master/CONTRIBUTING.md#browser-support)
+- [Salesforce/Mosaic/Submit a complaint app/Complaint portal]([GHE]/Mosaic/mosaic-toolbelt/blob/master/CONTRIBUTING.md#browser-support)
 - [cfpb-chart-builder](https://github.com/cfpb/cfpb-chart-builder/blob/master/CONTRIBUTING.md#browser-support)
-- HMDA Platform
+- [HMDA Platform](https://github.com/cfpb/hmda-platform/blob/master/CONTRIBUTING.md#browser-support)
 
 ## Definitions
 
