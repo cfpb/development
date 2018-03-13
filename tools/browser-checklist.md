@@ -5,7 +5,7 @@
 - [ ] Firefox
 - [ ] IE11
 - [ ] IE10
-- [ ] IE9
+- [ ] IE9 *
 - [ ] IE8 *
 - [ ] Opera
 - [ ] Mobile Safari
