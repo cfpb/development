@@ -89,12 +89,12 @@ the following list of browsers:
     - Chrome for Android
     - Firefox for Android
     - Samsung Internet
-- Internet Explorer 9
 
 http://browserl.ist/?q=last+2+versions%2C+Explorer+%3E%3D+9
 
 As well as additional Autoprefixer support for:
 
+- Internet Explorer 9
 - Internet Explorer 8
 
 http://browserl.ist/?q=last+2+versions%2C+Explorer+%3E%3D+8
