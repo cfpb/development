@@ -54,30 +54,25 @@ deploy:
   user: cfpb
   password:
     secure: <encrypted password for cfpb>
-  distributions: "sdist bdist_wheel"
+  distributions: "sdist bdist_wheel --universal"
   on:
     tags: true
 ```
 
-This tells Travis to publish both `sdist` and `bdist_wheel` distributions to PyPI as the user `cfpb` with the given password (encrypted using `travis encrypt`) whenever a new git tag is created, which GitHub does when creating a new release. 
+This tells Travis to publish both an `sdist` and a universal `bdist_wheel` distribution to PyPI as the user `cfpb` with the given password (encrypted using `travis encrypt`) whenever a new git tag is created, which GitHub does when creating a new release. 
 
-If you have multiple targets you can add conditions to the `on` value, for example, to upload wheel files for multiple versions of Python when matrix testing them:
+If you have multiple targets you can add conditions to the `on` value, for example:
 
 ```yml
-deploy:
-  user: cfpb
-  password:
-    secure: <encrypted password for cfpb>
-  - provider: pypi
-    distributions: "sdist bdist_wheel"
-    on:
-      tags: true
-      python: "3.6"
-  - provider: pypi
-    distributions: "bdist_wheel"
-    on:
-      tags: true
-      python: "2.7"
+on:
+  tags: true
+  condition: $TOXENV = "py36-dj111-wag113"
 ```
 
-This will avoid matrix failures where an `sdist` cannot be uploaded for a release more than once.
+This will avoid matrix failures where an distribution cannot be uploaded to PyPI for a release more than once.
+
+Additionally, you can have Travis upload to https://test.pypi.org by specifying that as the server:
+
+```yml
+server: https://test.pypi.org/legacy/
+```
