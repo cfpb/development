@@ -69,7 +69,7 @@ on:
   condition: $TOXENV = "py36-dj111-wag113"
 ```
 
-This will avoid matrix failures where an distribution cannot be uploaded to PyPI for a release more than once.
+This will avoid matrix failures where an distribution cannot be uploaded to PyPI for a release more than once. Note: `condition` requires a string that evaluates to `true` in bash.
 
 Additionally, if you want to test your release, Travis configuration, or anything else about the upload process to PyPI, you can have Travis upload to [TestPyPI])https://test.pypi.org) by specifying the server:
 
