@@ -71,7 +71,7 @@ on:
 
 This will avoid matrix failures where an distribution cannot be uploaded to PyPI for a release more than once.
 
-Additionally, you can have Travis upload to https://test.pypi.org by specifying that as the server:
+Additionally, if you want to test your release, Travis configuration, or anything else about the upload process to PyPI, you can have Travis upload to [TestPyPI])https://test.pypi.org) by specifying the server:
 
 ```yml
 server: https://test.pypi.org/legacy/
