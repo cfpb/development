@@ -1,6 +1,8 @@
 # JavaScript Guide
 
-This style guide aims to provide the ground rules for CFPB's JavaScript code, such that it's highly readable and consistent across different developers on a team.
+This style guide aims to provide the ground rules for CFPB's JavaScript code,
+such that it's highly readable and consistent across different developers on a
+team.
 
 
 ## Table of Contents
@@ -30,21 +32,36 @@ This style guide aims to provide the ground rules for CFPB's JavaScript code, su
 
 ## Linting
 
-Lint your code using ESLint. [CFPB-tailored ESLint options](https://github.com/cfpb/front-end/blob/master/.eslintrc) exist.
+Lint your code using ESLint.
+[CFPB-tailored ESLint options](https://github.com/cfpb/front-end/blob/master/.eslintrc)
+exist.
 
 ## Modules
 
-This style guide assumes you're using a module system such as [CommonJS][1], [AMD][2], [ES6 Modules][3], or any other kind of module system. If you are using CommonJS, refer to the [CommonJS guide](javascript-modules-commonjs.md) for structuring your modules. Modules systems provide individual scoping, avoid leaks to the `global` object, and improve code base organization by **automating dependency graph generation**, instead of having to resort to manually creating multiple `<script>` tags.
+This style guide assumes you're using a module system such as [CommonJS][1],
+[AMD][2], [ES6 Modules][3], or any other kind of module system. If you are
+using CommonJS, refer to the [CommonJS guide](javascript-modules-commonjs.md)
+for structuring your modules. Modules systems provide individual scoping,
+avoid leaks to the `global` object, and improve code base organization by
+**automating dependency graph generation**, instead of having to resort to
+manually creating multiple `<script>` tags.
 
-Module systems also provide us with dependency injection patterns, which are crucial when it comes to testing individual components in isolation.
+Module systems also provide us with dependency injection patterns, which are
+crucial when it comes to testing individual components in isolation.
 
 ## Strict Mode
 
-**Always** put [`'use strict';`][4] at the top of your modules. Strict mode allows you to catch nonsensical behavior, discourages poor practices, and _is faster_ because it allows compilers to make certain assumptions about your code.
+**Always** put [`'use strict';`][4] at the top of your modules. Strict mode
+allows you to catch nonsensical behavior, discourages poor practices, and
+_is faster_ because it allows compilers to make certain assumptions about your
+code.
 
 ## Spacing
 
-Spacing must be consistent across every file in the application. To this end, using something like [`.editorconfig`][5] configuration files is highly encouraged. Here are the defaults we suggest to get started with JavaScript indentation.
+Spacing must be consistent across every file in the application. To this end,
+using something like [`.editorconfig`][5] configuration files is highly
+encouraged. Here are the defaults we suggest to get started with JavaScript
+indentation.
 
 ```ini
 # editorconfig.org
@@ -62,28 +79,40 @@ insert_final_newline = true
 trim_trailing_whitespace = false
 ```
 
-We recommend using 2 spaces for indentation. The `.editorconfig` file can take care of that for us and everyone would be able to create the correct spacing by pressing the tab key.
+We recommend using 2 spaces for indentation. The `.editorconfig` file can take
+care of that for us and everyone would be able to create the correct spacing
+by pressing the tab key.
 
-Spacing doesn't just entail tabbing, but also the spaces before, after, and in between arguments of a function declaration. Try to keep this spacing consistent throughout the codebase.
+Spacing doesn't just entail tabbing, but also the spaces before, after, and in
+between arguments of a function declaration. Try to keep this spacing
+consistent throughout the codebase.
 
-Where possible, improve readability by keeping lines below the 80-character mark.
+Where possible, improve readability by keeping lines below the 80-character
+mark.
 
 ## Naming
 
-- Functions, variables, methods, objects and instances should be named using `camelCase`.
+- Functions, variables, methods, objects and instances should be named using
+  `camelCase`.
 - Constructors and prototypes should use `PascalCase`.
 - Symbolic constants should use `UPPERCASE`.
-- Encapsulated (private) variables and methods should use `_underscoreCamelCase`.
-- Prefix variables or properties that reference a jQuery object with `$` or `_$`
+- Encapsulated (private) variables and methods should use
+  `_underscoreCamelCase`.
+- Prefix variables or properties that reference a jQuery object with `$` or
+  `_$`
   (depending on exposure). For example: `var $button = $( '.btn-class' );`.
 
 ## Semicolons`;`
 
-We advocate for using semicolons at the end of each line. This choice is done to avoid potential issues with Automatic Semicolon Insertion _(ASI)_.
+We advocate for using semicolons at the end of each line. This choice is done
+to avoid potential issues with Automatic Semicolon Insertion _(ASI)_.
 
 ## Strings
 
-Strings should always be quoted using the same quotation mark. Use `'` or `"` consistently throughout your codebase. Ensure the team is using the same quotation mark in every portion of JavaScript that's authored. In general, we prefer to use single quotation marks `'`.
+Strings should always be quoted using the same quotation mark. Use `'` or `"`
+consistently throughout your codebase. Ensure the team is using the same
+quotation mark in every portion of JavaScript that's authored. In general, we
+prefer to use single quotation marks `'`.
 
 ##### Bad
 
@@ -97,11 +126,17 @@ var message = 'oh hai ' + name + "!";
 var message = 'oh hai ' + name + '!';
 ```
 
-Usually you'll be a happier JavaScript developer if you hack together a parameter-replacing method like [`util.format` in Node][12]. That way it'll be far easier to format your strings, and the code looks a lot cleaner too.
+Usually you'll be a happier JavaScript developer if you hack together a
+parameter-replacing method like [`util.format` in Node][12]. That way it'll be
+far easier to format your strings, and the code looks a lot cleaner too.
 
 ## Variable Declaration
 
-Always declare variables in **a consistent manner**, and at the top of their scope. Keeping variable declarations to _one per line is encouraged_. Comma-first, a single `var` statement, multiple `var` statements, it's all fine, just be consistent across the project, and ensure the team is on the same page.
+Always declare variables in **a consistent manner**, and at the top of their
+scope. Keeping variable declarations to _one per line is encouraged_.
+Comma-first, a single `var` statement, multiple `var` statements, it's all
+fine, just be consistent across the project, and ensure the team is on the
+same page.
 
 ##### Bad
 
@@ -147,7 +182,8 @@ if (foo > 1) {
 }
 ```
 
-Variable declarations that aren't immediately assigned a value are acceptable to share the same line of code.
+Variable declarations that aren't immediately assigned a value are acceptable
+to share the same line of code.
 
 ##### Acceptable
 
@@ -159,7 +195,8 @@ var i, j;
 
 ## Conditionals
 
-**Brackets are enforced**. This, together with a reasonable spacing strategy will help you avoid mistakes such as [Apple's SSL/TLS bug][14].
+**Brackets are enforced**. This, together with a reasonable spacing strategy
+will help you avoid mistakes such as [Apple's SSL/TLS bug][14].
 
 ##### Bad
 
@@ -173,7 +210,8 @@ if (err) throw err;
 if (err) { throw err; }
 ```
 
-It's even better if you avoid keeping conditionals on a single line, for the sake of text comprehension.
+It's even better if you avoid keeping conditionals on a single line, for the
+sake of text comprehension.
 
 ##### Better
 
@@ -185,7 +223,9 @@ if (err) {
 
 ## Equality
 
-Avoid using `==` and `!=` operators, always favor `===` and `!==`. These operators are called the "strict equality operators," while [their counterparts will attempt to cast the operands][15] into the same value type.
+Avoid using `==` and `!=` operators, always favor `===` and `!==`. These
+operators are called the "strict equality operators," while [their
+counterparts will attempt to cast the operands][15] into the same value type.
 
 ##### Bad
 
@@ -211,9 +251,13 @@ isEmptyString(0);
 
 ## Ternary Operators
 
-Ternary operators are fine for clear-cut conditionals, but unacceptable for confusing choices. As a rule, if you can't eye-parse it as fast as your brain can interpret the text that declares the ternary operator, chances are it's probably too complicated for its own good.
+Ternary operators are fine for clear-cut conditionals, but unacceptable for
+confusing choices. As a rule, if you can't eye-parse it as fast as your brain
+can interpret the text that declares the ternary operator, chances are it's
+probably too complicated for its own good.
 
-jQuery is a prime example of a codebase that's [**filled with nasty ternary operators**][16].
+jQuery is a prime example of a codebase that's
+[**filled with nasty ternary operators**][16].
 
 ##### Bad
 
@@ -235,7 +279,8 @@ In cases that may prove confusing just use `if` and `else` statements instead.
 
 ## Functions
 
-When declaring a function, always use the [function declaration form][17] instead of [function expressions][18]. Because [hoisting][19].
+When declaring a function, always use the [function declaration form][17]
+instead of [function expressions][18]. Because [hoisting][19].
 
 ##### Bad
 
@@ -253,7 +298,8 @@ function sum (x, y) {
 }
 ```
 
-That being said, there's nothing wrong with function expressions that are just [currying another function][20].
+That being said, there's nothing wrong with function expressions that are just
+[currying another function][20].
 
 ##### Good
 
@@ -261,7 +307,10 @@ That being said, there's nothing wrong with function expressions that are just [
 var plusThree = sum.bind(null, 3);
 ```
 
-Keep in mind that [function declarations will be hoisted][21] to the top of the scope so it doesn't matter the order they are declared in. That being said, you should always keep functions at the top level in a scope, and avoid placing them inside conditional statements.
+Keep in mind that [function declarations will be hoisted][21] to the top of the
+scope so it doesn't matter the order they are declared in. That being said, you
+should always keep functions at the top level in a scope, and avoid placing
+them inside conditional statements.
 
 ##### Bad
 
@@ -298,7 +347,9 @@ if (Math.random() > 0.5) {
 }
 ```
 
-If you need a _"no-op"_ method you can use either `Function.prototype`, or `function noop () {}`. Ideally a single reference to `noop` is used throughout the application.
+If you need a _"no-op"_ method you can use either `Function.prototype`, or
+`function noop () {}`. Ideally a single reference to `noop` is used throughout
+the application.
 
 Whenever you have to manipulate an array-like object, cast it to an array.
 
@@ -322,7 +373,10 @@ var divs = document.querySelectorAll('div');
 });
 ```
 
-However, be aware that there is a [substantial performance hit][22] in V8 environments when using this approach on `arguments`. If performance is a major concern, avoid casting `arguments` with `slice` and instead use a `for` loop.
+However, be aware that there is a [substantial performance hit][22] in V8
+environments when using this approach on `arguments`. If performance is a
+major concern, avoid casting `arguments` with `slice` and instead use a `for`
+loop.
 
 #### Bad
 ```js
@@ -394,7 +448,8 @@ function wait (i) {
 }
 ```
 
-Or even better, just use `.forEach` which doesn't have the same caveats as declaring functions in `for` loops.
+Or even better, just use `.forEach` which doesn't have the same caveats as
+declaring functions in `for` loops.
 
 ##### Better
 
@@ -406,7 +461,9 @@ Or even better, just use `.forEach` which doesn't have the same caveats as decla
 });
 ```
 
-Whenever a method is non-trivial, make the effort to **use a named function declaration rather than an anonymous function**. This will make it easier to pinpoint the root cause of an exception when analyzing stack traces.
+Whenever a method is non-trivial, make the effort to **use a named function
+declaration rather than an anonymous function**. This will make it easier to
+pinpoint the root cause of an exception when analyzing stack traces.
 
 ##### Bad
 
@@ -434,7 +491,8 @@ function once (fn) {
 }
 ```
 
-Avoid keeping indentation levels from raising more than necessary by using guard clauses instead of flowing `if` statements.
+Avoid keeping indentation levels from raising more than necessary by using
+guard clauses instead of flowing `if` statements.
 
 ##### Bad
 
@@ -478,7 +536,9 @@ if (!condition) {
 
 ## Prototypes
 
-Hacking native prototypes should be avoided at all costs, use a method instead. If you must extend the functionality in a native type, try using something like [poser][23] instead.
+Hacking native prototypes should be avoided at all costs, use a method instead.
+If you must extend the functionality in a native type, try using something like
+[poser][23] instead.
 
 ##### Bad
 
@@ -496,7 +556,8 @@ function half (text) {
 }
 ```
 
-**Avoid prototypical inheritance models** unless you have a very good _performance reason_ to justify yourself.
+**Avoid prototypical inheritance models** unless you have a very good
+_performance reason_ to justify yourself.
 
 - Prototypical inheritance boosts puts need for `this` through the roof
 - It's way more verbose than using object literals
@@ -506,15 +567,19 @@ function half (text) {
 
 ## Object Literals
 
-Instantiate using the egyptian notation `{}`. Use factories instead of constructors.
+Instantiate using the egyptian notation `{}`. Use factories instead of
+constructors.
 
 ## Array Literals
 
-Instantiate using the square bracketed notation `[]`. If you have to declare a fixed-dimension array for performance reasons then it's fine to use the `new Array(length)` notation instead.
+Instantiate using the square bracketed notation `[]`. If you have to declare a
+fixed-dimension array for performance reasons then it's fine to use the
+`new Array(length)` notation instead.
 
 ## Regular Expressions
 
-Keep regular expressions in variables, don't use them inline. This will vastly improve readability.
+Keep regular expressions in variables, don't use them inline. This will vastly
+improve readability.
 
 ##### Bad
 
@@ -533,11 +598,14 @@ if (numeric.test(text)) {
 }
 ```
 
-Also [learn how to write regular expressions][25], and what they actually do. Then you can also [visualize them online][26].
+Also [learn how to write regular expressions][25], and what they actually do.
+Then you can also [visualize them online][26].
 
 ## `console` statements
 
-Preferably bake `console` statements into a service that can easily be disabled in production. Alternatively, don't ship any `console.log` printing statements to production distributions.
+Preferably bake `console` statements into a service that can easily be
+disabled in production. Alternatively, don't ship any `console.log` printing
+statements to production distributions.
 
 ## Comments
 
@@ -545,7 +613,12 @@ Preferably bake `console` statements into a service that can easily be disabled 
 [Use JSDocs](http://usejsdoc.org/) where applicable for JavaScript commenting.
 
 ### Purpose
-Comments **aren't meant to explain what** the code does. Good **code is supposed to be self-explanatory**. If you're thinking of writing a comment to explain what a piece of code does, chances are you need to change the code itself. The exception to that rule is explaining what a regular expression does. Good comments are supposed to **explain why** code does something that may not seem to have a clear-cut purpose.
+Comments **aren't meant to explain what** the code does. Good **code is
+supposed to be self-explanatory**. If you're thinking of writing a comment to
+explain what a piece of code does, chances are you need to change the code
+itself. The exception to that rule is explaining what a regular expression
+does. Good comments are supposed to **explain why** code does something that
+may not seem to have a clear-cut purpose.
 
 ##### Bad
 
@@ -577,11 +650,14 @@ if (numeric.test(text)) {
 }
 ```
 
-Commenting out entire blocks of code _should be avoided entirely_, that's why you have version control systems in place!
+Commenting out entire blocks of code _should be avoided entirely_, that's why
+you have version control systems in place!
 
 ## Variable Naming
 
-Variables must have meaningful names so that you don't have to resort to commenting what a piece of functionality does. Instead, try to be expressive while succinct, and use meaningful variable names.
+Variables must have meaningful names so that you don't have to resort to
+commenting what a piece of functionality does. Instead, try to be expressive
+while succinct, and use meaningful variable names.
 
 ##### Bad
 
@@ -605,15 +681,26 @@ ruleOfThree(4, 2, 6);
 
 ## Polyfills
 
-Where possible use the native browser implementation and include [a polyfill that provides that behavior][27] for unsupported browsers. This makes the code easier to work with and less involved in hackery to make things just work.
+Where possible use the native browser implementation and include
+[a polyfill that provides that behavior][27] for unsupported browsers. This
+makes the code easier to work with and less involved in hackery to make things
+just work.
 
-Although we continue to support IE8, we do not support scripted interactions and rely instead on progressive enhancement to provide IE8 users with a functioning experience.
+Although we continue to support IE8, we do not support scripted interactions
+and rely instead on progressive enhancement to provide IE8 users with a
+functioning experience.
 
-If you can't patch a piece of functionality with a polyfill, then [wrap all uses of the patching code][28] in a globally available method that is accessible from everywhere in the application.
+If you can't patch a piece of functionality with a polyfill, then
+[wrap all uses of the patching code][28] in a globally available method that
+is accessible from everywhere in the application.
 
 ## Everyday Tricks
 
-Use `||` to define a default value. If the left-hand value is [falsy][29] then the right-hand value will be used. Be advised, that because of loose type comparison, inputs like `false`, `0`, `null` or `''` will be evaluated as falsy, and converted to default value. For strict type checking use `if (value === void 0) { value = defaultValue }`.
+Use `||` to define a default value. If the left-hand value is [falsy][29] then
+the right-hand value will be used. Be advised, that because of loose type
+comparison, inputs like `false`, `0`, `null` or `''` will be evaluated as
+falsy, and converted to default value. For strict type checking use
+`if (value === void 0) { value = defaultValue }`.
 
 ```js
 function a (value) {
@@ -668,7 +755,9 @@ function (cb) {
 
 ## Credits
 
-The original version of this document is based on [Nicolas Bevacqua's functon qualityGuide](https://github.com/bevacqua/js), which is licensed under the MIT license.
+The original version of this document is based on [Nicolas Bevacqua's functon
+qualityGuide](https://github.com/bevacqua/js), which is licensed under the MIT
+license.
 
 
   [1]: http://wiki.commonjs.org/wiki/CommonJS
