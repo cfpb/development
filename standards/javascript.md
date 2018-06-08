@@ -154,7 +154,7 @@ var a
 ```js
 var foo = 1;
 
-if (foo > 1) {
+if ( foo > 1 ) {
   var bar = 2;
 }
 ```
@@ -177,7 +177,7 @@ var b;
 var foo = 1;
 var bar;
 
-if (foo > 1) {
+if ( foo > 1 ) {
   bar = 2;
 }
 ```
@@ -201,13 +201,13 @@ will help you avoid mistakes such as [Apple's SSL/TLS bug][14].
 ##### Bad
 
 ```js
-if (err) throw err;
+if ( err ) throw err;
 ```
 
 ##### Good
 
 ```js
-if (err) { throw err; }
+if ( err ) { throw err; }
 ```
 
 It's even better if you avoid keeping conditionals on a single line, for the
@@ -216,7 +216,7 @@ sake of text comprehension.
 ##### Better
 
 ```js
-if (err) {
+if ( err ) {
   throw err;
 }
 ```
@@ -230,22 +230,22 @@ counterparts will attempt to cast the operands][15] into the same value type.
 ##### Bad
 
 ```js
-function isEmptyString (text) {
+function isEmptyString( text ) {
   return text == '';
 }
 
-isEmptyString(0);
+isEmptyString( 0 );
 // <- true
 ```
 
 ##### Good
 
 ```js
-function isEmptyString (text) {
+function isEmptyString( text ) {
   return text === '';
 }
 
-isEmptyString(0);
+isEmptyString( 0 );
 // <- false
 ```
 
@@ -262,7 +262,7 @@ jQuery is a prime example of a codebase that's
 ##### Bad
 
 ```js
-function calculate (a, b) {
+function calculate( a, b ) {
   return a && b ? 11 : a ? 10 : b ? 1 : 0;
 }
 ```
@@ -270,7 +270,7 @@ function calculate (a, b) {
 ##### Good
 
 ```js
-function getName (mobile) {
+function getName( mobile ) {
   return mobile ? mobile.name : 'Generic Player';
 }
 ```
@@ -285,7 +285,7 @@ instead of [function expressions][18]. Because [hoisting][19].
 ##### Bad
 
 ```js
-var sum = function (x, y) {
+var sum = function( x, y ) {
   return x + y;
 };
 ```
@@ -293,7 +293,7 @@ var sum = function (x, y) {
 ##### Good
 
 ```js
-function sum (x, y) {
+function sum( x, y ) {
   return x + y;
 }
 ```
@@ -304,7 +304,7 @@ That being said, there's nothing wrong with function expressions that are just
 ##### Good
 
 ```js
-var plusThree = sum.bind(null, 3);
+var plusThree = sum.bind( null, 3 );
 ```
 
 Keep in mind that [function declarations will be hoisted][21] to the top of the
@@ -315,10 +315,10 @@ them inside conditional statements.
 ##### Bad
 
 ```js
-if (Math.random() > 0.5) {
-  sum(1, 3);
+if ( Math.random() > 0.5 ) {
+  sum( 1, 3 );
 
-  function sum (x, y) {
+  function sum( x, y ) {
     return x + y;
   }
 }
@@ -328,22 +328,22 @@ if (Math.random() > 0.5) {
 ##### Good
 
 ```js
-if (Math.random() > 0.5) {
-  sum(1, 3);
+if ( Math.random() > 0.5 ) {
+  sum( 1, 3 );
 }
 
-function sum (x, y) {
+function sum( x, y ) {
   return x + y;
 }
 ```
 
 ```js
-function sum (x, y) {
+function sum( x, y ) {
   return x + y;
 }
 
-if (Math.random() > 0.5) {
-  sum(1, 3);
+if ( Math.random() > 0.5 ) {
+  sum( 1, 3 );
 }
 ```
 
@@ -356,21 +356,21 @@ Whenever you have to manipulate an array-like object, cast it to an array.
 ##### Bad
 
 ```js
-var divs = document.querySelectorAll('div');
+var divs = document.querySelectorAll( 'div' );
 
-for (i = 0; i < divs.length; i++) {
-  console.log(divs[i].innerHTML);
+for ( i = 0; i < divs.length; i++ ) {
+  console.log( divs[i].innerHTML );
 }
 ```
 
 ##### Good
 
 ```js
-var divs = document.querySelectorAll('div');
+var divs = document.querySelectorAll( 'div' );
 
-[].slice.call(divs).forEach(function (div) {
-  console.log(div.innerHTML);
-});
+[].slice.call( divs ).forEach( function( div ) {
+  console.log( div.innerHTML );
+} );
 ```
 
 However, be aware that there is a [substantial performance hit][22] in V8
@@ -380,14 +380,14 @@ loop.
 
 #### Bad
 ```js
-var args = [].slice.call(arguments);
+var args = [].slice.call( arguments );
 ```
 
 #### Good
 ```js
 var i;
-var args = new Array(arguments.length);
-for (i = 0; i < args.length; i++) {
+var args = new Array( arguments.length );
+for ( i = 0; i < args.length; i++ ) {
     args[i] = arguments[i];
 }
 ```
@@ -400,10 +400,10 @@ Don't declare functions inside of loops.
 var values = [1, 2, 3];
 var i;
 
-for (i = 0; i < values.length; i++) {
-  setTimeout(function () {
-    console.log(values[i]);
-  }, 1000 * i);
+for ( i = 0; i < values.length; i++ ) {
+  setTimeout( function() {
+    console.log( values[i] );
+  }, 1000 * i );
 }
 ```
 
@@ -411,12 +411,12 @@ for (i = 0; i < values.length; i++) {
 var values = [1, 2, 3];
 var i;
 
-for (i = 0; i < values.length; i++) {
-  setTimeout(function (i) {
-    return function () {
-      console.log(values[i]);
+for ( i = 0; i < values.length; i++ ) {
+  setTimeout( function( i ) {
+    return function() {
+      console.log( values[i] );
     };
-  }(i), 1000 * i);
+  }( i ), 1000 * i );
 }
 ```
 
@@ -426,10 +426,10 @@ for (i = 0; i < values.length; i++) {
 var values = [1, 2, 3];
 var i;
 
-for (i = 0; i < values.length; i++) {
-  setTimeout(function (i) {
-    console.log(values[i]);
-  }, 1000 * i, i);
+for ( i = 0; i < values.length; i++ ) {
+  setTimeout( function( i ) {
+    console.log( values[i] );
+  }, 1000 * i, i );
 }
 ```
 
@@ -437,14 +437,14 @@ for (i = 0; i < values.length; i++) {
 var values = [1, 2, 3];
 var i;
 
-for (i = 0; i < values.length; i++) {
-  wait(i);
+for ( i = 0; i < values.length; i++ ) {
+  wait( i );
 }
 
-function wait (i) {
-  setTimeout(function () {
-    console.log(values[i]);
-  }, 1000 * i);
+function wait( i ) {
+  setTimeout( function() {
+    console.log( values[i] );
+  }, 1000 * i );
 }
 ```
 
@@ -454,11 +454,11 @@ declaring functions in `for` loops.
 ##### Better
 
 ```js
-[1, 2, 3].forEach(function (value, i) {
-  setTimeout(function () {
-    console.log(value);
-  }, 1000 * i);
-});
+[1, 2, 3].forEach( function( value, i ) {
+  setTimeout( function() {
+    console.log( value );
+  }, 1000 * i );
+} );
 ```
 
 Whenever a method is non-trivial, make the effort to **use a named function
@@ -468,12 +468,12 @@ pinpoint the root cause of an exception when analyzing stack traces.
 ##### Bad
 
 ```js
-function once (fn) {
+function once( fn ) {
   var ran = false;
-  return function () {
-    if (ran) { return };
+  return function() {
+    if ( ran ) { return };
     ran = true;
-    fn.apply(this, arguments);
+    fn.apply( this, arguments );
   };
 }
 ```
@@ -481,12 +481,12 @@ function once (fn) {
 ##### Good
 
 ```js
-function once (fn) {
+function once( fn ) {
   var ran = false;
-  return function run () {
-    if (ran) { return };
+  return function run() {
+    if ( ran ) { return };
     ran = true;
-    fn.apply(this, arguments);
+    fn.apply( this, arguments );
   };
 }
 ```
@@ -497,9 +497,9 @@ guard clauses instead of flowing `if` statements.
 ##### Bad
 
 ```js
-if (car) {
-  if (black) {
-    if (turbine) {
+if ( car ) {
+  if ( black ) {
+    if ( turbine ) {
       return 'batman!';
     }
   }
@@ -507,7 +507,7 @@ if (car) {
 ```
 
 ```js
-if (condition) {
+if ( condition ) {
   // 10+ lines of code
 }
 ```
@@ -515,20 +515,20 @@ if (condition) {
 ##### Good
 
 ```js
-if (!car) {
+if ( !car ) {
   return;
 }
-if (!black) {
+if ( !black ) {
   return;
 }
-if (!turbine) {
+if ( !turbine ) {
   return;
 }
 return 'batman!';
 ```
 
 ```js
-if (!condition) {
+if ( !condition ) {
   return;
 }
 // 10+ lines of code
@@ -543,16 +543,16 @@ If you must extend the functionality in a native type, try using something like
 ##### Bad
 
 ```js
-String.prototype.half = function () {
-  return this.substr(0, this.length / 2);
+String.prototype.half = function() {
+  return this.substr( 0, this.length / 2 );
 };
 ```
 
 ##### Good
 
 ```js
-function half (text) {
-  return text.substr(0, text.length / 2);
+function half( text ) {
+  return text.substr( 0, text.length / 2 );
 }
 ```
 
@@ -574,7 +574,7 @@ constructors.
 
 Instantiate using the square bracketed notation `[]`. If you have to declare a
 fixed-dimension array for performance reasons then it's fine to use the
-`new Array(length)` notation instead.
+`new Array( length )` notation instead.
 
 ## Regular Expressions
 
@@ -584,8 +584,8 @@ improve readability.
 ##### Bad
 
 ```js
-if (/\d+/.test(text)) {
-  console.log('so many numbers!');
+if ( /\d+/.test( text ) ) {
+  console.log( 'so many numbers!' );
 }
 ```
 
@@ -593,8 +593,8 @@ if (/\d+/.test(text)) {
 
 ```js
 var numeric = /\d+/;
-if (numeric.test(text)) {
-  console.log('so many numbers!');
+if ( numeric.test( text ) ) {
+  console.log( 'so many numbers!' );
 }
 ```
 
@@ -624,29 +624,29 @@ may not seem to have a clear-cut purpose.
 
 ```js
 // Create the centered container.
-var p = $('<p/>');
-p.center(div);
-p.text('foo');
+var p = $( '<p/>' );
+p.center( div );
+p.text( 'foo' );
 ```
 
 ##### Good
 
 ```js
-var container = $('<p/>');
+var container = $( '<p/>' );
 var contents = 'foo';
-container.center(parent);
-container.text(contents);
-megaphone.on('data', function (value) {
+container.center( parent );
+container.text( contents );
+megaphone.on( 'data', function( value ) {
   // The megaphone periodically emits updates for container.
-  container.text(value);
-});
+  container.text( value );
+} );
 ```
 
 ```js
 // One or more digits somewhere in the string.
 var numeric = /\d+/;
-if (numeric.test(text)) {
-  console.log('so many numbers!');
+if ( numeric.test( text ) ) {
+  console.log( 'so many numbers!' );
 }
 ```
 
@@ -662,20 +662,20 @@ while succinct, and use meaningful variable names.
 ##### Bad
 
 ```js
-function a (x, y, z) {
+function a( x, y, z ) {
   return z * y / x;
 }
-a(4, 2, 6);
+a( 4, 2, 6 );
 // <- 3
 ```
 
 ##### Good
 
 ```js
-function ruleOfThree (had, got, have) {
+function ruleOfThree( had, got, have ) {
   return have * got / had;
 }
-ruleOfThree(4, 2, 6);
+ruleOfThree( 4, 2, 6 );
 // <- 3
 ```
 
@@ -703,7 +703,7 @@ falsy, and converted to default value. For strict type checking use
 `if (value === void 0) { value = defaultValue }`.
 
 ```js
-function a (value) {
+function a( value ) {
   var defaultValue = 33;
   var used = value || defaultValue;
 }
@@ -712,20 +712,20 @@ function a (value) {
 Use `.bind` to [partially-apply][30] functions.
 
 ```js
-function sum (a, b) {
+function sum( a, b ) {
   return a + b;
 }
 
-var addSeven = sum.bind(null, 7);
+var addSeven = sum.bind( null, 7 );
 
-addSeven(6);
+addSeven( 6 );
 // <- 13
 ```
 
 Use `Array.prototype.slice.call` to cast array-like objects to true arrays.
 
 ```js
-var args = Array.prototype.slice.call(arguments);
+var args = Array.prototype.slice.call( arguments );
 ```
 
 Use [event emitters][31] on all the things!
@@ -733,23 +733,23 @@ Use [event emitters][31] on all the things!
 ```js
 var emitter = contra.emitter();
 
-body.addEventListener('click', function () {
-  emitter.emit('click', e.target);
-});
+body.addEventListener( 'click', function() {
+  emitter.emit('click', e.target );
+} );
 
-emitter.on('click', function (elem) {
-  console.log(elem);
-});
+emitter.on( 'click', function( elem ) {
+  console.log( elem );
+} );
 
 // simulate click
-emitter.emit('click', document.body);
+emitter.emit( 'click', document.body );
 ```
 
 Use `Function()` as a _"no-op"_.
 
 ```js
-function (cb) {
-  setTimeout(cb || Function(), 2000);
+function( cb ) {
+  setTimeout( cb || Function(), 2000 );
 }
 ```
 
