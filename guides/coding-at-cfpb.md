@@ -11,6 +11,7 @@ Similar to a "definition of done" document, the below steps should be completed 
   - [ ] Set up your test harnesses before you start coding. If you're working with a pre-existing CFPB repo, this has probably already been done.
 - [ ] Read CFPB's accessibility audit documentation
 - [ ] Undergo accessibility audit training (schedule it if you haven't already)
+- [ ] Discuss web analytics goals with your team and schedule a meeting with the Digital Analytics team to plan Google Analytics implementation
 
 ## Writing code
 
