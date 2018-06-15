@@ -51,10 +51,11 @@ crucial when it comes to testing individual components in isolation.
 
 ## Strict Mode
 
-**Always** put [`'use strict';`][4] at the top of your modules. Strict mode
-allows you to catch nonsensical behavior, discourages poor practices, and
-_is faster_ because it allows compilers to make certain assumptions about your
-code.
+**Always** put [`'use strict';`][4] at the top of your global code (code that
+is not exported), modules already use strict mode and thus don't require it.
+Strict mode allows you to catch nonsensical behavior, discourages poor
+practices, and _is faster_ because it allows compilers to make certain
+assumptions about your code.
 
 ## Spacing
 
@@ -79,9 +80,9 @@ insert_final_newline = true
 trim_trailing_whitespace = false
 ```
 
-We recommend using 2 spaces for indentation. The `.editorconfig` file can take
-care of that for us and everyone would be able to create the correct spacing
-by pressing the tab key.
+We always use 2 spaces for indentation in JavaScript files. The `.editorconfig`
+file can take care of that for us and everyone would be able to create the
+correct spacing by pressing the tab key.
 
 Spacing doesn't just entail tabbing, but also the spaces before, after, and in
 between arguments of a function declaration. Try to keep this spacing
@@ -98,9 +99,12 @@ mark.
 - Symbolic constants should use `UPPERCASE`.
 - Encapsulated (private) variables and methods should use
   `_underscoreCamelCase`.
-- Prefix variables or properties that reference a jQuery object with `$` or
+- ~~Prefix variables or properties that reference a jQuery object with `$` or
   `_$`
-  (depending on exposure). For example: `var $button = $( '.btn-class' );`.
+  (depending on exposure). For example: `var $button = $( '.btn-class' );`.~~
+  _We are currently phasing jQuery out of our codebases. If you are working on
+  new code please use the common es5 and es6 features with polyfills to support
+  older browsers if necessary._
 
 ## Semicolons`;`
 
@@ -109,21 +113,30 @@ to avoid potential issues with Automatic Semicolon Insertion _(ASI)_.
 
 ## Strings
 
-Strings should always be quoted using the same quotation mark. Use `'` or `"`
-consistently throughout your codebase. Ensure the team is using the same
-quotation mark in every portion of JavaScript that's authored. In general, we
-prefer to use single quotation marks `'`.
+- Use single quotes (`'`) for inline strings without variables or conditions.
+- Use [es6 template literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)
+  for inline strings with variables or conditions as well as multiline templates.
+- Use double quotes (`"`) for attribute values within templates.
 
 ##### Bad
 
 ```js
+const name = "Jane";
 const message = 'oh hai ' + name + "!";
+const input = "<input value='" + message + "'" +
+                     "type='text'" +
+                     "class='a-text-input'>";
 ```
 
 ##### Good
 
 ```js
-const message = 'oh hai ' + name + '!';
+const name = 'Jane';
+const message = `oh hai ${name}!`;
+const input = `
+  <input value="${ message }"
+         type="text"
+         class="a-text-input">`;
 ```
 
 Usually you'll be a happier JavaScript developer if you hack together a
@@ -133,16 +146,14 @@ far easier to format your strings, and the code looks a lot cleaner too.
 ## Variable Declaration
 
 Always declare variables in **a consistent manner**, and at the top of their
-scope. Keeping variable declarations to _one per line is encouraged_.
-Comma-first, a single `var` statement, multiple `var` statements, it's all
-fine, just be consistent across the project, and ensure the team is on the
-same page.
+scope, keeping variable declarations to single statements, including
+declarations that aren't assigned a value.
 
 ##### Bad
 
 ```js
 const foo = 1,
-    bar = 2;
+      bar = 2;
 
 let baz, pony;
 
@@ -179,17 +190,6 @@ let bar;
 if ( foo > 1 ) {
   bar = 2;
 }
-```
-
-Variable declarations that aren't immediately assigned a value are acceptable
-to share the same line of code.
-
-##### Acceptable
-
-```js
-const a = 'a';
-const b = 2;
-let i, j;
 ```
 
 ## Conditionals
@@ -287,6 +287,7 @@ instead of [function expressions][18]. Because [hoisting][19].
 const sum = ( x, y ) => {
   return x + y;
 };
+// Note for clarity, the issue is not arrow functions, but the expression.
 ```
 
 ##### Good
@@ -685,9 +686,9 @@ Where possible use the native browser implementation and include
 makes the code easier to work with and less involved in hackery to make things
 just work.
 
-Although we continue to support IE8, we do not support scripted interactions
-and rely instead on progressive enhancement to provide IE8 users with a
-functioning experience.
+Although we continue to support IE8 and 9, we do not support scripted
+interactions and rely instead on progressive enhancement to provide IE8 and 9
+users with a functioning experience.
 
 If you can't patch a piece of functionality with a polyfill, then
 [wrap all uses of the patching code][28] in a globally available method that
