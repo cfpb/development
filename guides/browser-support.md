@@ -116,13 +116,17 @@ browsers:
 
 #### Manual testing
 
-We use a mix of Saucelabs and [localtunnel](https://localtunnel.github.io/www/)
-to manually test our site. Be sure to review both the testing and accessibility
+We use a mix of [Sauce Labs](https://saucelabs.com/) and
+[localtunnel](https://localtunnel.github.io/www/) to manually test our site.
+Be sure to review both the
+[testing](https://github.com/cfpb/development/blob/master/guides/testing.md)
+and [accessibility](https://github.com/cfpb/development/blob/master/guides/accessibility.md)
 guides when reviewing sites locally.
 
-##### Saucelabs
+##### Sauce Labs
 
-_Need Cat's demo instructions._
+See [#171](https://github.com/cfpb/development/pull/171) for details on testing
+with Sauce Labs.
 
 ##### localtunnel
 
@@ -137,9 +141,9 @@ npm install -g localtunnel
 Start your project's localhost and in a separate tab run `lt --port 8000`
 editing the port value to match your localhost setup. This will create a
 temporary public URL that can be accessed from any device on any connection.
-Navigate to the URL from your device and test to your hearts content, the URL
+Navigate to the URL from your device and test to your heart's content, the URL
 will remain active as long as the instance is active (keep this in mind, don't
-leave it running forever).
+leave it running forever). Use `ctr + c` to terminate the connection.
 
 #### Individual projects to test
 
