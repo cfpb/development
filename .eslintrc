@@ -19,7 +19,7 @@ env:
   shared-node-browser: true
   es6: true
   worker: false
-  amd: false
+  amd: true
   mocha: false
   jasmine: false
   jest: false
@@ -44,7 +44,7 @@ env:
 
 # Linting rules for ESLint.
 # 0's ignore a rule, 1's produce a warning, and 2's throw an error.
-# See http://eslint.org/docs/rules/ for full documentation.
+# See https://eslint.org/docs/rules/ for full documentation.
 rules:
 
   # Rules for flagging POSSIBLE ERRORS.
@@ -773,7 +773,7 @@ rules:
       afterBlockComment: false
       beforeLineComment: false
       afterLineComment: false
-      allowBlockStart: false
+      allowBlockStart: true
       allowBlockEnd: false
 
   # Require or disallow an empty line between class members.
@@ -1283,4 +1283,3 @@ rules:
     -
       before: true
       after: false
-      
