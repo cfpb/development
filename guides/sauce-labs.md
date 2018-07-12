@@ -56,7 +56,7 @@ Once you create an account, you'll need to install "Sauce Connect" so you can ac
 
 1. Add the following line of code to your `.aliases` file:
     ```
-    alias saucy="cd ~/Applications/sc-4.4.12-osx/ && bin/sc"
+    alias saucy="~/Applications/sc-4.4.12-osx/bin/sc"
     ```
 
 You may need to update the path from `~/Applications/sc-4.4.12-osx/` to match wherever your Sauce Connect app was downloaded, if you did not move it to your Applications folder, or if the version number you downloaded is different.
