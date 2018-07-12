@@ -4,6 +4,10 @@ Extol the [testing pyramid](https://docs.google.com/presentation/d/1NFjgq5SbQ4cr
 
 [![Testing pyramid](http://i.imgur.com/1hQdxod.png)](https://docs.google.com/presentation/d/1NFjgq5SbQ4crNi06SplyqZQ-K9o5RX966AoRVEB38Yg/pub?start=false&loop=false&delayms=3000&slide=id.g18ef6d797_047)
 
+## Manual testing & browser support QA
+
+Refer to the [Sauce Labs Guide](sauce-labs.md) for instructions on using Sauce Labs to manually test your application in a range of browsers and virtual machines.
+
 ## Unit tests
 
 If your code has logic, it should have unit tests. As seen in the pyramid, unit tests should comprise the majority of your tests. Why? Unit tests can be executed quickly, they can be easily automated, they're maintainable and they promote good practices by requiring your code to be written in concise, modular chunks.
