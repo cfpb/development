@@ -76,7 +76,7 @@ WebAIM has a fantastic series and guide for using screenreaders for accessibilit
 - [Using VoiceOver to evaluate web accessibility](https://webaim.org/articles/voiceover/) – Learn how to use the built-in screenreader program on Macs and iOS products.
 - [Using NVDA to evaluate web accessibility](https://webaim.org/articles/nvda/) – Learn how to use NVDA, a free and open source screenreader for Windows.
 
-Be sure to test new features on both VoiceOver and a Windows screen reader. Read our guide on [Screen reader differences](screen-reader-differences) to understand the way screen readers work on different platforms and how to avoid creating bugs for Windows users.
+Be sure to test new features on both VoiceOver and a Windows screen reader. Read our guide on [Screen reader differences](screen-reader-differences.md) to understand the way screen readers work on different platforms and how to avoid creating bugs for Windows users.
 
 [Read more about screenreader testing on WebAIM](https://webaim.org/articles/screenreader_testing/)
 
