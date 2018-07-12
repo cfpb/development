@@ -26,6 +26,7 @@ A guide for the development team at the [CFPB](https://cfpb.github.io/).
 - [Publishing node modules](guides/npm.md)
 - [Publishing Python packages to PyPI](guides/pypi.md)
 - [Testing](guides/testing.md)
+- [Testing with Sauce Labs](guides/sauce-labs.md)
 - [Using node modules](guides/npm-usage.md)
 
 ## Tools
