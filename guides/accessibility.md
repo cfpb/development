@@ -22,6 +22,10 @@ POUR principles and get a checklist for these guidelines,
 
 Testing for accessibility should be done throughout the project lifecycle.
 
+### Accessibility audits
+
+Visit the CFPB's internal [Accessibility documentation [GHE]](https://GHE/CFPB/hubcap/wiki/Accessibility) to learn how to audit your project work in a standardized manner.
+
 ### Keyboard testing
 
 You don't need any special hardware for your first accessibility test.
@@ -67,11 +71,12 @@ The following checklist is adapted from
 
 ### Screenreader testing
 
-Using a screenreader can be a great way to experience how screenreader users experience your webpages.
 WebAIM has a fantastic series and guide for using screenreaders for accessibility testing purposes.
 
 - [Using VoiceOver to evaluate web accessibility](https://webaim.org/articles/voiceover/) – Learn how to use the built-in screenreader program on Macs and iOS products.
 - [Using NVDA to evaluate web accessibility](https://webaim.org/articles/nvda/) – Learn how to use NVDA, a free and open source screenreader for Windows.
+
+Be sure to test new features on both VoiceOver and a Windows screen reader. Read our guide on [Screen reader differences](screen-reader-differences) to understand the way screen readers work on different platforms and how to avoid creating bugs for Windows users.
 
 [Read more about screenreader testing on WebAIM](https://webaim.org/articles/screenreader_testing/)
 
