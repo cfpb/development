@@ -3,6 +3,7 @@
 1. [Linting](#linting)
 1. [Imports](#imports)
 3. [Python versions](#python-versions)
+4. [`requirements.txt`, `setup.py`, and specifying dependencies](#requirementstxt-setuppy-and-specifying-dependencies)
 
 ## Linting
 
@@ -49,3 +50,19 @@ For writing code that is Python 2 and 3-compatible, please see the [Python Porti
 - Use unicode literals (`from __future__ import unicode_literals`), and [the corresponding Django `python_2_unicode_compatible`](https://docs.djangoproject.com/en/1.11/ref/utils/#django.utils.encoding.python_2_unicode_compatible) (`from django.utils.encoding import python_2_unicode_compatible`)
 - Use Python 3 division wherein dividing `int`s results in a `float` (`from __future__ import division`)
 - Capture exceptions using the `as` keyword (`except Exception as exc`)
+
+## `requirements.txt`, `setup.py`, and specifying dependencies
+
+The difference between pinned versions of dependencies in `requirements.txt`  and dependencies specified in `setup.py` is frequently confusing and often misunderstood. The difference is between *concrete* and *abstract* dependencies, which is most easily understood in terms of applications (intended to be deployed and run), which specify *concrete* dependencies, and libraries (reusable code that may be included in applications), which specify *abstract* dependencies. 
+
+[Donald Stufft has an excelent article with a more in-depth discussion of this difference](https://caremad.io/posts/2013/07/setup-vs-requirement/). For our purposes, we use both requirements files and requirements specified in `setup.py` depending on the circumstance of the dependency.
+
+- Applications should use requirements files with pinned versions. 
+
+  For example, [cfgov-refresh has several requirements](https://github.com/cfpb/cfgov-refresh/tree/master/requirements) files that pin all relevant versions for deployment, testing, local execution, and other specific needs. Some of these requirements files dependend on each other ([`-r libraries.txt`](https://github.com/cfpb/cfgov-refresh/blob/master/requirements/base.txt#L3)).
+
+- Libraries should specify dependencies with supported version ranges ([and those ranges should be tested with tox](../tox.ini)) in `setup.py` using [the appropriate setuptools `_requires` keyword](https://setuptools.readthedocs.io/en/latest/setuptools.html#declaring-dependencies).
+
+  For example, our [wagtail-sharing library](https://github.com/cfpb/wagtail-sharing) declares install-time requirements with `install_requires` and testing requirements with `extras_require={'testing': testing_extras}`.
+
+Satellite apps of cfgov-refresh are considered for these purposes to be libraries.
