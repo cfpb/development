@@ -26,6 +26,26 @@ Once you create an account, you'll need to install "Sauce Connect" so you can ac
 1. To disconnect, use the keyboard command `CTRL-C` in the Terminal window where Sauce Connect is running.
 
 
+
+## Store your Sauce credentials for running Sauce Connect easily in the future
+
+1. Go to Finder and navigate to your user directory.
+1. Open the `.exports` file with your text editor. Can't find it? In Finder, try entering the following keyboard command to show hidden files:
+    ```
+    CMD + SHIFT + .
+    ```
+
+
+1. Add the following to your `.exports` file (with your credentials):
+    ```
+    export SAUCE_USERNAME=<sauce_username>
+    export SAUCE_ACCESS_KEY=<sauce_access_key>
+    ```
+
+
+    Sauce Connect will automatically check for the existence of those variables when it starts up.
+
+
 ## Create an alias for running Sauce Connect easily in the future
 
 1. Go to Finder and navigate to your user directory.
@@ -34,9 +54,9 @@ Once you create an account, you'll need to install "Sauce Connect" so you can ac
     CMD + SHIFT + .
     ```
 
-1. Add the following line of code to your `.aliases` file, using your credentials from SauceLabs.com:
+1. Add the following line of code to your `.aliases` file:
     ```
-    alias saucy="cd ~/Applications/sc-4.4.12-osx/ && bin/sc -u YOUR_USERNAME -k YOUR_ACCESS_KEY"
+    alias saucy="cd ~/Applications/sc-4.4.12-osx/ && bin/sc"
     ```
 
 You may need to update the path from `~/Applications/sc-4.4.12-osx/` to match wherever your Sauce Connect app was downloaded, if you did not move it to your Applications folder, or if the version number you downloaded is different.
@@ -50,10 +70,9 @@ You may need to update the path from `~/Applications/sc-4.4.12-osx/` to match wh
 
 ## Testing on Sauce Labs
 
-1. From SauceLabs.com, click the "Manual tests" tab.
-1. Click "New Manual Test." This will open a new tab.
+1. From SauceLabs.com, click the "Live testing" tab.
 1. Enter the URL you want to test.
-1. Select your browser.
+1. Select your browser and device.
 1. If you are testing a local or dev server URL (such as build), under "Sauce Connect proxy," click the dropdown and select your username from the list. If you are testing a public URL, you can skip this step.
 1. Click "Start session."
 
