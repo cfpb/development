@@ -25,7 +25,7 @@ A guide for the development team at the [CFPB](https://cfpb.github.io/).
 - [Git and GitHub](guides/git.md)
 - [Publishing node modules](guides/npm.md)
 - [Publishing Python packages to PyPI](guides/pypi.md)
-- [Screen reader differences](screen-reader-differences.md)
+- [Screen reader differences](guides/screen-reader-differences.md)
 - [Testing](guides/testing.md)
 - [Using node modules](guides/npm-usage.md)
 
