@@ -29,6 +29,7 @@ browser support standards.
 - [Git and GitHub](guides/git.md)
 - [Publishing node modules](guides/npm.md)
 - [Publishing Python packages to PyPI](guides/pypi.md)
+- [Screen reader differences](guides/screen-reader-differences.md)
 - [Testing](guides/testing.md)
 - [Testing with Sauce Labs](guides/sauce-labs.md)
 - [Using node modules](guides/npm-usage.md)
