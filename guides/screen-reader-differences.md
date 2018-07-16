@@ -21,7 +21,7 @@ JAWS and NVDA are Windows applications. VoiceOver is available as a desktop Mac 
 
 ## Commonalities
 
-It is important to keep in mind that screen readers "present content linearly to users, one item at a time. This contrasts with the way in which most people use visual interfaces....Users must progress through such systems in a step-wise manner. The insight that audio interfaces are linearized versions of web content is an important one that should guide web developers during the engineering and design process." [Source](https://webaim.org/techniques/screenreader/)
+It is important to keep in mind that screen readers "present content linearly to users, one item at a time. This contrasts with the way in which most people use visual interfaces. ... Users must progress through such systems in a step-wise manner. The insight that audio interfaces are linearized versions of web content is an important one that should guide web developers during the engineering and design process." [Source](https://webaim.org/techniques/screenreader/)
 
 Accessibility guidelines that target screen reader users will benefit users no matter the software they use. Some things to keep in mind include:
 
@@ -73,7 +73,7 @@ Headings
 
 Because hidden elements are not considered part of the page content for screen readers*, they are not included in the elements listed by the rotor menus. This has important implications for how we design and code interactive elements on our webpages. For example, in the current implementation of our global navigation "mega menu", none of the content that's in the mega menu dropdown is accessible to the VoiceOver rotor unless the user has opened the dropdown with a mouse hover or the keyboard. This as a general problem with drop down menus and similar interaction designs that affects VoiceOver users (and likely all screen reader users- we just haven't tested other software yet).
 
-*_NOTE: This is not the case for elements that are visually hidden using the same CSS techniques as are used to visually hide the "Skip nav" link on every page. It only applies to techniques that hide the content in a straightforward manner such as using `display: none` or `visibility: hidden`._
+_*NOTE: This is not the case for elements that are visually hidden using the same CSS techniques as are used to visually hide the "Skip nav" link on every page. It only applies to techniques that hide the content in a straightforward manner such as using `display: none` or `visibility: hidden`._
 
 #### 3. Forms mode
 VoiceOver does not have a forms or application mode. JAWS and NVDA do.
