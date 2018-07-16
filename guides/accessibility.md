@@ -24,7 +24,7 @@ Testing for accessibility should be done throughout the project lifecycle.
 
 ### Accessibility audits
 
-Visit the CFPB's internal [Accessibility documentation [GHE]](https://GHE/CFPB/hubcap/wiki/Accessibility) to learn how to audit your project work in a standardized manner.
+Visit the CFPB's internal [Accessibility documentation [links to GHE]](https://GHE/CFPB/hubcap/wiki/Accessibility) (`https://GHE/CFPB/hubcap/wiki/Accessibility`) to learn how to audit your project work in a standardized manner.
 
 ### Keyboard testing
 

@@ -4,7 +4,7 @@ In this guide:
   - [Commonalities](#Commonalities)
   - [Differences](#Differences)
       - [Interaction modes](#Interaction-modes)
-- [Lessons](#lessons)
+- [Guidelines for developers](#Guidelines-for-developers)
 
 # Overview
 
@@ -16,7 +16,7 @@ Screen reader software allows users to navigate webpages by having the text of t
 |  NVDA | 64.9%  |
 |  VoiceOver | 39.6%  |
 
-JAWS and NVDA are Windows applications. VoiceOver is available as a desktop Mac OS application and on iOS devices.
+JAWS and NVDA are Windows applications. VoiceOver is available as a desktop Mac OS application and on iOS devices. If you are new to screen readers or need a refresher, check out this [demo video of how a screen reader works](https://www.youtube.com/watch?v=q_ATY9gimOM).
 
 
 ## Commonalities
@@ -30,7 +30,7 @@ Accessibility guidelines that target screen reader users will benefit users no m
 - "You can't hear the meaning of a graphic unless it has alternative text."
 - "Non-descriptive link text such as 'click here' and 'more' offer little or no clues as to what will happen when the user selects them." [Source](https://webaim.org/articles/screenreader_testing/)
 
-"Following the principles of the Web Content Accessibility Guidelines (WCAG) or Section 508 guidelines will definitely help remove barriers, though they are not fool-proof. As a matter of fact, no method is fool-proof. You'll have the most success by paying attention to principles and guidelines and **testing your content**." (Emphasis mine) [Source](https://webaim.org/articles/screenreader_testing/)
+"Following the principles of the Web Content Accessibility Guidelines (WCAG) or Section 508 guidelines will definitely help remove barriers, though they are not fool-proof. As a matter of fact, no method is fool-proof. You'll have the most success by paying attention to principles and guidelines and **testing your content**." (emphasis intentionally added) [Source](https://webaim.org/articles/screenreader_testing/)
 
 ## Differences 
 
@@ -73,7 +73,7 @@ Headings
 
 Because hidden elements are not considered part of the page content for screen readers*, they are not included in the elements listed by the rotor menus. This has important implications for how we design and code interactive elements on our webpages. For example, in the current implementation of our global navigation "mega menu", none of the content that's in the mega menu dropdown is accessible to the VoiceOver rotor unless the user has opened the dropdown with a mouse hover or the keyboard. This as a general problem with drop down menus and similar interaction designs that affects VoiceOver users (and likely all screen reader users- we just haven't tested other software yet).
 
-*This is not the case for elements that are visually hidden using the same CSS techniques as are used to visually hide the "Skip nav" link on every page. It only applies to techniques that hide the content in a straightforward manner such as using `display: none` or `visibility: hidden`.
+*_NOTE: This is not the case for elements that are visually hidden using the same CSS techniques as are used to visually hide the "Skip nav" link on every page. It only applies to techniques that hide the content in a straightforward manner such as using `display: none` or `visibility: hidden`._
 
 #### 3. Forms mode
 VoiceOver does not have a forms or application mode. JAWS and NVDA do.
@@ -93,19 +93,27 @@ The W3C recommends developers **not use `role="application"`** if the interface 
 
 Swiping and touch screen interactions are the main difference for mobile. Things to watch out for:
 
-- Users must swipe right to jump between focusable elements on the page. This is akin to using the tab key on a keyboard.
+- Users must swipe right to advance between focusable elements on the page. This is akin to using the tab key on a keyboard.
 - Swiping left goes back to previous elements, just like using `shift + tab`.
 
 Tabindex, focusable elements, and tab order should be thoroughly tested and verified on small screen interfaces especially to ensure usability with iOS VoiceOver.
 
 
-# Lessons
+# Guidelines for developers
 
 These apply to differences between screen reader applications. Read these [screen reader guidelines for developers by WebAIM](https://webaim.org/techniques/screenreader/) for general guidance.
 
+## Test your features in real screen reader software.
+
+- Use CFPB's internal [web accessibility audit [links to GHE]](https://GHE/CFPB/hubcap/wiki/Accessibility#we-commit-to-auditing-for-accessibility-as-we-build--release-and-we-fix-the-bugs) (`https://GHE/CFPB/hubcap/wiki/Accessibility#we-commit-to-auditing-for-accessibility-as-we-build--release-and-we-fix-the-bugs`) to test new or updated features. It includes steps for conducting VoiceOver testing on desktop and mobile devices.
+- Refer to the following excellent guides to do more extensive screen reader testing during the development process:
+    - [Using JAWS to Evaluate Web Accessibility](https://webaim.org/articles/jaws/)
+    - [Using NVDA to Evaluate Web Accessibility](https://webaim.org/articles/nvda/)
+    - [Using VoiceOver to Evaluate Web Accessibility](https://webaim.org/articles/voiceover/)
+
 ## Don't use the `role="application"` attribute. There is really no use case for it on a standards-based website. [More info about why you should avoid application mode](https://www.marcozehe.de/2012/02/06/if-you-use-the-wai-aria-role-application-please-do-so-wisely/).
 
-Certain AIRA role attributes trigger application mode on Windows screen readers. When in application mode, the user cannot use the default keyboard shortcuts for navigating the page, such as using the key `H` to navigate the page via headings. This is the **number one method that screen reader users use to find information on a page**, and application mode disables it ([source](https://webaim.org/projects/screenreadersurvey7/#finding)).
+Certain ARIA role attributes trigger application mode on Windows screen readers. When in application mode, the user cannot use the default keyboard shortcuts for navigating the page, such as using the key `H` to navigate the page via headings. This is the **number one method that screen reader users use to find information on a page**, and application mode disables it ([source](https://webaim.org/projects/screenreadersurvey7/#finding)).
 
 What's more, application mode is rare enough that screen reader users are often unfamiliar with it and unaware that the website they're visiting has invoked the screen reader to enter this mode. [Source](https://webaim.org/blog/three-things-voiceover/)
 
