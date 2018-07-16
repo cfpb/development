@@ -6,9 +6,6 @@
 </head>
 <body>
 
-</body>
-</html>
-
 <table cellspacing="0" cellpadding="0" class="o-table o-table__striped o-table__stack-on-small o-table__entry-header-on-small">
     <thead>
         <tr>
@@ -36,7 +33,7 @@
         </tr>
         <tr>
             <td>Find a Housing Counselor</td>
-            <td data-label="A: Full support"></td>
+            <td data-label="A: Full support">"last two"</td>
             <td data-label="B: support">IE 9 and 8 + IE 7 (1)</td>
             <td data-label="C: Passive support"></td>
             <td data-label="D: Not officially supported"></td>
@@ -70,7 +67,69 @@
     <li>All it took to add full IE9 support was a simple 100 KB polyfill, which we expect won't bother people on IE9 who really want to use the tool.</li>
     <li>Only need to support browsers that are allowed on CFPB devices.</li>
 </ol>
-another way to lay out this table would be:
 
-list by browser
-label A, B, C, D in each cell
+<p>another way to lay out this table would be:</p>
+
+<ul>
+    <li>list by browser</li>
+    <li>label A, B, C, D in each cell</li>
+</ul>
+
+
+
+<table cellspacing="0" cellpadding="0" class="o-table o-table__striped o-table__stack-on-small o-table__entry-header-on-small">
+    <thead>
+        <tr>
+            <th>Cf.gov pages</th>
+            <th>Latest 2 releases of all browsers</th>
+            <th>Internet Explorer 10 & 11</th>
+            <th>IE 8 & 9</th>
+            <th>IE 7</th>
+            <th>Blackberry, older Android browsers</th>
+            <th>Everything else</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td data-label="Cf.gov pages">All pages by default</td>
+            <td data-label="Latest 2 releases of all browsers">A: Full support</td>
+            <td data-label="Internet Explorer 10 & 11">B: support</td>
+            <td data-label="IE 8 & 9">C: Passive support</td>
+            <td data-label="IE 7">D: Not officially supported</td>
+            <td data-label="Blackberry, older Android browsers">C: Passive support</td>
+            <td data-label="Everything else">Fix bugs on ad-hoc basis as alerted to them</td>
+        </tr>
+        <tr>
+            <td>Find a Housing Counselor</td>
+            <td data-label="A: Full support">"last two"</td>
+            <td data-label="B: support">IE 9 and 8 + IE 7 (1)</td>
+            <td data-label="C: Passive support"></td>
+            <td data-label="D: Not officially supported"></td>
+        </tr>
+        <tr>
+            <td>Complaint Search</td>
+            <td data-label="A: Full support">"last two" + IE 9 (2)</td>
+            <td data-label="B: support">None</td>
+            <td data-label="C: Passive support">None</td>
+            <td data-label="D: Not officially supported">None</td>
+        </tr>
+        <tr>
+            <td>Intranet</td>
+            <td data-label="A: Full support">"last two" (IE, Chrome, Edge, and Safari only) (3)</td>
+            <td data-label="B: support">None</td>
+            <td data-label="C: Passive support">None</td>
+            <td data-label="D: Not officially supported">None</td>
+        </tr>
+        <tr>
+            <td>Public docs (DM, CF, etc.)</td>
+            <td data-label="A: Full support">"last two"</td>
+            <td data-label="B: support">None</td>
+            <td data-label="C: Passive support">None</td>
+            <td data-label="D: Not officially supported">None</td>
+        </tr>
+    </tbody>
+</table>
+
+
+</body>
+</html>
