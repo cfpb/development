@@ -9,7 +9,7 @@ cross-browser compatibility, accessibility, simplicity and maintainability.
 1. [Coding Style](#coding-style)
 1. [Head](#head)
 1. [Syntax](#syntax)
-1. [Patterns](#patterns-)
+1. [Patterns](#patterns-for)
 1. [Credits](#credits)
 
 ## Coding Style
