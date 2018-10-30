@@ -219,7 +219,7 @@ Whenever possible, avoid superfluous parent elements when writing HTML. Many tim
 
 ### Other
 - Don't omit optional closing tags (e.g. `</li>` or `</body>`).
-- Use closing tag comments, like `<!-- /.element -->`, sparringly. These add to page load time and overuse counter-acts their purpose
+- Use closing tag comments, like `<!-- /.element -->`, sparingly. These add to page load time and overuse counter-acts their purpose.
 - Don't set `tabindex` manually; rely on the browser to set the order.
 
 
@@ -271,6 +271,23 @@ The visual order should be preserved with float: right; on each button.
 + [CFPB Design Manual on Effective Forms](http://cfpb.github.io/design-manual/guides/effective-forms.html)
 
 
+### Links that open in new tabs
+
+Links should only open in new tabs (`target="_blank"`) in situations where
+users enter data or make selections that would be lost if they left the page.
+When doing this, be sure to also include `rel="noopener noreferrer"` to mitigate
+[potential vulnerabilities](https://www.jitbit.com/alexblog/256-targetblank---the-most-underestimated-vulnerability-ever/).
+
+Additionally, add an `aria-label` that includes the link text and informs screen reader users
+that the link will open in a new tab. For example:
+`aria-label="Learn why some county data are unavailable. (Link opens in new tab.)"`
+
+Full example:
+
+```html
+<a href="
+
+
 ### Tables
 
 First off, never use tables for layout purposes.
@@ -318,4 +335,4 @@ You want the browser to load the footer before a table full of data.)
 
 ## Credits
 
-This guide includes inspiration and guidelines from the [Github Styleguide](https://github.com/styleguide/) and [Code Guide by @mdo](http://codeguide.co/#html-syntax).
+This guide includes inspiration and guidelines from the [GitHub Styleguide](https://github.com/styleguide/) and [Code Guide by @mdo](http://codeguide.co/#html-syntax).
