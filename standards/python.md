@@ -16,6 +16,7 @@ Exceptions to PEP8 are found in that [sample flake8 configuration](../.flake8), 
 
 - `E731`, we allow assignment of `lambda` expressions
 - `W503`, we allow line breaks after binary operators
+- `W504`, we allow line breaks before binary operators
 
 On the whole, generated Python files like Django migrations can be safely ignored. 
 
