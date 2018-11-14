@@ -4,6 +4,8 @@ ignore =
     E731,
     # Allow line breaks after binary operators
     W503,
+    # Allow line breaks before binary operators
+    W504,
 
 exclude =
     # Some of this are excluded for speed of directory traversal. Not all of 
