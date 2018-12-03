@@ -21,7 +21,7 @@ browser support standards.
 
 1. Project starts and team assesses front end needs
 2. If project team decides their needs are unique and cannot be supported by
-current CFPB browser standards, they create a Hubcap GHE Issue to review the
+current CFPB browser standards, they create a [Hubcap GHE](https://[GHE]/CFPB/hubcap) Issue to review the
 situation, including answers to the following questions:   
     - What is the device/OS/browser/feature for which you would like to drop
     support in this app?
