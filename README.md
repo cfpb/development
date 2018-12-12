@@ -16,11 +16,11 @@ A guide for the development team at the [CFPB](https://cfpb.github.io/).
 
 ## Guides
 
+- [Start here](guides/start-here.md) – New to software development at the CFPB? Read this first.
 - [Browser support](guides/browser-support.md)
 - [Browser support exceptions](guides/browser-support-exceptions.md): This document
 outlines the decision making process for requesting an exception to current
 browser support standards.
-- [Coding @ CFPB](guides/coding-at-cfpb.md)
 - [Accessibility](guides/accessibility.md)
 - [Atomic Design](guides/atomic-design.md)
 - [Building your project's front-end](guides/build.md)
