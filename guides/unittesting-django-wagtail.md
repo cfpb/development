@@ -1,4 +1,4 @@
-# Backend Unit Testing for Django and Wagtail at CFPB
+# Unit Testing Django and Wagtail
 
 - [Setting up tests](#setting-up-tests)
     - [Chosing a `TestCase` base class](#choosing-a-testcase-base-class)
