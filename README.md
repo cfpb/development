@@ -33,6 +33,7 @@ browser support standards.
 - [Testing](guides/testing.md)
 - [Testing with Sauce Labs](guides/sauce-labs.md)
 - [Using node modules](guides/npm-usage.md)
+- [Unit testing Django and Wagtail](guides/unittesting-django-wagtail.md)
 
 ## Tools
 
