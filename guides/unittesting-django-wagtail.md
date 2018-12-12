@@ -105,9 +105,9 @@ There are a few different ways to provide data for your tests to operate on.
             self.assertEqual(page.meta_image, page.social_sharing_image)    
     ```
 
-- Creating specific instances of models in code. All other test data needs are generally accomplished by creating instances of models directly. 
+- Creating specific instances of models in code. 
 
-    For example, our [Django-Flags `DatabaseFlagsSoruce` test case](https://github.com/cfpb/django-flags/blob/master/flags/tests/test_sources.py#L46-L56) tests that a database-stored `FlagState` object is provided by the `DatabaseFlagsSource` class. To do that it creates a specific instance of `FlagState` using `FlagStage.objects.create()` that it expects to be returned:
+    All other test data needs are generally accomplished by creating instances of models directly. For example, our [Django-Flags `DatabaseFlagsSource` test case](https://github.com/cfpb/django-flags/blob/master/flags/tests/test_sources.py#L46-L56) tests that a database-stored `FlagState` object is provided by the `DatabaseFlagsSource` class. To do that it creates a specific instance of `FlagState` using `FlagStage.objects.create()` that it expects to be returned:
 
 
     ```python
@@ -149,23 +149,26 @@ It is sometimes useful to modify Django settings when testing code that may beha
 
 ### Mocking
 
+#### General Mocking with Mock
+
 We use the [Python Mock library](https://docs.python.org/3/library/unittest.mock.html) when we need to. We recommend mocking for:
 
-- External service calls, for example Akamai caching or GovDelivery (either their APIs or via `requests`). 
+- External service calls.
 
-    For example, to test code that interfaces with search.gov's API, [we mock the call to `requests.get` within the module that's being tested](https://github.com/cfpb/cfgov-refresh/blob/master/cfgov/search/tests/test_dotgov.py#L10-L14), `search.dotgov` and set an appropriate return value:
+    For example, we have a custom Wagtail admin view that allows users to flush the Akamai cache for specific URLs. One of the tests for that view mocks calls to the Akamai `purge()` method within the module being tested to ensure that it is called with the URL that needs to be purged:
         
     ```python
     from django.test import TestCase
     import mock
-    from search.dotgov import search
-    
-    class SearchDotGovTestCase(TestCase):   
-        @mock.patch('search.dotgov.requests.get')
-        def test_search_query(self, mock_get):
-            mock_get.return_value.ok = True
-            search('query')
-            mock_get.return_value.json.assert_called()
+
+    class TestCDNManagementView(TestCase):
+
+        @mock.patch('v1.models.akamai_backend.AkamaiBackend.purge')
+        def test_submission_with_url(self, mock_purge):
+            self.client.login(username='cdn', password='password')
+            self.client.post(reverse('manage-cdn'),
+                             {'url': 'http://fake.gov'})
+            mock_purge.assert_called_with('http://fake.gov')
     ```
 
 - Logging introspection, to ensure that a message that should be logged does get logged. 
@@ -181,7 +184,30 @@ We use the [Python Mock library](https://docs.python.org/3/library/unittest.mock
 
 There are other potential uses of Mock, but generally we prefer to test our code operating on real objects as much as as possible rather than mocking.
 
-Additionally, we use the [moto](https://github.com/spulec/moto) library for mocking AWS services that are called via [boto](https://github.com/boto/boto/). For example, [to test our S3 utilities](https://github.com/cfpb/cfgov-refresh/blob/master/cfgov/v1/tests/test_s3utils.py#L21-L25), we initialize moto in our test case's `setUp` method: 
+#### Mocking Requests with Responses
+
+For mocking HTTP calls that are made via [the Requests library](http://docs.python-requests.org/en/master/), we prefer the use of [Responses](https://github.com/getsentry/responses). For example, to test whether an informative banner is displayed to users [the ComplaintLandingView tests](https://github.com/cfpb/cfgov-refresh/blob/master/cfgov/legacy/tests/views/test_complaint.py#L67) use responses to provide response data for calls to `requests.get()`:
+
+```python
+from django.test import TestCase
+
+import responses
+
+class ComplaintLandingViewTests(TestCase):
+
+    @responses.activate
+    def test_no_banner_when_data_invalid(self):
+        data_json = {
+            'wrong_key': 5
+        }
+        responses.add(responses.GET, self.test_url, json=data_json)
+        response = ComplaintLandingView.as_view()(self.request)
+        self.assertNotContains(response, 'show-')
+```
+
+#### Mocking boto with moto
+
+When we need to mock AWS services that are called via [boto](https://github.com/boto/boto/) we use the [moto](https://github.com/spulec/moto) library. For example, [to test our S3 utilities](https://github.com/cfpb/cfgov-refresh/blob/master/cfgov/v1/tests/test_s3utils.py#L21-L25), we initialize moto in our test case's `setUp` method: 
 
 ```python
 class S3UtilsTestCase(TestCase):
@@ -197,7 +223,7 @@ From there calls to boto's S3 API will use the moto mock S3.
 
 ### Django models
 
-Any custom method or properties on Django models should be unit tested.  we generally use `django.test.TestCase` as the base class because testing models is going to involve creating them in the test database.
+Any custom method or properties on Django models should be unit tested.  We generally use `django.test.TestCase` as the base class because testing models is going to involve creating them in the test database.
 
 For example, interactive regulations `Part` objects [construct a full CFR title string from their fields](https://github.com/cfpb/cfgov-refresh/blob/master/cfgov/regulations3k/models/django.py#L58-L61):
 
@@ -245,7 +271,7 @@ Testing Django views requires responding to a `request` object. Django provides 
      
     *Note*: Requests made with `django.test.Client` include all Django request handling, including middleware. See [overriding settings](#overriding-settings) if this is a problem.
     
-    The morgage performance tests use a [combination of fixtures and Model Mommy-created models](https://github.com/cfpb/cfgov-refresh/blob/master/cfgov/data_research/tests/test_views.py#L47-L148) to set up for testing the timeseries view's response code and response data:
+    The mortgage performance tests use a [combination of fixtures and Model Mommy-created models](https://github.com/cfpb/cfgov-refresh/blob/master/cfgov/data_research/tests/test_views.py#L47-L148) to set up for testing the timeseries view's response code and response data:
     
     ```python
     from django.test import TestCase
@@ -263,7 +289,7 @@ Testing Django views requires responding to a `request` object. Django provides 
             self.assertIn('No metadata object found.', response.content)
     ```
     
-    Note the use of `django.core.urlresolvers.reverse` and named URL patterns to look up the URL rather than hard-coding urls directly in tests.
+    Note the use of `django.core.urlresolvers.reverse` and named URL patterns to look up the URL rather than hard-coding URLs directly in tests.
 
 - [`django.test.RequestFactory`](https://docs.djangoproject.com/en/1.11/topics/testing/advanced/#django.test.RequestFactory) shares the `django.test.Client` API, but instead of performing the request it simply generates a `request` object that can then be passed to a view manually. 
 
@@ -291,7 +317,7 @@ We generally do not recommend creating `django.http.HttpRequest` objects directl
 
 ### Wagtail pages
 
-Wagtail pages are special kinds of Django models that form the basis of the Content Management System. They provide many opportunities to override default methods (like `get_template()`) which need testing just like [Django models](#django-models), but they also provide their own view via the `serve()` method, which makes them testable like [Django views](#django-views). 
+[Wagtail pages](http://docs.wagtail.io/en/v1.13.4/topics/pages.html) are special kinds of Django models that form the basis of the Content Management System. They provide many opportunities to override default methods (like `get_template()`) which need testing just like [Django models](#django-models), but they also provide their own view via the `serve()` method, which makes them testable like [Django views](#django-views). 
 
 In general the same principle applies to Wagtail pages as to Django models: any custom method or properties should be unit tested.
 
