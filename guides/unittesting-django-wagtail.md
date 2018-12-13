@@ -1,10 +1,15 @@
 # Unit Testing Django and Wagtail
 
+- [Additional reading](#additional-reading)
+    - [Documentation](#documentation)
+    - [Inspiration](#inspiration)
 - [Setting up tests](#setting-up-tests)
     - [Chosing a `TestCase` base class](#choosing-a-testcase-base-class)
     - [Providing test data](#providing-test-data)
     - [Overriding settings](#overriding-settings)
     - [Mocking](#mocking)
+- [Running tests](#running-tests)
+    
 - [Common test patterns](#common-test-patterns)
     - [Django models](#django-models)
     - [Django views](#django-views)
@@ -13,9 +18,19 @@
     - [Wagtail admin customization](#wagtail-admin-customizations)
     - [Django management commands](#django-management-commands)
     - [Feature-flagged code](#feature-flagged-code)
-- [Additional reading](#additional-reading)
-    - [Documentation](#documentation)
-    - [Inspiration](#inspiration)
+
+## Additional reading
+
+### Documentation
+
+- [The Django testing documentation](https://docs.djangoproject.com/en/1.11/topics/testing/overview/)
+- [The Wagtail testing documentation](http://docs.wagtail.io/en/v1.13.4/advanced_topics/testing.html)
+- [Real Python's "Testing in Django"](https://realpython.com/testing-in-django-part-1-best-practices-and-examples/)
+
+### Inspiration
+
+- [The Django tests](https://github.com/django/django/tree/master/django): it's always a good idea to take a look at how Django tests code that's similar to yours.
+- [The Wagtail tests](https://github.com/wagtail/wagtail/): it's also a good idea to see how Wagtail's built-in pages, blocks, etc, are tested.
 
 ## Setting up tests
 
@@ -218,6 +233,14 @@ class S3UtilsTestCase(TestCase):
 ```
 
 From there calls to boto's S3 API will use the moto mock S3.
+
+
+## Running tests
+
+To run Django and Wagtail unit tests we prefer to use [tox](https://tox.readthedocs.io/en/latest/). tox creates and manages virtual environments for running tests against multiple versions of dependencies. 
+
+CFPB has a [sample `tox.ini`](https://github.com/cfpb/development/blob/master/tox.ini) that will test against Django 1.11 and 2.1 and Python 2.7 and 3.6. Additionally, running the tests for [CFPB's cfgov-refresh Django project are documented with that project](https://cfpb.github.io/cfgov-refresh/testing-be/)
+
 
 ## Common test patterns
 
@@ -463,15 +486,3 @@ class FlaggedWagtailOnlyViewTests(TestCase):
         self.assertEqual(response.status_code, 404)
 ```
 
-## Additional reading
-
-### Documentation
-
-- [The Django testing documentation](https://docs.djangoproject.com/en/1.11/topics/testing/overview/)
-- [The Wagtail testing documentation](http://docs.wagtail.io/en/v1.13.4/advanced_topics/testing.html)
-- [Real Python's "Testing in Django"](https://realpython.com/testing-in-django-part-1-best-practices-and-examples/)
-
-### Inspiration
-
-- [The Django tests](https://github.com/django/django/tree/master/django): it's always a good idea to take a look at how Django tests code that's similar to yours.
-- [The Wagtail tests](https://github.com/wagtail/wagtail/): it's also a good idea to see how Wagtail's built-in pages, blocks, etc, are tested.
