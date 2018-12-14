@@ -239,7 +239,7 @@ From there calls to boto's S3 API will use the moto mock S3.
 
 To run Django and Wagtail unit tests we prefer to use [tox](https://tox.readthedocs.io/en/latest/). tox creates and manages virtual environments for running tests against multiple versions of dependencies. 
 
-CFPB has a [sample `tox.ini`](https://github.com/cfpb/development/blob/master/tox.ini) that will test against Django 1.11 and 2.1 and Python 2.7 and 3.6. Additionally, running the tests for [CFPB's cfgov-refresh Django project are documented with that project](https://cfpb.github.io/cfgov-refresh/testing-be/)
+CFPB has a [sample `tox.ini`](https://github.com/cfpb/development/blob/master/tox.ini) that will test against Django 1.11 and 2.1 and Python 2.7 and 3.6. Additionally, running the tests for [CFPB's cfgov-refresh Django project are documented with that project](https://cfpb.github.io/cfgov-refresh/testing-be/).
 
 
 ## Common test patterns
