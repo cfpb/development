@@ -25,6 +25,7 @@ browser support standards.
 - [Atomic Design](guides/atomic-design.md)
 - [Building your project's front-end](guides/build.md)
 - [Code review guide](guides/code-reviews.md)
+- [Documenting your work](guides/documentation.md)
 - [CommonJS Modules](guides/javascript-modules-commonjs.md)
 - [Git and GitHub](guides/git.md)
 - [Publishing node modules](guides/npm.md)
