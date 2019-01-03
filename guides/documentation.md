@@ -2,9 +2,9 @@
 
 Good development practices include writing and maintaining documentation that covers the software being written.
 
-The Write the Docs [Documentation Guide](https://www.writethedocs.org/guide/) provides an excellent writeup on [why writing documentation is important](https://www.writethedocs.org/guide/writing/beginners-guide-to-docs/#why-write-docs), best processes for writing and maintaining docs, and tips for building a documentation culture in an organization.
+The Write the Docs [Documentation Principles](https://www.writethedocs.org/guide/writing/docs-principles/) are recommended reading and should be kept in mind when writing documentation at CFPB.
 
-The WTD [Documentation Principles](https://www.writethedocs.org/guide/writing/docs-principles/) are also recommended reading and should be kept in mind when writing documentation at CFPB.
+The WTD [Documentation Guide](https://www.writethedocs.org/guide/) also provides an excellent writeup on [why writing documentation is important](https://www.writethedocs.org/guide/writing/beginners-guide-to-docs/#why-write-docs), best processes for writing and maintaining docs, and tips for building a documentation culture in an organization.
 
 ## Where to put documentation
 
@@ -28,4 +28,5 @@ Any new or modified documentation should meet the following criteria before bein
 
 1. _Thoroughly reviewed:_ Ideally, documentation should be peer-reviewed by two people: one who is familiar with the material being covered, and one who is new to the material. This will ensure that documentation is appropriate for developers with different experience levels.
 1. _Tested:_ Any documentation that describes a process (for example, setting up a project) should be tested fully by a developer to verify its correctness. Consider defining and using user stories to guide this process (for example, "as a new member of the team, I need to get cf.gov running locally on my machine").
-1. _Properly located:_ Documentation should be located in an appropriate place, and be discoverable for developers seeking it out. See [above](#where-to-put-documentation) for additional detail.
+1. _Properly located:_ Documentation should be located in an appropriate place. [See "Where to put documentation" above](#where-to-put-documentation) for additional detail.
+1. _Properly discoverable:_ Documentation should be linked to from an appropriate landing page (for example, this repository's [`README.md`](https://github.com/cfpb/development/blob/master/README.md) and, if possible, be discoverable through search ([for example](https://cfpb.github.io/cfgov-refresh/search.html?q=testing)).
