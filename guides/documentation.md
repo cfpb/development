@@ -20,7 +20,7 @@ Documentation specific to
 [https://www.consumerfinance.gov](https://www.consumerfinance.gov) or
 the software that powers it should live in the [cfgov-refresh](https://github.com/cfpb/cfgov-refresh) repository. Documentation is written as [Markdown files](https://github.com/cfpb/cfgov-refresh/tree/master/docs) in that repository, converted to HTML by [MkDocs](https://www.mkdocs.org/), and served by GitHub Pages at [https://cfpb.github.io/cfgov-refresh/](https://cfpb.github.io/cfgov-refresh/).
 
-Documentation specific to other projects should live in that project's repository. Exceptions to this include repositories that only work within the context of a larger project, for example the cf.gov satellite apps. In that case it may be appropriate to locate documentation within the cf.gov repository, as long as the satellite app contains a link pointing to the appropriate location.
+Documentation specific to other projects should live in that project's repository. Exceptions to this include repositories that only work within the context of a larger project, for example the cf.gov satellite apps. In that case it may be appropriate to locate documentation within the cfgov-refresh repository, as long as the satellite app contains a link pointing to the appropriate location.
 
 ## Documentation definition of done
 
