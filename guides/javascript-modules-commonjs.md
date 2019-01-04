@@ -1,4 +1,4 @@
-# JavaScript Guide - CommonJS Modules
+# Creating CommonJS Modules
 
 ## Table of Contents
 

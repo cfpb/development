@@ -1,4 +1,4 @@
-# npm Guidelines
+# Using npm Modules in Projects
 
 This document provides general guidelines for using [npm](https://www.npmjs.com/) with CFPB projects.
 

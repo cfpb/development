@@ -1,4 +1,4 @@
-# Authoring npm modules
+# Authoring, Testing, and Publishing npm Modules
 
 Whenever possible, we should write JavaScript as small modules that can be published to [npm](https://www.npmjs.com/). This document includes guidelines for authoring and publishing these modules.
 
