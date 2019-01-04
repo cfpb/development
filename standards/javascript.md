@@ -40,7 +40,7 @@ exist.
 
 This style guide assumes you're using a module system such as [CommonJS][1],
 [AMD][2], [ES6 Modules][3], or any other kind of module system. If you are
-using CommonJS, refer to the [CommonJS guide](javascript-modules-commonjs.md)
+using CommonJS, refer to the [CommonJS guide](creating-commonjs-modules.md)
 for structuring your modules. Modules systems provide individual scoping,
 avoid leaks to the `global` object, and improve code base organization by
 **automating dependency graph generation**, instead of having to resort to
