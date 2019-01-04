@@ -9,7 +9,7 @@ A guide for the development team at the [CFPB](https://cfpb.github.io/).
 > – [idiomatic.js](https://github.com/rwaldron/idiomatic.js/#all-code-in-any-code-base-should-look-like-a-single-person-typed-it-no-matter-how-many-people-contributed)
 
 - [API standards](standards/api.md)
-- [CSS/Less standards](standards/css.md)
+- [CSS & Less standards](standards/css.md)
 - [JavaScript standards](standards/javascript.md)
 - [Markup standards](standards/markup.md)
 - [Python standards](standards/python.md)
