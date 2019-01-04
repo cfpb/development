@@ -1,4 +1,4 @@
-# CSS & Less Guide
+# CSS & Less Standards
 
 This style guide aims to provide the ground rules for CFPB's CSS,
 such that it's highly readable and consistent across different developers on a team.

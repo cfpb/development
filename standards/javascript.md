@@ -1,4 +1,4 @@
-# JavaScript Guide
+# JavaScript Standards
 
 This style guide aims to provide the ground rules for CFPB's JavaScript code,
 such that it's highly readable and consistent across different developers on a
