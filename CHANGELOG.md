@@ -1,5 +1,9 @@
 All notable changes to this project will be documented in this file.
 
+## 2019-01-04
+
+- Renamed some pages to better reflect their content
+
 ## 2017-11-08
 
 - Add PyPI guide

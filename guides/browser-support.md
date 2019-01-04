@@ -119,7 +119,7 @@ browsers:
 We use a mix of [Sauce Labs](https://saucelabs.com/) and
 [localtunnel](https://localtunnel.github.io/www/) to manually test our site.
 Be sure to review both the
-[testing](https://github.com/cfpb/development/blob/master/guides/testing.md)
+[testing](https://github.com/cfpb/development/blob/master/guides/front-end-testing.md)
 and [accessibility](https://github.com/cfpb/development/blob/master/guides/accessibility.md)
 guides when reviewing sites locally.
 

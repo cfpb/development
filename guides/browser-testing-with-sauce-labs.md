@@ -1,4 +1,4 @@
-# Testing with Sauce Labs
+# Browser Testing with Sauce Labs
 
 Use Sauce Labs to manually test your application in a range of browsers and virtual machines. Automated tests can also be run in multiple browsers with Sauce Labs using their API. For examples, check out their documentation for [running frontend JavaScript unit tests](https://wiki.saucelabs.com/display/DOCS/JavaScript+Unit+Testing).
 
@@ -14,7 +14,7 @@ Once you create an account, you'll need to install "Sauce Connect" so you can ac
 
 1. Download the app here: https://wiki.saucelabs.com/display/DOCS/Basic+Sauce+Connect+Proxy+Setup#BasicSauceConnectProxySetup-SettingUpSauceConnect
 1. Unzip the folder and copy the unzipped folder to your user Applications directory.
-1. Open the unzipped folder in Terminal. The easiest way to do this is to open Terminal, then in Finder go to the folder and drag it to the Terminal dock icon. 
+1. Open the unzipped folder in Terminal. The easiest way to do this is to open Terminal, then in Finder go to the folder and drag it to the Terminal dock icon.
 1. Get your username and Access Key ready: click your name on the top right when logged in on SauceLabs.com and click "My account" in the menu. Your username is at the top of the page. Scroll down to find your access key and copy it.
 1. Back in Terminal, run this command, using your credentials from SauceLabs.com:
     ```

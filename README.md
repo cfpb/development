@@ -9,7 +9,7 @@ A guide for the development team at the [CFPB](https://cfpb.github.io/).
 > – [idiomatic.js](https://github.com/rwaldron/idiomatic.js/#all-code-in-any-code-base-should-look-like-a-single-person-typed-it-no-matter-how-many-people-contributed)
 
 - [API standards](standards/api.md)
-- [CSS/Less standards](standards/css.md)
+- [CSS & Less standards](standards/css.md)
 - [JavaScript standards](standards/javascript.md)
 - [Markup standards](standards/markup.md)
 - [Python standards](standards/python.md)
@@ -26,14 +26,14 @@ browser support standards.
 - [Building your project's front-end](guides/build.md)
 - [Code review guide](guides/code-reviews.md)
 - [Documenting your work](guides/documentation.md)
-- [CommonJS Modules](guides/javascript-modules-commonjs.md)
+- [Creating CommonJS modules](guides/creating-commonjs-modules.md)
 - [Git and GitHub](guides/git.md)
-- [Publishing node modules](guides/npm.md)
+- [Authoring, testing, and publishing npm modules](guides/authoring-npm-modules.md)
 - [Publishing Python packages to PyPI](guides/pypi.md)
 - [Screen reader differences](guides/screen-reader-differences.md)
-- [Testing](guides/testing.md)
-- [Testing with Sauce Labs](guides/sauce-labs.md)
-- [Using node modules](guides/npm-usage.md)
+- [Front-end testing](guides/front-end-testing.md)
+- [Browser testing with Sauce Labs](guides/browser-testing-with-sauce-labs.md)
+- [Using npm modules in projects](guides/using-npm-modules-in-projects.md)
 - [Unit testing Django and Wagtail](guides/unittesting-django-wagtail.md)
 
 ## Tools
