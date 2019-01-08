@@ -53,13 +53,13 @@ Capital Framework is our modular front end framework. New projects should start 
 - **Willingness**: We are willing to help each other with anything that is good for the team
 - **Excellence**: We believe that excellence is defined by a commitment to and practice of constant learning and improvement
 
-## Our Front End Web Development Values
+## Our Front-end web development values
 
 1. End goals of the user should be what drive the front-end design.
 2. Pages, apps, and sites should be inclusive of all users.
-3. We want to continue to use cutting-edge technologies and methods to build modern applications, but we won’t allow that to preclude usability for all consumers.
+3. We want to continue to use cutting-edge technologies and methods to build modern applications, but usability for all consumers takes precedence.
 4. Testing in supported browsers should be as painless as we can make it.
-5. Websites should download quickly and not cost smartphone users much money.
+5. Websites should download quickly and not cost users on metered data connections much money.
 6. Development workflows and standards are understood by all of us and easy to maintain.
 
 
