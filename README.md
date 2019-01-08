@@ -66,7 +66,7 @@ Capital Framework is our modular front end framework. New projects should start 
 
 1. End goals of the user should be what drive the front-end design.
 2. Pages, apps, and sites should be inclusive of all users.
-3. We want to continue to use cutting-edge technologies and methods to build modern applications, but usability for all consumers takes precedence.
+3. We want to continue to use cutting-edge technologies and methods to build modern applications, but without compromising usability for all consumers.
 4. Testing in supported browsers should be as painless as we can make it.
 5. Websites should download quickly and not cost users on metered data connections much money.
 6. Development workflows and standards are understood by all of us and easy to maintain.
