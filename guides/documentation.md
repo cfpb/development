@@ -89,7 +89,7 @@ required third-party dependencies.
 Be as specific as possible about the required versions of any external dependencies.
 
 When referencing external links, try to make the references as specific as possible,
-for example by using page hash links
+for example by using anchor links
 ([like this](https://github.com/cfpb/development/#guides)) to target specific places on the page.
 When referencing specific lines in source code, consider linking to specific
 releases or commit hashes instead of the master branch
