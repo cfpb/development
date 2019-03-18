@@ -31,6 +31,7 @@ browser support standards.
 - [Documenting your work](guides/documentation.md)
 - [Front-end testing](guides/front-end-testing.md)
 - [Git and GitHub](guides/git.md)
+- [Installing and using Python 2 and 3](guides/installing-python.md)
 - [Publishing Python packages to PyPI](guides/pypi.md)
 - [Screen reader differences](guides/screen-reader-differences.md)
 - [Unit testing Django and Wagtail](guides/unittesting-django-wagtail.md)
