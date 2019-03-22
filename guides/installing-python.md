@@ -112,6 +112,8 @@ pyenv local 2.7.15
 
 This will create a `.python-version` file in the current directory. When you're in that directory or below it, pyenv will use the version you've specified here as `python`. 
 
+**Note:** Please ensure that `.python-version` is in the `.gitignore` file for a given repository and that it does not get committed.
+
 **Note:** When you create a virtualenv with `mkvirtualenv` with a local Python version set, it will default to that local Python version, and not the global version. You can still specify `-p` argument with the specific Python you wish to use.
 
 ## Upgrading Python versions
