@@ -40,7 +40,7 @@ brew uninstall python
 brew cleanup python
 brew uninstall virtualenvwrapper
 ```
-You should also remove any variables that reference Homebrew's Python from your shell's dotfiles (`.profile`, `.bashrc` for bash users, `.zshrc` for zsh users), for example:
+You should also remove any variables that reference Homebrew's Python from your shell's dotfiles (`.profile`, `.bashrc` for bash users, `.zshrc` for zsh users), for example, removing:
 
 ```shell
 export PYTHONPATH=$HOME/homebrew/bin/python
@@ -61,15 +61,9 @@ brew install pyenv-virtualenvwrapper
 
 **Note:** pyenv-virtualenvwrapper is not strictly required, depending on how you wish to manage your virtualenvs. See the [notes in the pyenv-virtualewrapper README](https://github.com/pyenv/pyenv-virtualenvwrapper#pyenv-virtualenvwrapper). Some of our documentation assumes `virtualenvwrapper` exists, so this guide installs it. You will see a deprecation warning when using `mkvirtualenv`:
 
-```
-WARNING: the pyenv script is deprecated in favour of `python3.6 -m venv`
-```
-
-Until we switch to using Python 3 and the `venv` module full-time, this can be safely ignored.
-
 ## Configuring pyenv
 
-Per the [pyenv documentation](https://github.com/pyenv/pyenv#basic-github-checkout), the follow environment variables need to be added to your shell dotfiles (`.bashrc` for bash users, `.zshrc` for zsh users).
+Per the [pyenv documentation](https://github.com/pyenv/pyenv#basic-github-checkout), the follow environment variables need to be added to your shell dotfiles (`.profile`, `.bashrc` for bash users, `.zshrc` for zsh users).
 
 ```shell
 # pyenv
@@ -97,7 +91,7 @@ pyenv install 3.6.8
 pyenv install 2.7.15
 ```
 
-With these two versions of Python installed, you 
+Before you can use either of these versions of Python, you have to set them as either global or local versions.
 
 ## Setting the global Python versions
 
@@ -132,7 +126,11 @@ pyenv local 3.7.2
 
 And the local `.python-version` file will contain `3.7.2`.
 
-This does not work for virtualenvs, however. If you install a new version of Python, for example, 3.7.2, you must recreate the virtualenv with the new version of Python. The virtualenv will have be recreated (`mkvirtualenv`) with the new version of Python either set locally, globally, or specified with `-p`.
+This does not work for virtualenvs, however. If you install a new version of Python, for example, 3.7.2, you must recreate the virtualenv with the new version of Python. The virtualenv will have be recreated (`mkvirtualenv`) with the new version of Python either set locally, globally, or specified with `--python`:
+
+```shell
+mkvirtualenv --python=python2.7 [virtualenv name]
+```
 
 # Further reading
 
