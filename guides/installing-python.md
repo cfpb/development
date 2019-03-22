@@ -55,7 +55,6 @@ To [install pyenv on MacOS](https://github.com/pyenv/pyenv#homebrew-on-macos), u
 ```shell
 brew update
 brew install pyenv
-brew install pyenv-virtualenv
 brew install pyenv-virtualenvwrapper
 ```
 
@@ -70,7 +69,6 @@ Per the [pyenv documentation](https://github.com/pyenv/pyenv#basic-github-checko
 export PYENV_ROOT="$HOME/.pyenv"
 
 # pyenv-virtualenvwrapper
-export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
 export WORKON_HOME=$HOME/.virtualenvs
 
 # Ensure this placed toward the end of the file
