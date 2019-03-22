@@ -58,7 +58,7 @@ brew install pyenv
 brew install pyenv-virtualenvwrapper
 ```
 
-**Note:** pyenv-virtualenvwrapper is not strictly required, depending on how you wish to manage your virtualenvs. See the [notes in the pyenv-virtualewrapper README](https://github.com/pyenv/pyenv-virtualenvwrapper#pyenv-virtualenvwrapper). Some of our documentation assumes `virtualenvwrapper` exists, so this guide installs it. You will see a deprecation warning when using `mkvirtualenv`:
+**Note:** pyenv-virtualenvwrapper is not strictly required, depending on how you wish to manage your virtualenvs. See the [notes in the pyenv-virtualewrapper README](https://github.com/pyenv/pyenv-virtualenvwrapper#pyenv-virtualenvwrapper). Some of our documentation assumes `virtualenvwrapper` exists, so this guide installs it.
 
 ## Configuring pyenv
 
