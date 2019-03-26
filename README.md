@@ -17,24 +17,25 @@ A guide for the development team at the [CFPB](https://cfpb.github.io/).
 ## Guides
 
 - [Start here](guides/start-here.md) – New to software development at the CFPB? Read this first.
+- [Accessibility](guides/accessibility.md)
+- [Atomic Design](guides/atomic-design.md)
+- [Authoring, testing, and publishing npm modules](guides/authoring-npm-modules.md)
 - [Browser support](guides/browser-support.md)
 - [Browser support exceptions](guides/browser-support-exceptions.md): This document
 outlines the decision making process for requesting an exception to current
 browser support standards.
-- [Accessibility](guides/accessibility.md)
-- [Atomic Design](guides/atomic-design.md)
+- [Browser testing with Sauce Labs](guides/browser-testing-with-sauce-labs.md)
 - [Building your project's front-end](guides/build.md)
 - [Code review guide](guides/code-reviews.md)
-- [Documenting your work](guides/documentation.md)
 - [Creating CommonJS modules](guides/creating-commonjs-modules.md)
+- [Documenting your work](guides/documentation.md)
+- [Front-end testing](guides/front-end-testing.md)
 - [Git and GitHub](guides/git.md)
-- [Authoring, testing, and publishing npm modules](guides/authoring-npm-modules.md)
+- [Installing and using Python 2 and 3](guides/installing-python.md)
 - [Publishing Python packages to PyPI](guides/pypi.md)
 - [Screen reader differences](guides/screen-reader-differences.md)
-- [Front-end testing](guides/front-end-testing.md)
-- [Browser testing with Sauce Labs](guides/browser-testing-with-sauce-labs.md)
-- [Using npm modules in projects](guides/using-npm-modules-in-projects.md)
 - [Unit testing Django and Wagtail](guides/unittesting-django-wagtail.md)
+- [Using npm modules in projects](guides/using-npm-modules-in-projects.md)
 
 ## Tools
 

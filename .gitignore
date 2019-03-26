@@ -17,6 +17,7 @@ Thumbs.db
 *.egg-info/
 __pycache__/
 *.py[cod]
+.python-version
 
 # Django #
 #################
