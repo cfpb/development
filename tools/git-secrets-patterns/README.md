@@ -14,8 +14,6 @@ This is a set of patterns for use with git-secrets, which we can use to keep sen
 
 1. Install the default patterns into git-secrets with `git secrets  --add-provider -- grep -v \#  /path/to/development/tools/git-secret-patterns/default.txt`
 
-1. Install the profanity patterns into git-secrets with `git secrets  --add-provider -- grep -v \#  /path/to/development/tools/git-secret-patterns/profanity.txt`
-
 ## Usage
 
 Scan a repo with [`git secrets --scan`](https://github.com/awslabs/git-secrets#options-for-scan) or use [`git secrets --scan-history`](https://github.com/awslabs/git-secrets#operation-modes) to scan the entire commit history.

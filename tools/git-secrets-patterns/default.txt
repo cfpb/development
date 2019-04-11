@@ -35,6 +35,6 @@ hash
 raw_input
 pickle
 
-# CFPB-specific concerns
-\.gov
-cfpb
+## CFPB-specific concerns
+#\.gov
+#cfpb
