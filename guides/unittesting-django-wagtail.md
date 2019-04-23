@@ -151,7 +151,7 @@ It is sometimes useful to modify Django settings when testing code that may beha
   This can include testing different values of feature flags: 
   
   ```python
-  @override_settings(FLAGS={'MYFLAG': {'boolean': 'True'}})
+  @override_settings(FLAGS={'MYFLAG': [('boolean', True)]})
   ```
   
   Or when we need to test behavior with AWS S3:
@@ -472,7 +472,7 @@ For example, to test [a function that serves a URL via Wagtail depending on the 
 ```python
 class FlaggedWagtailOnlyViewTests(TestCase):
 
-    @override_settings(FLAGS={'MY_TEST_FLAG': {'boolean': True}})
+    @override_settings(FLAGS={'MY_TEST_FLAG': [('boolean', True)]})
     def test_flag_set_returns_view_that_calls_wagtail_serve_view(self):
         response = self.client.get('/')
         self.assertContains(
@@ -480,7 +480,7 @@ class FlaggedWagtailOnlyViewTests(TestCase):
             'U.S. government agency that makes sure banks'
         )
 
-    @override_settings(FLAGS={'MY_TEST_FLAG': {'boolean': False}})
+    @override_settings(FLAGS={'MY_TEST_FLAG': [('boolean', False)]})
     def test_flag_not_set_returns_view_that_raises_http404(self):
         response = self.client.get('/')
         self.assertEqual(response.status_code, 404)
