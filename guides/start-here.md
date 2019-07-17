@@ -3,7 +3,7 @@
 A handy guide to assist software developers at the CFPB.
 Similar to a "definition of done" document, the below steps should be completed in order for a project to be considered done.
 
-## Before you start writing code
+## 1. Before you start writing code
 
 - [ ] Browse our [development guidelines](https://github.com/cfpb/development)
 - [ ] Consult with other developers before making large technical decisions, e.g., before choosing your project's language, framework and/or architecture pattern
@@ -13,7 +13,7 @@ Similar to a "definition of done" document, the below steps should be completed 
 - [ ] Undergo accessibility audit training (schedule it if you haven't already)
 - [ ] Discuss web analytics goals with your team and schedule a meeting with the Digital Analytics team to plan Google Analytics implementation
 
-## Writing code
+## 2. Writing code
 
 - [ ] Code complies with our [development guidelines](https://github.com/cfpb/development)
 - [ ] Code is covered by tests and those tests pass locally
@@ -22,7 +22,7 @@ Similar to a "definition of done" document, the below steps should be completed 
 - [ ] New features use [Capital Framework](https://cfpb.github.io/capital-framework/) components when applicable
 - [ ] When a feature is nearing completion, perform an accessibility audit on the respective page(s). Report issues and make a plan made for fixing critical bugs before release
 
-## Merging code
+## 3. Merging code
 
 - [ ] Use a [feature branch workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow)
 - [ ] Add CFPB's [PR template](/.github/PULL_REQUEST_TEMPLATE.md) to your repo if it isn't already there
@@ -32,7 +32,7 @@ Similar to a "definition of done" document, the below steps should be completed 
   - [ ] Be [reviewed](/guides/code-reviews.md) and approved by at least one other developer
   - [ ] Be small enough in scope that they can be reviewed in a couple hours
 
-## Releasing code
+## 4. Releasing code
 
 - [ ] All critical and high-priority accessibility bugs have been fixed
 - [ ] Project documentation has been updated (usually a README or GHE wiki)
