@@ -128,9 +128,24 @@ And the local `.python-version` file will contain `3.7.2`.
 
 This does not work for virtualenvs, however. If you install a new version of Python, for example, 3.7.2, you must recreate the virtualenv with the new version of Python. The virtualenv will have be recreated (`mkvirtualenv`) with the new version of Python either set locally, globally, or specified with `--python`:
 
+If you already have created a virtual environment in the past (and it's running):
+
+```shell
+deactivate
+rmvirtualenv cfgov-refresh
+```
+
+If python 2.7 is already set up as the local python (which it should be if you followed steps above, check by running `pyenv versions` and you should see 2.7 is the active python):
+```shell
+mkvirtualenv cfgov-refresh
+```
+
+If Python isn't set as the local python, you need to specify when you create the virtual environment:
+
 ```shell
 mkvirtualenv --python=python2.7 [virtualenv name]
 ```
+
 
 # Further reading
 
