@@ -135,12 +135,12 @@ deactivate
 rmvirtualenv cfgov-refresh
 ```
 
-If python 2.7 is already set up as the local python (which it should be if you followed steps above, check by running `pyenv versions` and you should see 2.7 is the active python):
+If Python 2.7 is already set up as the local Python (which it should be if you followed steps above, check by running `pyenv versions`):
 ```shell
 mkvirtualenv cfgov-refresh
 ```
 
-If Python isn't set as the local python, you need to specify when you create the virtual environment:
+If Python 2.7 isn't set as the local Python, you need to specify when you create the virtual environment:
 
 ```shell
 mkvirtualenv --python=python2.7 [virtualenv name]
