@@ -2,7 +2,7 @@
 
 1. [Linting](#linting)
 1. [Imports](#imports)
-3. [Python versions](#python-versions)
+3. [Python version](#python-version)
 4. [`requirements.txt`, `setup.py`, and specifying dependencies](#requirementstxt-setuppy-and-specifying-dependencies)
 
 ## Linting
@@ -37,13 +37,13 @@ We use [isort](https://github.com/timothycrosley/isort) to lint imports to compl
 
 The isort configuration can go into a `tox.ini` file under an `[isort]` header.
 
-## Python versions
+## Python version
 
-As we transition from Python 2.7 to Python 3 it is highly recommended to test against both Python 2.7 and Python 3.6.
+It is highly recommended to test against Python 3.6.
 
-We recommend using [tox](https://tox.readthedocs.io/en/latest/) for matrix testing, and provide a [sample tox configuration](../tox.ini) that tests against Python 2.7 and 3.6 and Django LTS versions 1.8 and 1.11.
+We recommend using [tox](https://tox.readthedocs.io/en/latest/) for matrix testing, and provide a [sample tox configuration](../tox.ini) that tests against Python 3.6 and Django LTS versions 1.8 and 1.11.
 
-For writing code that is Python 2 and 3-compatible, please see the [Python Porting HOWTO](https://docs.python.org/3/howto/pyporting.html) and the [Django Porting to Python3](https://docs.djangoproject.com/en/1.11/topics/python3/). In particular, we prefer to:
+For writing code that is Python 3-compatible, please see the [Python Porting HOWTO](https://docs.python.org/3/howto/pyporting.html) and the [Django Porting to Python3](https://docs.djangoproject.com/en/1.11/topics/python3/). In particular, we prefer to:
 
 - [Use feature detection instead of version detection](https://docs.python.org/3/howto/pyporting.html#use-feature-detection-instead-of-version-detection)
 - Use absolute imports (`from __future__ import absolute_import`)
