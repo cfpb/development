@@ -39,7 +39,7 @@ The isort configuration can go into a `tox.ini` file under an `[isort]` header.
 
 ## Python version
 
-It is highly recommended to test against Python 3.6.
+We test against Python 3.6.
 
 We recommend using [tox](https://tox.readthedocs.io/en/latest/) for matrix testing, and provide a [sample tox configuration](../tox.ini) that tests against Python 3.6 and Django LTS versions 1.8 and 1.11.
 
