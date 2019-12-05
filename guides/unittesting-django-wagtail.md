@@ -38,20 +38,20 @@
 
 When writing unit tests for code in cfgov-refresh there are multiple possible test case base classes that can be used. 
 
-- [`unittest.TestCase`](https://docs.python.org/2.7/library/unittest.html#unittest.TestCase): For testing Python code that does not interact with Django or Wagtail. This class provides all the base Python unit test assertions, such as:
+- [`unittest.TestCase`](https://docs.python.org/3.6/library/unittest.html#unittest.TestCase): For testing Python code that does not interact with Django or Wagtail. This class provides all the base Python unit test assertions, such as:
 
-    - [`assertEqual(a, b)`](https://docs.python.org/2.7/library/unittest.html#unittest.TestCase.assertEqual)
-    - [`assertNotEqual(a, b)`](https://docs.python.org/2.7/library/unittest.html#unittest.TestCase.assertNotEqual)
-    - [`assertTrue(x)`](https://docs.python.org/2.7/library/unittest.html#unittest.TestCase.assertTrue)
-    - [`assertFalse(x)`](https://docs.python.org/2.7/library/unittest.html#unittest.TestCase.assertFalse)
-    - [`assertIs(a, b)`](https://docs.python.org/2.7/library/unittest.html#unittest.TestCase.assertIs)
-    - [`assertIsNot(a, b)`](https://docs.python.org/2.7/library/unittest.html#unittest.TestCase.assertIsNot)
-    - [`assertIsNone(x)`](https://docs.python.org/2.7/library/unittest.html#unittest.TestCase.assertIsNone)
-    - [`assertIsNotNone(x)`](https://docs.python.org/2.7/library/unittest.html#unittest.TestCase.assertIsNotNone)
-    - [`assertIn(a, b)`](https://docs.python.org/2.7/library/unittest.html#unittest.TestCase.assertIn)
-    - [`assertNotIn(a, b)`](https://docs.python.org/2.7/library/unittest.html#unittest.TestCase.assertNotIn)
-    - [`assertIsInstance(a, b)`](https://docs.python.org/2.7/library/unittest.html#unittest.TestCase.assertIsInstance)
-    - [`assertNotIsInstance(a, b)`](https://docs.python.org/2.7/library/unittest.html#unittest.TestCase.assertNotIsInstance)
+    - [`assertEqual(a, b)`](https://docs.python.org/3.6/library/unittest.html#unittest.TestCase.assertEqual)
+    - [`assertNotEqual(a, b)`](https://docs.python.org/3.6/library/unittest.html#unittest.TestCase.assertNotEqual)
+    - [`assertTrue(x)`](https://docs.python.org/3.6/library/unittest.html#unittest.TestCase.assertTrue)
+    - [`assertFalse(x)`](https://docs.python.org/3.6/library/unittest.html#unittest.TestCase.assertFalse)
+    - [`assertIs(a, b)`](https://docs.python.org/3.6/library/unittest.html#unittest.TestCase.assertIs)
+    - [`assertIsNot(a, b)`](https://docs.python.org/3.6/library/unittest.html#unittest.TestCase.assertIsNot)
+    - [`assertIsNone(x)`](https://docs.python.org/3.6/library/unittest.html#unittest.TestCase.assertIsNone)
+    - [`assertIsNotNone(x)`](https://docs.python.org/3.6/library/unittest.html#unittest.TestCase.assertIsNotNone)
+    - [`assertIn(a, b)`](https://docs.python.org/3.6/library/unittest.html#unittest.TestCase.assertIn)
+    - [`assertNotIn(a, b)`](https://docs.python.org/3.6/library/unittest.html#unittest.TestCase.assertNotIn)
+    - [`assertIsInstance(a, b)`](https://docs.python.org/3.6/library/unittest.html#unittest.TestCase.assertIsInstance)
+    - [`assertNotIsInstance(a, b)`](https://docs.python.org/3.6/library/unittest.html#unittest.TestCase.assertNotIsInstance)
 
 - [`django.test.SimpleTestCase`](https://docs.djangoproject.com/en/1.11/topics/testing/tools/#simpletestcase): For testing Django or Wagtail code that does not interact with the database. This class provides all the assertions that `unittest.TestCase` provides as well as:
 
@@ -239,7 +239,7 @@ From there calls to boto's S3 API will use the moto mock S3.
 
 To run Django and Wagtail unit tests we prefer to use [tox](https://tox.readthedocs.io/en/latest/). tox creates and manages virtual environments for running tests against multiple versions of dependencies. 
 
-CFPB has a [sample `tox.ini`](https://github.com/cfpb/development/blob/master/tox.ini) that will test against Django 1.11 and 2.1 and Python 2.7 and 3.6. Additionally, running the tests for [CFPB's cfgov-refresh Django project are documented with that project](https://cfpb.github.io/cfgov-refresh/testing-be/).
+CFPB has a [sample `tox.ini`](https://github.com/cfpb/development/blob/master/tox.ini) that will test against Django 1.11 and 2.1 and Python 3.6. Additionally, running the tests for [CFPB's cfgov-refresh Django project are documented with that project](https://cfpb.github.io/cfgov-refresh/testing-be/).
 
 
 ## Common test patterns

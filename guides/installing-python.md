@@ -1,13 +1,16 @@
-# Installing and using Python 2 and 3
+# Installing and using Python
 
 - [Migrating from Homebrew-installed Python](#migrating-from-homebrew-installed-python)
    - [Remove Homebrew-installed virtualenvwrapper](#remove-homebrew-installed-virtualenvwrapper)
    - [Optional: remove Homebrew-installed Python and variables](#optional-remove-homebrew-installed-python-and-variables)
 - [Installing pyenv](#installing-pyenv)
 - [Configuring pyenv](#configuring-pyenv)
-- [Installing Python](#installing-python)
-- [Setting the global Python versions](#setting-the-global-python-versions)
-- [Using local Python versions](#using-local-python-versions)
+- [Installing Python 2](#installing-python-2)
+- [Installing Python 3](#installing-python-3)
+- [Setting the global Python 2 version](#setting-the-global-python-2-version)
+- [Setting the global Python 3 version](#setting-the-global-python-3-version)
+- [Using local Python 2 version](#using-local-python-2-version)
+- [Using local Python 3 version](#using-local-python-3-version)
 - [Upgrading Python versions](#upgrading-python-versions)
 - [Further reading](#further-reading)
 
@@ -80,34 +83,60 @@ pyenv virtualenvwrapper_lazy
 
 Restart your shell.
 
-## Installing Python
+## Installing Python 2
 
-We have projects that require both Python 2.7 and Python 3.6:
+**Note:** WARNING this version of Python is deprecated, but here's what to do if you're sure you need it.
 
-```shell
-pyenv install 3.6.8
-pyenv install 2.7.15
-```
-
-Before you can use either of these versions of Python, you have to set them as either global or local versions.
-
-## Setting the global Python versions
-
-By default with pyenv when you invoke `python`, you will be using the system-installed Python. To set the [global Python version to the versions installed above](https://github.com/pyenv/pyenv/blob/master/COMMANDS.md#pyenv-global):
+We are still going to have internal projects (like the Intranet) that may require Python 2.7
 
 ```shell
-pyenv global 3.6.8 2.7.15
+pyenv install 2.7.16
 ```
 
-This will make `python` version 3.6.8, and `python2` will be 2.7.15. This is our recommended configuration.
+## Installing Python 3
 
+We have projects that require Python 3.6
 
-## Using local Python versions
+```shell
+pyenv install 3.6.9
+```
+
+Before you can use a version of Python, you have to set them as either global or local versions.
+
+## Setting the global Python 2 version
+
+By default with pyenv when you invoke `python`, you will be using the system-installed Python. To set the [global Python version to 2.7.16](https://github.com/pyenv/pyenv/blob/master/COMMANDS.md#pyenv-global):
+
+```shell
+pyenv global 2.7.16
+```
+
+This will make `python` version 2.7.16. This is NOT our recommended configuration.
+
+## Setting the global Python 3 version
+
+By default with pyenv when you invoke `python`, you will be using the system-installed Python. To set the [global Python version to 3.6.9](https://github.com/pyenv/pyenv/blob/master/COMMANDS.md#pyenv-global):
+
+```shell
+pyenv global 3.6.9
+```
+
+This will make `python` version 3.6.9. This is our recommended configuration.
+
+## Using local Python 2 version
 
 pyenv also allows you to set a local Python version (the version of Python that is available in the current directory):
 
 ```shell
-pyenv local 2.7.15
+pyenv local 2.7.16
+```
+
+## Using local Python 3 version
+
+pyenv also allows you to set a local Python version (the version of Python that is available in the current directory):
+
+```shell
+pyenv local 3.6.9
 ```
 
 This will create a `.python-version` file in the current directory. When you're in that directory or below it, pyenv will use the version you've specified here as `python`. 
@@ -135,15 +164,15 @@ deactivate
 rmvirtualenv cfgov-refresh
 ```
 
-If Python 2.7 is already set up as the local Python (which it should be if you followed steps above, check by running `pyenv versions`):
+If Python 3.6 is already set up as the local Python (which it should be if you followed steps above, check by running `pyenv versions`):
 ```shell
 mkvirtualenv cfgov-refresh
 ```
 
-If Python 2.7 isn't set as the local Python, you need to specify when you create the virtual environment:
+If Python 3.6 isn't set as the local Python, you need to specify when you create the virtual environment:
 
 ```shell
-mkvirtualenv --python=python2.7 [virtualenv name]
+mkvirtualenv --python=python3.6 [virtualenv name]
 ```
 
 
