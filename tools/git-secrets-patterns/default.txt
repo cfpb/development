@@ -18,10 +18,6 @@ uname[\s]*=[\s]*.+
 # Email addresses
 [A-Z0-9._%-]+@[A-Z0-9.\-]+\.[A-Z]{2,4}
 
-# Credit cards
-# Credit: grep Pocket Reference, 2009 O'Reilly Publishing
-\b[0-9]{4}(( |-|)[0-9]{4}){3}\b
-
 # Private keys
 \-\-\-\-\-BEGIN\sRSA\sPRIVATE\sKEY\-\-\-\-\-.*\-\-\-\-\-END\sRSA\sPRIVATE\sKEY\-\-\-\-\-
 SECRET_KEY
