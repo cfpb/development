@@ -13,7 +13,7 @@ All of our Python code should match the [PEP8 style guide](https://www.python.or
 
 We follow [PEP8's line length](https://www.python.org/dev/peps/pep-0008/#maximum-line-length) instead of Django's for consistency with our other development standards. We follow [Django's recommended import ordering in Django projects](https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/coding-style/#imports).
 
-We use [Black](http://black.readthedocs.io) to standardize formatting of our Python code and make linting easier. We do override the default line length for Black, however, to 78. We also exclude generated files like migrations. We provide a sample [`pyproject.toml` file containing line length and exclude configuration for Black](../pyproject.toml).
+We use [Black](http://black.readthedocs.io) to standardize formatting of our Python code and make linting easier. We override the default Black line length to 79 to match PEP8. We also exclude generated files like migrations. We provide a sample [`pyproject.toml` file containing line length and exclude configuration for Black](../pyproject.toml).
 
 ## Linting
 
