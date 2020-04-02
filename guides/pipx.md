@@ -49,7 +49,7 @@ export PATH="/Users/<username>/.local/bin:$PATH"
 
 You might also want to take this opportunity to move it to wherever you have other path modifications.
 
-pipx also has a helper that provides [shell compltion instructions](https://pipxproject.github.io/pipx/installation/#shell-completion):
+pipx also has a helper that provides [shell completion instructions](https://pipxproject.github.io/pipx/installation/#shell-completion):
 
 ```shell
 pipx completions
