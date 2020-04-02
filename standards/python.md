@@ -1,16 +1,21 @@
 # Python Standards
 
+- [Style](#style)
 - [Linting](#linting)
 - [Imports](#imports)
 - [Dependency support/testing matrix](#dependency-supporttesting-matrix)
   - [Considerations](#considerations)
   - [Specifying dependencies in `requirements.txt` or `setup.py`](#specifying-dependencies-in-requirementstxt-or-setuppy)
 
-## Linting
+## Style
 
 All of our Python code should match the [PEP8 style guide](https://www.python.org/dev/peps/pep-0008/) and the [Django coding style guidelines](https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/coding-style/).
 
 We follow [PEP8's line length](https://www.python.org/dev/peps/pep-0008/#maximum-line-length) instead of Django's for consistency with our other development standards. We follow [Django's recommended import ordering in Django projects](https://docs.djangoproject.com/en/dev/internals/contributing/writing-code/coding-style/#imports).
+
+We use [Black](http://black.readthedocs.io) to standardize formatting of our Python code and make linting easier. We override the default Black line length to 79 to match PEP8. We also exclude generated files like migrations. We provide a sample [`pyproject.toml` file containing line length and exclude configuration for Black](../pyproject.toml).
+
+## Linting
 
 For linting we recommend [flake8](http://flake8.pycqa.org/en/latest/), and provide a [sample flake8 configuration](../.flake8).
 Exceptions to PEP8 are found in that [sample flake8 configuration](../.flake8), and include:
