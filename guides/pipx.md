@@ -1,6 +1,6 @@
 # Installing and using pipx for command-line Python tools
 
-[pipx](https://github.com/pipxproject/pipx) is a utility for installing and running Python applications in isolated environments.
+[pipx](https://github.com/pipxproject/pipx) is a utility for installing and running Python applications in isolated environments. This means it allows you to [install command-line tools like `tox`](#installing-command-line-tools-with-pipx) in their own virtualenv that pipx manages for you using simple, `pip`-like commands. 
 
 - [Installing pipx](#installing-pipx)
 - [Configuring pipx](#configuring-pipx)
@@ -49,7 +49,7 @@ export PATH="/Users/<username>/.local/bin:$PATH"
 
 You might also want to take this opportunity to move it to wherever you have other path modifications.
 
-pipx also has a helper that provides [shell completion instructions](https://pipxproject.github.io/pipx/installation/#shell-completion):
+pipx also has a helper that provides [shell compltion instructions](https://pipxproject.github.io/pipx/installation/#shell-completion):
 
 ```shell
 pipx completions
