@@ -32,6 +32,7 @@ browser support standards.
 - [Front-end testing](guides/front-end-testing.md)
 - [Git and GitHub](guides/git.md)
 - [Installing and using Python](guides/installing-python.md)
+- [Using pipx for command-line Python tools](guides/pipx.md)
 - [Patterns for git-secrets](tools/git-secrets-patterns/README.md)
 - [Publishing Python packages to PyPI](guides/pypi.md)
 - [Screen reader differences](guides/screen-reader-differences.md)
