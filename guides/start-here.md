@@ -9,8 +9,7 @@ Similar to a "definition of done" document, the below steps should be completed 
 - [ ] Consult with other developers before making large technical decisions, e.g., before choosing your project's language, framework and/or architecture pattern
 - [ ] Use test-driven development (TDD)
   - [ ] Set up your test harnesses before you start coding. If you're working with a pre-existing CFPB repo, this has probably already been done.
-- [ ] Read our accessibility audit documentation
-- [ ] Undergo accessibility audit training (schedule it if you haven't already)
+- [ ] Read our [accessibility audit documentation](https://docs.google.com/document/d/1MPLfvYRTX7fYKuskSV5FyCbmEW6vXXEn6W_-7uXwzaw/edit)
 - [ ] Discuss web analytics goals with your team and schedule a meeting with the Digital Analytics team to plan Google Analytics implementation
 
 ## 2. Writing code
@@ -19,7 +18,7 @@ Similar to a "definition of done" document, the below steps should be completed 
 - [ ] Code is covered by tests and those tests pass locally
 - [ ] New features work in browsers listed in our [browser checklist](/tools/browser-checklist.md)
 - [ ] New features are usable without JavaScript enabled
-- [ ] New features use [Capital Framework](https://cfpb.github.io/capital-framework/) components when applicable
+- [ ] New features use the [CFPB design system](https://github.com/cfpb/design-system) components when applicable
 - [ ] When a feature is nearing completion, perform an accessibility audit on the respective page(s). Report issues and make a plan made for fixing critical bugs before release
 
 ## 3. Merging code
