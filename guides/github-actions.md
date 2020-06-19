@@ -66,7 +66,7 @@ jobs:
 
 ## Fetching git history for setuptools-git-version
 
-Some of our consumerfinance.gov satellite apps use [setuptools-git-version](https://github.com/pyfidelity/setuptools-git-version) to set the Python package version from the latest git tag. This requires tags too be available in the checkout in the GitHub action: 
+Some of our consumerfinance.gov satellite apps use [setuptools-git-version](https://github.com/pyfidelity/setuptools-git-version) to set the Python package version from the latest git tag. This requires tags to be available in the checkout in the GitHub action: 
 
 ```yml
     steps:
