@@ -3,7 +3,7 @@
 We use [GitHub Actions](https://github.com/features/actions) for some of our contionuous integration and other automations. 
 This guide is a collection of actions recipes to perform tasks that may be common across repositories. 
 
-- [Running front-end unit tests with gulp](#running-front-end-unit-tests-with-gulp)
+- [Running front-end unit tests](#running-front-end-unit-tests)
 - [Running back-end unit tests with tox](#running-back-end-unit-tests-with-tox)
 - [Fetching git history for setuptools-git-version](#fetching-git-history-for-setuptools-git-version)
 - [Attaching a Python wheel file to a GitHub release](#attaching-a-python-wheel-file-to-a-github-release)
