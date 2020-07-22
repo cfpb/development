@@ -3,7 +3,7 @@
 - [Style](#style)
 - [Linting](#linting)
 - [Imports](#imports)
-- [Dependency support/testing matrix](#dependency-supporttesting-matrix)
+- [Dependency support and matrix testing](#dependency-support-and-matrix-testing)
   - [Considerations](#considerations)
   - [Specifying dependencies in `requirements.txt` or `setup.py`](#specifying-dependencies-in-requirementstxt-or-setuppy)
 
@@ -42,36 +42,15 @@ We use [isort](https://github.com/timothycrosley/isort) to lint imports to compl
 
 The isort configuration can go into a `tox.ini` file under an `[isort]` header.
 
-## Dependency support/testing matrix
+## Dependency support and matrix testing
 
-We have two general types of Python projects:
+### Matrix testing
 
-- Applications that have a running instance, e.g., [cfgov-refresh](https://github.com/cfpb/cfgov-refresh)
-- Libraries that provide some functionality independent of applications
-
-We use a rubric like the one below to determine which versions of Python and major dependencies should be supported. Assuming the project has Django and Wagtail as its major dependencies, our recommendation would be this:
-
-|| Library | Application |
-|--|--|--|
-|Oldest Python 3 supported by Django LTS | ✔️| |
-|Current production Python |  | ✔️ |
-|Latest Python | ✔️ | ✔️ |
-|Latest Django LTS version | ✔️ | ✔️ |
-|Latest Django version |  ✔️ | ✔️ |
-|Latest Wagtail LTS version | ✔️ | ✔️ |
-|Latest Wagtail version |  ✔️ | ✔️ |
-
-Our applications should support the version of Python 3 we currently run in production and the latest version. For example, [cfgov-refresh](https://github.com/cfpb/cfgov-refresh) should support version 3.6 and 3.8 at time of writing.
-
-Our libraries should support the oldest version of Python 3 that the library's major dependencies supports, and the latest version of Python. For example, [Django 2.2 supports Python 3.5 and up](https://docs.djangoproject.com/en/2.2/releases/2.2/#python-compatibility), so our Django and Wagtail libraries that support Django 2.2 should do the same.
-
-"Major dependencies" are the frameworks upon which our applications and libraries are built. Examples are Django and Wagtail. Both our applications and our libraries should support the LTS (long-term support) version of that dependency we currently run in production, and the latest version (LTS or not) of that dependency.
-
-### Considerations
-
-We recommend using [tox](https://tox.readthedocs.io/en/latest/) for matrix testing against all the versions listed above, and we provide a [sample tox configuration](../tox.ini) that tests against both our current production the latest versions Python and Django.
+We recommend using [tox](https://tox.readthedocs.io/en/latest/) for matrix testing against our supported versions of our core dependencies, and we provide a [sample tox configuration](../tox.ini) that tests against both our current production the latest versions Python and Django.
 
 When dealing with support for multiple versions of Python or major dependencies, we prefer to [use feature detection instead of version detection](https://docs.python.org/3/howto/pyporting.html#use-feature-detection-instead-of-version-detection) for incompatibilities/breaking changes that may exist between versions.
+
+See [Tracking Django and Wagtail](../guides/tracking-django-wagtail.md) for more detailed guidance.
 
 ### Specifying dependencies in `requirements.txt` or `setup.py`
 
