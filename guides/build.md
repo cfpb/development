@@ -53,10 +53,6 @@ Here are some helpful plugins for Grunt:
 - [grunt-contrib-watch](https://github.com/gruntjs/grunt-contrib-watch) for watching and compiling assets on the fly
 - [grunt-browserify](https://github.com/jmreidy/grunt-browserify) for using Node style CommonJS modules clientside
 
-## Capital Framework Generator
-
-Our recommended workflow is to use the [generator-cf](https://github.com/cfpb/generator-cf) Yeoman generator to scaffold out a new Capital Framework project. This generator provides a solid front-end build process and directory structure.
-
 ## npm module generator
 
 For authoring node modules, our recommended workflow is to use [generator-node-cfpb](https://github.com/cfpb/generator-node-cfpb).
