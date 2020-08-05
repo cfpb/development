@@ -36,7 +36,7 @@ steps:
       git fetch origin ${{ github.head_ref }} && git checkout ${{ github.head_ref }}
 ```
 
-The intention is for the command `git describe --tags --long --dirty` to succeed.
+The intention is for the command `git describe --tags --long --dirty` to succeed. If it does not, the resulting wheel filename will contain an unpredictable string that will break our common wheel file URL patterns in requirements files.
 
 ## Attaching a Python wheel file to a GitHub release
 
