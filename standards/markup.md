@@ -267,8 +267,7 @@ The visual order should be preserved with float: right; on each button.
 
 **More about forms**
 
-+ [cf-forms: Form patterns in Capital Framework](https://github.com/cfpb/cf-forms)
-+ [CFPB Design Manual on Effective Forms](http://cfpb.github.io/design-manual/guides/effective-forms.html)
++ [Form patterns in Design System](https://cfpb.github.io/design-system/patterns/designing-forms)
 
 
 ### Links that open in new tabs

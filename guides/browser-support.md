@@ -148,8 +148,7 @@ leave it running forever). Use `ctr + c` to terminate the connection.
 #### Individual projects to test
 
 - [cfgov-refresh](https://github.com/cfpb/cfgov-refresh/blob/master/CONTRIBUTING.md#browser-support)
-- [Design System](https://github.com/cfpb/capital-framework/blob/canary/CONTRIBUTING.md#browser-support)
-- [Design Manual](https://github.com/cfpb/design-manual/blob/gh-pages/CONTRIBUTING.md#browser-support)
+- [Design System](https://github.com/cfpb/design-system/blob/master/CONTRIBUTING.md#browser-support)
 - [Paying for College](https://github.com/cfpb/college-costs/blob/master/CONTRIBUTING.md#browser-support)
 - [Retirement](https://github.com/cfpb/retirement/blob/master/CONTRIBUTING.md#browser-support)
 - [Complaint](https://github.com/cfpb/complaint/blob/master/CONTRIBUTING.md#browser-support)
