@@ -15,7 +15,7 @@ You can generate a GPG key and add the public key to your account by following
 
 Anyone can make a commit to a codebase and attribute it to you:
 `git commit --author='Jane Doe <jane@doe.com>' -m 'Really evil malicious change'`.
-It will show up in the project's [log](https://github.com/cfpb/capital-framework/commits/master)
+It will show up in the project's [log](https://github.com/cfpb/design-system/commits/master)
 with your name and smiling face (assuming your GitHub email address is `jane@doe.com`).
 
 To protect yourself and prove to your peers that you are the author of a given commit,

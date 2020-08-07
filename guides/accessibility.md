@@ -15,7 +15,7 @@ Your website should follow the following four principles.
 
 To understand more about how we build accessible interfaces according to
 POUR principles and get a checklist for these guidelines,
-[read the CFPB Design Manual's guide on accessibility](https://cfpb.github.io/design-manual/best-practices/accessibility-best-practices).
+[read the CFPB Design System's guide on accessibility](https://cfpb.github.io/design-system/accessibility).
 
 
 ## Testing for accessibility
@@ -84,7 +84,7 @@ Be sure to test new features on both VoiceOver and a Windows screen reader. Read
 
 To ensure any new color combinations that need to be implemented are accessible, use the [CFPB palette checker](https://accessibility.oit.ncsu.edu/tools/color-contrast/accessible-color-palette.php?&colors=1e9642,20aa3f,66c368,addc91,c7e5b3,e2efd8,005e5d,257675,579695,89b6b5,b4d2d1,d4e7e6,0050b4,0072ce,4497dc,7eb7e8,afd2f2,d6e8fa,002d72,254b87,5674a3,889cc0,b3c0d9,d3daeb,a01b68,b4267a,c55998,d486b2,e3b2cc,f0d8e2,b63014,d14124,dd735d,e79e8e,f0c3b8,f7e0d9,dc731c,ff9e1b,ffb858,ffce8d,ffe1b9,fff0dd,745745,8a6c57,a18573,baa496,d3c5bc,e7ddd7,101820,43484e,5a5d61,75787b,919395,b4b5b6,d2d3d5,e7e8e9,f7f8f9,ffffff&level=AA).
 
-[View our existing approved accessible color combinations for typography on the Design Manual](https://cfpb.github.io/design-manual/brand-guidelines/typography.html#type-accessibility)
+[View our existing approved accessible color combinations for typography on the Design System](https://cfpb.github.io/design-system/foundation/fonts#accessibility)
 
 
 ### Other tools
