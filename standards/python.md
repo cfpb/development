@@ -38,7 +38,7 @@ We use [isort](https://github.com/timothycrosley/isort) to lint imports to compl
 
 - Multiple-line `from` imports become grouped within parenthesis with one imported name per-line and a trailing comma for the last imported name.
 - Django imports are included as their own section between the standard library and third-party imports.
-- For Wagtail-specific projects like [cfgov-refresh](https://github.com/cfpb/cfgov-refresh), Wagtail imports are included as their own section between Django and third-party imports.
+- For Wagtail-specific projects like [consumerfinance.gov](https://github.com/cfpb/consumerfinance.gov), Wagtail imports are included as their own section between Django and third-party imports.
 
 The isort configuration can go into a `tox.ini` file under an `[isort]` header.
 
@@ -58,6 +58,6 @@ The difference between pinned versions of dependencies in `requirements.txt`  an
 
 [Donald Stufft has an excelent article with a more in-depth discussion of this difference](https://caremad.io/posts/2013/07/setup-vs-requirement/). For our purposes, we use both requirements files and requirements specified in `setup.py` depending on the circumstance of the dependency.
 
-Our applications should use requirements files with pinned versions. For example, [cfgov-refresh has several requirements files](https://github.com/cfpb/cfgov-refresh/tree/master/requirements) that pin all relevant versions for deployment, testing, local execution, and other specific needs. Some of these requirements files inherit from each other (e.g., [`base.txt` uses the `-r libraries.txt` directive](https://github.com/cfpb/cfgov-refresh/blob/master/requirements/base.txt#L3) to include the requirements from that file).
+Our applications should use requirements files with pinned versions. For example, [consumerfinance.gov has several requirements files](https://github.com/cfpb/consumerfinance.gov/tree/master/requirements) that pin all relevant versions for deployment, testing, local execution, and other specific needs. Some of these requirements files inherit from each other (e.g., [`base.txt` uses the `-r libraries.txt` directive](https://github.com/cfpb/consumerfinance.gov/blob/master/requirements/base.txt#L3) to include the requirements from that file).
 
 Our libraries should specify dependencies with supported version ranges ([and those ranges should be tested with tox](../tox.ini)) in `setup.py` using [the appropriate setuptools `_requires` keyword](https://setuptools.readthedocs.io/en/latest/setuptools.html#declaring-dependencies). For example, our [wagtail-sharing library](https://github.com/cfpb/wagtail-sharing) declares install-time requirements with `install_requires` and testing requirements with `extras_require={'testing': testing_extras}`.

@@ -191,7 +191,7 @@ If you find yourself going further, think about re-organizing your rules _(eithe
 
 ### Variables
 
-- Colors: (use generic variable names like recent cfgov-refresh update)
+- Colors: (use generic variable names like recent consumerfinance.gov update)
 - Breakpoints: standard variable names for commonly used breakpoints
 
 ### Comments

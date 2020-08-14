@@ -36,7 +36,7 @@
 
 ### Choosing a `TestCase` base class
 
-When writing unit tests for code in cfgov-refresh there are multiple possible test case base classes that can be used.
+When writing unit tests for code in consumerfinance.gov there are multiple possible test case base classes that can be used.
 
 - [`unittest.TestCase`](https://docs.python.org/3.6/library/unittest.html#unittest.TestCase): For testing Python code that does not interact with Django or Wagtail. This class provides all the base Python unit test assertions, such as:
 
@@ -83,7 +83,7 @@ There are a few different ways to provide data for your tests to operate on.
 
 - Using [Django test fixtures](https://docs.djangoproject.com/en/1.11/topics/testing/tools/#fixture-loading) to load specific data into the database.
 
-    Generally we use Django test fixtures when we need to test a fairly large amount of data with fixed values that matter to multiple tests. For example, when [testing the interactive regulations search indexes](https://github.com/cfpb/cfgov-refresh/blob/master/cfgov/regulations3k/tests/test_search_indexes.py#L16).
+    Generally we use Django test fixtures when we need to test a fairly large amount of data with fixed values that matter to multiple tests. For example, when [testing the interactive regulations search indexes](https://github.com/cfpb/consumerfinance.gov/blob/master/cfgov/regulations3k/tests/test_search_indexes.py#L16).
 
     ```python
     class RegulationIndexTestCase(TestCase):
@@ -103,7 +103,7 @@ There are a few different ways to provide data for your tests to operate on.
 
 - Using [Model Mommy](https://model-mommy.readthedocs.io/en/latest/index.html) to create test data automatically in code.
 
-    Generally use use Model Mommy when we need to test operations on a model whose values are unimportant to the outcome. Occasionlly we will pass specific values to Model Mommy when those values are important to the tests. An example is when [testing operations around image models and the way they're handled](https://github.com/cfpb/cfgov-refresh/blob/master/cfgov/v1/tests/test_meta_image.py#L14), when we want to make sure that the model gets rendered correctly.
+    Generally use use Model Mommy when we need to test operations on a model whose values are unimportant to the outcome. Occasionlly we will pass specific values to Model Mommy when those values are important to the tests. An example is when [testing operations around image models and the way they're handled](https://github.com/cfpb/consumerfinance.gov/blob/master/cfgov/v1/tests/test_meta_image.py#L14), when we want to make sure that the model gets rendered correctly.
 
     ```python
     class TestMetaImage(TestCase):
@@ -201,7 +201,7 @@ There are other potential uses of Mock, but generally we prefer to test our code
 
 #### Mocking Requests with Responses
 
-For mocking HTTP calls that are made via [the Requests library](http://docs.python-requests.org/en/master/), we prefer the use of [Responses](https://github.com/getsentry/responses). For example, to test whether an informative banner is displayed to users [the ComplaintLandingView tests](https://github.com/cfpb/cfgov-refresh/blob/master/cfgov/legacy/tests/views/test_complaint.py#L67) use responses to provide response data for calls to `requests.get()`:
+For mocking HTTP calls that are made via [the Requests library](http://docs.python-requests.org/en/master/), we prefer the use of [Responses](https://github.com/getsentry/responses). For example, to test whether an informative banner is displayed to users [the ComplaintLandingView tests](https://github.com/cfpb/consumerfinance.gov/blob/master/cfgov/legacy/tests/views/test_complaint.py#L67) use responses to provide response data for calls to `requests.get()`:
 
 ```python
 from django.test import TestCase
@@ -222,7 +222,7 @@ class ComplaintLandingViewTests(TestCase):
 
 #### Mocking boto with moto
 
-When we need to mock AWS services that are called via [boto](https://github.com/boto/boto/) we use the [moto](https://github.com/spulec/moto) library. For example, [to test our S3 utilities](https://github.com/cfpb/cfgov-refresh/blob/master/cfgov/v1/tests/test_s3utils.py#L21-L25), we initialize moto in our test case's `setUp` method:
+When we need to mock AWS services that are called via [boto](https://github.com/boto/boto/) we use the [moto](https://github.com/spulec/moto) library. For example, [to test our S3 utilities](https://github.com/cfpb/consumerfinance.gov/blob/master/cfgov/v1/tests/test_s3utils.py#L21-L25), we initialize moto in our test case's `setUp` method:
 
 ```python
 class S3UtilsTestCase(TestCase):
@@ -239,7 +239,7 @@ From there calls to boto's S3 API will use the moto mock S3.
 
 To run Django and Wagtail unit tests we prefer to use [tox](https://tox.readthedocs.io/en/latest/). tox creates and manages virtual environments for running tests against multiple versions of dependencies.
 
-CFPB has a [sample `tox.ini`](https://github.com/cfpb/development/blob/master/tox.ini) that will test against Django 1.11 and 2.1 and Python 3.6. Additionally, running the tests for [CFPB's cfgov-refresh Django project are documented with that project](https://cfpb.github.io/cfgov-refresh/testing-be/).
+CFPB has a [sample `tox.ini`](https://github.com/cfpb/development/blob/master/tox.ini) that will test against Django 1.11 and 2.1 and Python 3.6. Additionally, running the tests for [CFPB's consumerfinance.gov Django project are documented with that project](https://cfpb.github.io/consumerfinance.gov/testing-be/).
 
 
 ## Common test patterns
@@ -248,7 +248,7 @@ CFPB has a [sample `tox.ini`](https://github.com/cfpb/development/blob/master/to
 
 Any custom method or properties on Django models should be unit tested.  We generally use `django.test.TestCase` as the base class because testing models is going to involve creating them in the test database.
 
-For example, interactive regulations `Part` objects [construct a full CFR title string from their fields](https://github.com/cfpb/cfgov-refresh/blob/master/cfgov/regulations3k/models/django.py#L58-L61):
+For example, interactive regulations `Part` objects [construct a full CFR title string from their fields](https://github.com/cfpb/consumerfinance.gov/blob/master/cfgov/regulations3k/models/django.py#L58-L61):
 
 ```python
 class Part(models.Model):
@@ -263,7 +263,7 @@ class Part(models.Model):
         )
 ```
 
-This property [can be tested](https://github.com/cfpb/cfgov-refresh/blob/master/cfgov/regulations3k/tests/test_models.py#L196-L203) against a [Model Mommy-created model](#providing-test-data):
+This property [can be tested](https://github.com/cfpb/consumerfinance.gov/blob/master/cfgov/regulations3k/tests/test_models.py#L196-L203) against a [Model Mommy-created model](#providing-test-data):
 
 ```python
 from django.test import TestCase
@@ -294,7 +294,7 @@ Testing Django views requires responding to a `request` object. Django provides 
 
     *Note*: Requests made with `django.test.Client` include all Django request handling, including middleware. See [overriding settings](#overriding-settings) if this is a problem.
 
-    The mortgage performance tests use a [combination of fixtures and Model Mommy-created models](https://github.com/cfpb/cfgov-refresh/blob/master/cfgov/data_research/tests/test_views.py#L47-L148) to set up for testing the timeseries view's response code and response data:
+    The mortgage performance tests use a [combination of fixtures and Model Mommy-created models](https://github.com/cfpb/consumerfinance.gov/blob/master/cfgov/data_research/tests/test_views.py#L47-L148) to set up for testing the timeseries view's response code and response data:
 
     ```python
     from django.test import TestCase
@@ -318,7 +318,7 @@ Testing Django views requires responding to a `request` object. Django provides 
 
     Using a `RequestFactory` generated request is useful when you wish to call the view function or class directly, without going through Django's URL dispatcher or any middleware.
 
-    The Data & Research [conference registration handler tests](https://github.com/cfpb/cfgov-refresh/blob/master/cfgov/v1/tests/models/test_base.py#L21) use a `RequestFactory` to generate requests with various inputs, including how a `GET` parameter is handled:
+    The Data & Research [conference registration handler tests](https://github.com/cfpb/consumerfinance.gov/blob/master/cfgov/v1/tests/models/test_base.py#L21) use a `RequestFactory` to generate requests with various inputs, including how a `GET` parameter is handled:
 
     ```python
     from django.test import RequestFactory , TestCase
@@ -344,7 +344,7 @@ We generally do not recommend creating `django.http.HttpRequest` objects directl
 
 In general the same principle applies to Wagtail pages as to Django models: any custom method or properties should be unit tested.
 
-For example, the careers `JobListingPage` [overrides the default `get_context()` method](https://github.com/cfpb/cfgov-refresh/blob/master/cfgov/jobmanager/models/pages.py#L140) to provide additional context when rendering the page.
+For example, the careers `JobListingPage` [overrides the default `get_context()` method](https://github.com/cfpb/consumerfinance.gov/blob/master/cfgov/jobmanager/models/pages.py#L140) to provide additional context when rendering the page.
 
 ```python
 from django.test import TestCase, RequestFactory
@@ -398,7 +398,7 @@ class TestDateTimeBlock(SimpleTestCase):
 
 More complicated blocks' fields are stored as JSON on the page object. To prepare that JSON as the block's `value` to pass to the block's `render()` and other methods, the `block.to_python()` method is used.
 
-For example, the `TextIntroduction` block [requires its `heading` field when the `eyebrow` field is given](https://github.com/cfpb/cfgov-refresh/blob/master/cfgov/v1/atomic_elements/molecules.py#L98-L105). This is tested by checking if a [`ValidationError` is raised in `block.clean(value)`](https://github.com/cfpb/cfgov-refresh/blob/master/cfgov/v1/tests/atomic_elements/test_molecules.py#L250-L255). To prepare a value to pass, `to_python()` is used:
+For example, the `TextIntroduction` block [requires its `heading` field when the `eyebrow` field is given](https://github.com/cfpb/consumerfinance.gov/blob/master/cfgov/v1/atomic_elements/molecules.py#L98-L105). This is tested by checking if a [`ValidationError` is raised in `block.clean(value)`](https://github.com/cfpb/consumerfinance.gov/blob/master/cfgov/v1/tests/atomic_elements/test_molecules.py#L250-L255). To prepare a value to pass, `to_python()` is used:
 
 ```python
 from django.test import SimpleTestCase
@@ -444,7 +444,7 @@ We generally recommend using `WagtailTestUtils` to login and test the admin unle
 
 When testing custom management commands [Django provides a `call_command()` function](https://docs.djangoproject.com/en/2.1/topics/testing/tools/#management-commands) which will call the command direct the output into a `StringIO` object to be introspected.
 
-For example, our [custom makemessages command (that adds support for Jinja2 templates)](https://github.com/cfpb/cfgov-refresh/blob/master/cfgov/v1/management/commands/makemessages.py) is tested [using `call_command()`](https://github.com/cfpb/cfgov-refresh/blob/master/cfgov/v1/tests/management/commands/test_makemessages.py#L66) (although it inspects the resulting `.po` file):
+For example, our [custom makemessages command (that adds support for Jinja2 templates)](https://github.com/cfpb/consumerfinance.gov/blob/master/cfgov/v1/management/commands/makemessages.py) is tested [using `call_command()`](https://github.com/cfpb/consumerfinance.gov/blob/master/cfgov/v1/tests/management/commands/test_makemessages.py#L66) (although it inspects the resulting `.po` file):
 
 ```python
 from django.core.management import call_command
@@ -467,7 +467,7 @@ We use [Django-Flags](https://cfpb.github.io/django-flags/) to feature flag code
 
 In all cases, the easiest way to test with explicit flag states is to [override the `FLAGS` setting](#overriding-settings) and include only your specific flag with a `boolean` condition of `True`.
 
-For example, to test [a function that serves a URL via Wagtail depending on the state of a flag](https://github.com/cfpb/cfgov-refresh/blob/master/cfgov/cfgov/urls.py#L42-L53), the base URL tests [check behavior with a flag explicitly enabled and again with that flag explicitly disabled](https://github.com/cfpb/cfgov-refresh/blob/master/cfgov/cfgov/tests/test_urls.py#L92-L109):
+For example, to test [a function that serves a URL via Wagtail depending on the state of a flag](https://github.com/cfpb/consumerfinance.gov/blob/master/cfgov/cfgov/urls.py#L42-L53), the base URL tests [check behavior with a flag explicitly enabled and again with that flag explicitly disabled](https://github.com/cfpb/consumerfinance.gov/blob/master/cfgov/cfgov/tests/test_urls.py#L92-L109):
 
 ```python
 class FlaggedWagtailOnlyViewTests(TestCase):
