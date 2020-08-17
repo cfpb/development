@@ -32,15 +32,15 @@ This documentation is written in Markdown and browseable
 [on GitHub](https://github.com/cfpb/development#cfpb-development-guidelines).
 
 Documentation specific to [https://www.consumerfinance.gov](https://www.consumerfinance.gov)
-or the software that powers it should live in the [cfgov-refresh](https://github.com/cfpb/cfgov-refresh) repository.
-Documentation is written as [Markdown files](https://github.com/cfpb/cfgov-refresh/tree/master/docs)
+or the software that powers it should live in the [consumerfinance.gov](https://github.com/cfpb/consumerfinance.gov) repository.
+Documentation is written as [Markdown files](https://github.com/cfpb/consumerfinance.gov/tree/master/docs)
 in that repository, converted to HTML by [MkDocs](https://www.mkdocs.org/),
-and served by GitHub Pages at [https://cfpb.github.io/cfgov-refresh/](https://cfpb.github.io/cfgov-refresh/).
+and served by GitHub Pages at [https://cfpb.github.io/consumerfinance.gov/](https://cfpb.github.io/consumerfinance.gov/).
 
 Documentation specific to other projects should live in that project's repository.
 Exceptions to this include repositories that only work within the context of a larger project,
 for example the cf.gov satellite apps.
-In that case it may be appropriate to locate documentation within the cfgov-refresh repository,
+In that case it may be appropriate to locate documentation within the consumerfinance.gov repository,
 as long as the satellite app contains a link pointing to the appropriate location.
 
 ## Documentation definition of done
@@ -66,7 +66,7 @@ See ["Where to put documentation"](#where-to-put-documentation) above for additi
 Documentation should be linked to from an appropriate landing page
 (for example, [this repository's README](https://github.com/cfpb/development/blob/master/README.md))
 and, if possible, be discoverable through search
-(for example, [the cfgov-refresh docs search](https://cfpb.github.io/cfgov-refresh/search.html?q=testing)).
+(for example, [the consumerfinance.gov docs search](https://cfpb.github.io/consumerfinance.gov/search.html?q=testing)).
 
 The onboarding of new team members can be a great opportunity to review and
 update existing documentation to ensure that it meets these goals.
@@ -93,10 +93,10 @@ for example by using anchor links
 ([like this](https://github.com/cfpb/development/#guides)) to target specific places on the page.
 When referencing specific lines in source code, consider linking to specific
 releases or commit hashes instead of the master branch
-([this](https://github.com/cfpb/cfgov-refresh/blob/7.2.2/tox.ini#L105) or
-[this](https://github.com/cfpb/cfgov-refresh/blob/fb16e906bc4935669f880c270ccf4e32b930b068/tox.ini#L105)
+([this](https://github.com/cfpb/consumerfinance.gov/blob/7.2.2/tox.ini#L105) or
+[this](https://github.com/cfpb/consumerfinance.gov/blob/fb16e906bc4935669f880c270ccf4e32b930b068/tox.ini#L105)
 instead of
-[this](https://github.com/cfpb/cfgov-refresh/blob/master/tox.ini#L105))
+[this](https://github.com/cfpb/consumerfinance.gov/blob/master/tox.ini#L105))
 when the file being linked to is likely to change often and a specific line reference would be hard to maintain.
 Links to the master branch of source code should be used as long as the
 documentation is updated appropriately when the source files are.

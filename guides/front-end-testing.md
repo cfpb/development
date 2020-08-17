@@ -23,7 +23,7 @@ Check out 18f's excellent [testing cookbook](https://pages.18f.gov/testing-cookb
 
 ## Code coverage
 
-The goal is to have all of your code covered by unit tests. Tools known as code coverage reporters will tell you what percentage of your codebase is covered by tests. The cfgov-refresh (consumerfinance.gov) project uses [Jest](https://github.com/facebook/jest/). When cfgov-refresh unit tests are run using `gulp test:unit`, a coverage report with coverages percentages is printed to the command line. It also generates an interactive HTML code coverage report in `test/unit_test_coverage`.
+The goal is to have all of your code covered by unit tests. Tools known as code coverage reporters will tell you what percentage of your codebase is covered by tests. The consumerfinance.gov (consumerfinance.gov) project uses [Jest](https://github.com/facebook/jest/). When consumerfinance.gov unit tests are run using `gulp test:unit`, a coverage report with coverages percentages is printed to the command line. It also generates an interactive HTML code coverage report in `test/unit_test_coverage`.
 
 ![lcov report](http://i.imgur.com/oJYfZCN.png)
 
@@ -35,4 +35,4 @@ Integration tests test the points at which your front-end JavaScript communicate
 
 When building browser-based applications, systems tests are browser (otherwise known as GUI) tests. They verify that the front-end code operates as expected in environments similar to the end-users'. They are slow and expensive to write and maintain. They break easily when the GUI is modified. But they are an incredibly important method of ensuring your application is operating correctly.
 
-They are often written in languages that can be understood by non-developers, traditionally business analysts. The cfgov-refresh (consumerfinance.gov) project uses [Protractor](https://www.protractortest.org) and [Cucumber](https://github.com/cucumber/cucumber-js) to execute [feature files](https://github.com/cfpb/cfgov-refresh/tree/master/test/browser_tests/cucumber/features/suites/default) that verify pages are working as expected.
+They are often written in languages that can be understood by non-developers, traditionally business analysts. The consumerfinance.gov (consumerfinance.gov) project uses [Protractor](https://www.protractortest.org) and [Cucumber](https://github.com/cucumber/cucumber-js) to execute [feature files](https://github.com/cfpb/consumerfinance.gov/tree/master/test/browser_tests/cucumber/features/suites/default) that verify pages are working as expected.

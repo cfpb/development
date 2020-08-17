@@ -161,12 +161,12 @@ If you already have created a virtual environment in the past (and it's running)
 
 ```shell
 deactivate
-rmvirtualenv cfgov-refresh
+rmvirtualenv consumerfinance.gov
 ```
 
 If Python 3.6 is already set up as the local Python (which it should be if you followed steps above, check by running `pyenv versions`):
 ```shell
-mkvirtualenv cfgov-refresh
+mkvirtualenv consumerfinance.gov
 ```
 
 If Python 3.6 isn't set as the local Python, you need to specify when you create the virtual environment:

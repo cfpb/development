@@ -16,7 +16,7 @@
 
 We have two general types of Python projects:
 
-- The running [consumerfinance.gov](https://github.com/cfpb/cfgov-refresh) website
+- The running [consumerfinance.gov](https://github.com/cfpb/consumerfinance.gov) website
 - Satellite applications of consumerfinance.gov that live in their own repository, e.g., our satellite apps of consumerfinance.gov, like [ccdb5-ui](https://github.com/cfpb/ccdb5-ui)
 - Libraries that provide some functionality independent of consumerfinance.gov, e.g., [wagtail-sharing](https://github.com/cfpb/wagtail-sharing)
 
@@ -111,7 +111,7 @@ New releases of satellite apps should be automatically added to their GitHub rel
 
 ### Ensure consumerfinance.gov supports required versions
 
-consumerfinance.gov's [tox.ini](https://github.com/cfpb/cfgov-refresh/blob/master/tox.ini) matrixes on "current" vs "future" versions rather than on specific version numbers, and unlike our satellite apps and libraries pins its dependencies to specific versions. This can create incompatibilities that we need to deal with.
+consumerfinance.gov's [tox.ini](https://github.com/cfpb/consumerfinance.gov/blob/master/tox.ini) matrixes on "current" vs "future" versions rather than on specific version numbers, and unlike our satellite apps and libraries pins its dependencies to specific versions. This can create incompatibilities that we need to deal with.
  
 1. Add support for the new version(s) to the `tox` `future-config` matrix configuration. 
 
@@ -126,7 +126,7 @@ consumerfinance.gov's [tox.ini](https://github.com/cfpb/cfgov-refresh/blob/maste
        beautifulsoup4>=4.8.2
    ```
 
-2. Pin any new releases of satellite apps or libraries in the [requirements](https://github.com/cfpb/cfgov-refresh/blob/master/requirements/libraries.txt) file.
+2. Pin any new releases of satellite apps or libraries in the [requirements](https://github.com/cfpb/consumerfinance.gov/blob/master/requirements/libraries.txt) file.
 3. Consult release notes of the version(s) being added and make necessary code changes 
 4. Fix any tests that break as a result
 5. Ensure that running functionality works as expected
@@ -136,5 +136,5 @@ consumerfinance.gov's [tox.ini](https://github.com/cfpb/cfgov-refresh/blob/maste
 
 When we have a new LTS version of Django, or when there's a new release of Wagtail to deploy, the process of upgrading consumerfinance.gov should be simple, because we already have been tracking support for those versions.
 
-1. Pin [Django](https://github.com/cfpb/cfgov-refresh/blob/master/requirements/django.txt) and [Wagtail](https://github.com/cfpb/cfgov-refresh/blob/master/requirements/wagtail.txt) in their respective requirements files.
-2. Update the pins of any libraries that we pinned in the tox `future-config` `deps` in the [libraries](https://github.com/cfpb/cfgov-refresh/blob/master/requirements/libraries.txt) requirements file.
+1. Pin [Django](https://github.com/cfpb/consumerfinance.gov/blob/master/requirements/django.txt) and [Wagtail](https://github.com/cfpb/consumerfinance.gov/blob/master/requirements/wagtail.txt) in their respective requirements files.
+2. Update the pins of any libraries that we pinned in the tox `future-config` `deps` in the [libraries](https://github.com/cfpb/consumerfinance.gov/blob/master/requirements/libraries.txt) requirements file.
