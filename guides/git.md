@@ -5,7 +5,7 @@ GitHub.com is used to share and manage our Git repositories.
 
 ## Signing commits using GPG
 
-![GitHub verified commit](https://raw.githubusercontent.com/cfpb/development/master/img/github-verified.png)
+![GitHub verified commit](https://raw.githubusercontent.com/cfpb/development/main/img/github-verified.png)
 
 GPG keys are a way to sign and verify work from trusted collaborators.
 You can generate a GPG key and add the public key to your account by following
@@ -15,7 +15,7 @@ You can generate a GPG key and add the public key to your account by following
 
 Anyone can make a commit to a codebase and attribute it to you:
 `git commit --author='Jane Doe <jane@doe.com>' -m 'Really evil malicious change'`.
-It will show up in the project's [log](https://github.com/cfpb/design-system/commits/master)
+It will show up in the project's [log](https://github.com/cfpb/design-system/commits/main)
 with your name and smiling face (assuming your GitHub email address is `jane@doe.com`).
 
 To protect yourself and prove to your peers that you are the author of a given commit,
@@ -34,7 +34,7 @@ CFPB's [dotfiles](https://github.com/cfpb/dotfiles) include a git commit message
 Download the git commit message template to your home directory:
 
 ```sh
-curl https://raw.githubusercontent.com/cfpb/dotfiles/master/.gitmessage -o ~/.gitmessage
+curl https://raw.githubusercontent.com/cfpb/dotfiles/main/.gitmessage -o ~/.gitmessage
 ```
 
 Tell git to use it:
@@ -76,4 +76,4 @@ The template looks like this:
 
 Here's an example of a complete message:
 
-![Commit message screenshot](https://raw.githubusercontent.com/cfpb/development/master/img/commit-message.png)
+![Commit message screenshot](https://raw.githubusercontent.com/cfpb/development/main/img/commit-message.png)

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-url="https://raw.githubusercontent.com/CFPB/open-source-project-template/master"
+url="https://raw.githubusercontent.com/CFPB/open-source-project-template/main"
 
 root_files=(
   ".gitattributes"

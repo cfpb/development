@@ -42,7 +42,7 @@ Both prefixing and organizing elements by their type is the easiest way to keep 
 
 ## Working with code
 
-See the Design System [changing the codebase documentation](https://github.com/cfpb/design-system/blob/master/CONTRIBUTING.md#changing-the-codebase).
+See the Design System [changing the codebase documentation](https://github.com/cfpb/design-system/blob/main/CONTRIBUTING.md#changing-the-codebase).
 
 ## Questions
 

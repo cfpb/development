@@ -20,7 +20,7 @@ We have two general types of Python projects:
 - Satellite applications of consumerfinance.gov that live in their own repository, e.g., our satellite apps of consumerfinance.gov, like [ccdb5-ui](https://github.com/cfpb/ccdb5-ui)
 - Libraries that provide some functionality independent of consumerfinance.gov, e.g., [wagtail-sharing](https://github.com/cfpb/wagtail-sharing)
 
-We use a rubric like the one below to determine which versions of Python and major dependencies should be supported. 
+We use a rubric like the one below to determine which versions of Python and major dependencies should be supported.
 
 || Library | consumerfinance.gov | Satellite application |
 |--|--|--|--|
@@ -36,7 +36,7 @@ consumerfinance.gov and its satellite apps should support the version of Python 
 
 Our libraries should support the oldest version of Python 3 that the library's major dependencies supports, and the latest version of Python. For example, [Django 2.2 supports Python 3.5 and up](https://docs.djangoproject.com/en/2.2/releases/2.2/#python-compatibility), so our Django and Wagtail libraries that support Django 2.2 should do the same.
 
-Both consumerfinance.gov and its satellite apps, and our libraries should support the LTS (long-term support) version of Django and Wagtail that we currently run in production, and the latest version (LTS or not) of Django and Wagtail. 
+Both consumerfinance.gov and its satellite apps, and our libraries should support the LTS (long-term support) version of Django and Wagtail that we currently run in production, and the latest version (LTS or not) of Django and Wagtail.
 
 ## Considerations when supporting multiple versions
 
@@ -76,7 +76,7 @@ else:
     is_anonymous = bool(request.user.is_anonymous())
 ```
 
-When performing a version check, the hard-coded version should always be **inclusive** of the first version to support the new API and should specify the entire semantic version. 
+When performing a version check, the hard-coded version should always be **inclusive** of the first version to support the new API and should specify the entire semantic version.
 
 Both Django and Wagtail provide versions as tuples of (major version, minor version, patch version, sub-version, sub-version release). For example:
 
@@ -99,11 +99,11 @@ The upgrade process for consumerfinance.gov is fairly straight-forward, and reas
 ### Ensure libraries and satellite apps support required versions
 
 1. Add support for the new version(s) to the `tox` matrix
-2. Consult release notes of the version(s) being added and make necessary code changes 
+2. Consult release notes of the version(s) being added and make necessary code changes
 3. Fix any tests that break as a result
 4. Ensure that running functionality works as expected
 5. Clean up support for any previous versions that can be dropped
-6. Create a new release 
+6. Create a new release
 
 New releases of libraries should be automatically uploaded to PyPI by our GitHub Actions.
 
@@ -111,9 +111,9 @@ New releases of satellite apps should be automatically added to their GitHub rel
 
 ### Ensure consumerfinance.gov supports required versions
 
-consumerfinance.gov's [tox.ini](https://github.com/cfpb/consumerfinance.gov/blob/master/tox.ini) matrixes on "current" vs "future" versions rather than on specific version numbers, and unlike our satellite apps and libraries pins its dependencies to specific versions. This can create incompatibilities that we need to deal with.
- 
-1. Add support for the new version(s) to the `tox` `future-config` matrix configuration. 
+consumerfinance.gov's [tox.ini](https://github.com/cfpb/consumerfinance.gov/blob/main/tox.ini) matrixes on "current" vs "future" versions rather than on specific version numbers, and unlike our satellite apps and libraries pins its dependencies to specific versions. This can create incompatibilities that we need to deal with.
+
+1. Add support for the new version(s) to the `tox` `future-config` matrix configuration.
 
    Include new pins of any required libraries. For example, if a future Wagtail requires an update to BeautifulSoup that is incompatible with our current Wagtail's dependency on BeautifulSoup, pin it in the tox `future-config` `deps`:
 
@@ -126,8 +126,8 @@ consumerfinance.gov's [tox.ini](https://github.com/cfpb/consumerfinance.gov/blob
        beautifulsoup4>=4.8.2
    ```
 
-2. Pin any new releases of satellite apps or libraries in the [requirements](https://github.com/cfpb/consumerfinance.gov/blob/master/requirements/libraries.txt) file.
-3. Consult release notes of the version(s) being added and make necessary code changes 
+2. Pin any new releases of satellite apps or libraries in the [requirements](https://github.com/cfpb/consumerfinance.gov/blob/main/requirements/libraries.txt) file.
+3. Consult release notes of the version(s) being added and make necessary code changes
 4. Fix any tests that break as a result
 5. Ensure that running functionality works as expected
 6. Clean up support for any previous versions that can be dropped
@@ -136,5 +136,5 @@ consumerfinance.gov's [tox.ini](https://github.com/cfpb/consumerfinance.gov/blob
 
 When we have a new LTS version of Django, or when there's a new release of Wagtail to deploy, the process of upgrading consumerfinance.gov should be simple, because we already have been tracking support for those versions.
 
-1. Pin [Django](https://github.com/cfpb/consumerfinance.gov/blob/master/requirements/django.txt) and [Wagtail](https://github.com/cfpb/consumerfinance.gov/blob/master/requirements/wagtail.txt) in their respective requirements files.
-2. Update the pins of any libraries that we pinned in the tox `future-config` `deps` in the [libraries](https://github.com/cfpb/consumerfinance.gov/blob/master/requirements/libraries.txt) requirements file.
+1. Pin [Django](https://github.com/cfpb/consumerfinance.gov/blob/main/requirements/django.txt) and [Wagtail](https://github.com/cfpb/consumerfinance.gov/blob/main/requirements/wagtail.txt) in their respective requirements files.
+2. Update the pins of any libraries that we pinned in the tox `future-config` `deps` in the [libraries](https://github.com/cfpb/consumerfinance.gov/blob/main/requirements/libraries.txt) requirements file.

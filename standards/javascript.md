@@ -33,7 +33,7 @@ team.
 ## Linting
 
 Lint your code using ESLint.
-[CFPB-tailored ESLint options](https://github.com/cfpb/front-end/blob/master/.eslintrc)
+[CFPB-tailored ESLint options](https://github.com/cfpb/development/blob/main/.eslintrc)
 exist.
 
 ## Modules

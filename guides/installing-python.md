@@ -139,7 +139,7 @@ pyenv also allows you to set a local Python version (the version of Python that 
 pyenv local 3.6.9
 ```
 
-This will create a `.python-version` file in the current directory. When you're in that directory or below it, pyenv will use the version you've specified here as `python`. 
+This will create a `.python-version` file in the current directory. When you're in that directory or below it, pyenv will use the version you've specified here as `python`.
 
 **Note:** Please ensure that `.python-version` is in the `.gitignore` file for a given repository and that it does not get committed.
 
@@ -183,7 +183,7 @@ mkvirtualenv --python=python3.6 [virtualenv name]
 
 Virtualenv and its alternatives:
 
-- [Introduction to Virtualenvs in the Virtualenv documentation](https://virtualenv.pypa.io/en/stable/#introduction) 
+- [Introduction to Virtualenvs in the Virtualenv documentation](https://virtualenv.pypa.io/en/stable/#introduction)
 - [virtualenvwrapper documentation](https://virtualenvwrapper.readthedocs.io/en/latest/)
 - [Python 3's venv module documentation](https://docs.python.org/3/library/venv.html)
 - [pyenv-virtualenv README](https://github.com/pyenv/pyenv-virtualenv/blob/master/README.md)

@@ -45,7 +45,7 @@ browser support standards.
 - [Browser testing checklist](tools/browser-checklist.md)
 - [ESLint file](.eslintrc)
 - [gitignore sample](.gitignore)
-- [Pull request template](https://raw.githubusercontent.com/cfpb/development/master/.github/PULL_REQUEST_TEMPLATE.md)
+- [Pull request template](https://raw.githubusercontent.com/cfpb/development/main/.github/PULL_REQUEST_TEMPLATE.md)
 
 ### Design System
 

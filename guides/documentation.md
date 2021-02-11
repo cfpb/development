@@ -33,7 +33,7 @@ This documentation is written in Markdown and browseable
 
 Documentation specific to [https://www.consumerfinance.gov](https://www.consumerfinance.gov)
 or the software that powers it should live in the [consumerfinance.gov](https://github.com/cfpb/consumerfinance.gov) repository.
-Documentation is written as [Markdown files](https://github.com/cfpb/consumerfinance.gov/tree/master/docs)
+Documentation is written as [Markdown files](https://github.com/cfpb/consumerfinance.gov/tree/main/docs)
 in that repository, converted to HTML by [MkDocs](https://www.mkdocs.org/),
 and served by GitHub Pages at [https://cfpb.github.io/consumerfinance.gov/](https://cfpb.github.io/consumerfinance.gov/).
 
@@ -64,7 +64,7 @@ See ["Where to put documentation"](#where-to-put-documentation) above for additi
 
 1. _Properly discoverable:_
 Documentation should be linked to from an appropriate landing page
-(for example, [this repository's README](https://github.com/cfpb/development/blob/master/README.md))
+(for example, [this repository's README](https://github.com/cfpb/development/blob/main/README.md))
 and, if possible, be discoverable through search
 (for example, [the consumerfinance.gov docs search](https://cfpb.github.io/consumerfinance.gov/search.html?q=testing)).
 
@@ -92,11 +92,11 @@ When referencing external links, try to make the references as specific as possi
 for example by using anchor links
 ([like this](https://github.com/cfpb/development/#guides)) to target specific places on the page.
 When referencing specific lines in source code, consider linking to specific
-releases or commit hashes instead of the master branch
+releases or commit hashes instead of the main branch
 ([this](https://github.com/cfpb/consumerfinance.gov/blob/7.2.2/tox.ini#L105) or
 [this](https://github.com/cfpb/consumerfinance.gov/blob/fb16e906bc4935669f880c270ccf4e32b930b068/tox.ini#L105)
 instead of
-[this](https://github.com/cfpb/consumerfinance.gov/blob/master/tox.ini#L105))
+[this](https://github.com/cfpb/consumerfinance.gov/blob/main/tox.ini#L105))
 when the file being linked to is likely to change often and a specific line reference would be hard to maintain.
-Links to the master branch of source code should be used as long as the
+Links to the main branch of source code should be used as long as the
 documentation is updated appropriately when the source files are.

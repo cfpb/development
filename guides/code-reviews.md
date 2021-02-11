@@ -98,7 +98,7 @@ Before seeking a review, you should be able to check off each of the following:
 ### Opening a PR
 
 Once sure your code meets the checks above, open a Pull Request for your new
-feature or bugfix following our [Pull Request Template](https://raw.githubusercontent.com/cfpb/front-end/master/.github/PULL_REQUEST_TEMPLATE.md). You can also create a [Bookmarklet based on this template](https://gist.github.com/cfarm/b9b638943a2eea52a3a8). Remember that the
+feature or bugfix following our [Pull Request Template](https://raw.githubusercontent.com/cfpb/front-end/main/.github/PULL_REQUEST_TEMPLATE.md). You can also create a [Bookmarklet based on this template](https://gist.github.com/cfarm/b9b638943a2eea52a3a8). Remember that the
 more information you provide to reviewers, the more context they will have. This
 leads to faster reviews, and less back and forth between everyone.
 
@@ -139,5 +139,5 @@ existing guideline.
 
 - [Code Review in the Lab](http://mozillascience.github.io/codeReview/intro.html)
 - [GitHub Code Reviews](https://blog.codeship.com/github-code-review/)
-- [thoughtbot Code Review Guide](https://github.com/thoughtbot/guides/blob/master/code-review/README.md)
+- [thoughtbot Code Review Guide](https://github.com/thoughtbot/guides/blob/main/code-review/README.md)
 - [Effective Code Reviews without the Pain](http://www.developer.com/tech/article.php/3579756/Effective-Code-Reviews-Without-the-Pain.htm)

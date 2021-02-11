@@ -119,8 +119,8 @@ browsers:
 We use a mix of [Sauce Labs](https://saucelabs.com/) and
 [localtunnel](https://localtunnel.github.io/www/) to manually test our site.
 Be sure to review both the
-[testing](https://github.com/cfpb/development/blob/master/guides/front-end-testing.md)
-and [accessibility](https://github.com/cfpb/development/blob/master/guides/accessibility.md)
+[testing](https://github.com/cfpb/development/blob/main/guides/front-end-testing.md)
+and [accessibility](https://github.com/cfpb/development/blob/main/guides/accessibility.md)
 guides when reviewing sites locally.
 
 ##### Sauce Labs
@@ -147,14 +147,14 @@ leave it running forever). Use `ctr + c` to terminate the connection.
 
 #### Individual projects to test
 
-- [consumerfinance.gov](https://github.com/cfpb/consumerfinance.gov/blob/master/CONTRIBUTING.md#browser-support)
-- [Design System](https://github.com/cfpb/design-system/blob/master/CONTRIBUTING.md#browser-support)
+- [consumerfinance.gov](https://github.com/cfpb/consumerfinance.gov/blob/main/CONTRIBUTING.md#browser-support)
+- [Design System](https://github.com/cfpb/design-system/blob/main/CONTRIBUTING.md#browser-support)
 - [Paying for College](https://github.com/cfpb/college-costs/blob/master/CONTRIBUTING.md#browser-support)
-- [Retirement](https://github.com/cfpb/retirement/blob/master/CONTRIBUTING.md#browser-support)
+- [Retirement](https://github.com/cfpb/retirement/blob/main/CONTRIBUTING.md#browser-support)
 - [Complaint](https://github.com/cfpb/complaint/blob/master/CONTRIBUTING.md#browser-support)
 - [eRegs](https://github.com/cfpb/eregs-2.0/blob/master/CONTRIBUTING.md#browser-support)
 - [Salesforce/Mosaic/Submit a complaint app/Complaint portal]([GHE]/Mosaic/mosaic-toolbelt/blob/master/CONTRIBUTING.md#browser-support)
-- [cfpb-chart-builder](https://github.com/cfpb/cfpb-chart-builder/blob/master/CONTRIBUTING.md#browser-support)
+- [cfpb-chart-builder](https://github.com/cfpb/cfpb-chart-builder/blob/main/CONTRIBUTING.md#browser-support)
 - [HMDA Platform](https://github.com/cfpb/hmda-platform/blob/master/CONTRIBUTING.md#browser-support)
 
 ## Definitions
