@@ -63,9 +63,9 @@ remove `-- --all` from the end of the command.
 Once it completes, you need to tell Git to purge the old objects from its cache:
 
 ```bash
-$ git for-each-ref --format="delete %(refname)" refs/original | git update-ref --stdin
-$ git reflog expire --expire=now --all
-$ git gc --prune=now
+git for-each-ref --format="delete %(refname)" refs/original | git update-ref --stdin
+git reflog expire --expire=now --all
+git gc --prune=now
 ```
 
 Once you've taken out the trash,
@@ -113,9 +113,9 @@ git filter-branch -f --msg-filter 'sed "s/internal.host.gov/INTERNAL/"'
 Once it completes, you need to tell Git to purge the old objects from its cache:
 
 ```bash
-$ git for-each-ref --format="delete %(refname)" refs/original | git update-ref --stdin
-$ git reflog expire --expire=now --all
-$ git gc --prune=now
+git for-each-ref --format="delete %(refname)" refs/original | git update-ref --stdin
+git reflog expire --expire=now --all
+git gc --prune=now
 ```
 
 Once you've taken out the trash, force push to your remotes, and all is well.
@@ -150,9 +150,9 @@ git log -Ginternal.host.gov --all
 git filter-branch --force --tree-filter "find . -type f -exec grep -I -l -q . {} \; -print0 | xargs -0 sed -i '' 's/internal\.host\.gov/INTERNAL/g'" --tag-name-filter cat -- --all
 
 # Take out the trash
-$ git for-each-ref --format="delete %(refname)" refs/original | git update-ref --stdin
-$ git reflog expire --expire=now --all
-$ git gc --prune=now
+git for-each-ref --format="delete %(refname)" refs/original | git update-ref --stdin
+git reflog expire --expire=now --all
+git gc --prune=now
 
 # Re-run searches to ensure the string is no longer found
 git log -Sinternal.host.gov --all
@@ -174,9 +174,9 @@ git log --grep='internal.host.gov' --all
 git filter-branch -f --msg-filter 'sed "s/internal.host.gov/INTERNAL/"'
 
 # Take out the trash
-$ git for-each-ref --format="delete %(refname)" refs/original | git update-ref --stdin
-$ git reflog expire --expire=now --all
-$ git gc --prune=now
+git for-each-ref --format="delete %(refname)" refs/original | git update-ref --stdin
+git reflog expire --expire=now --all
+git gc --prune=now
 
 # Force push the updated code to your remote(s)
 git push <remote> <branch> --force-with-lease
