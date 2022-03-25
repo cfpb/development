@@ -101,18 +101,18 @@ There are a few different ways to provide data for your tests to operate on.
 
     The best way to create test fixtures is to add the objects manually and then use the [Django `manage.py dumpdata` command](https://docs.djangoproject.com/en/1.11/ref/django-admin/#django-admin-dumpdata) to dump the objects to JSON.
 
-- Using [Model Mommy](https://model-mommy.readthedocs.io/en/latest/index.html) to create test data automatically in code.
+- Using [Model Bakery](https://model-bakery.readthedocs.io/en/latest/index.html) to create test data automatically in code.
 
-    Generally use use Model Mommy when we need to test operations on a model whose values are unimportant to the outcome. Occasionlly we will pass specific values to Model Mommy when those values are important to the tests. An example is when [testing operations around image models and the way they're handled](https://github.com/cfpb/consumerfinance.gov/blob/main/cfgov/v1/tests/test_meta_image.py#L14), when we want to make sure that the model gets rendered correctly.
+    Generally use use Model Bakery when we need to test operations on a model whose values are unimportant to the outcome. Occasionlly we will pass specific values to Model Bakery when those values are important to the tests. An example is when [testing operations around image models and the way they're handled](https://github.com/cfpb/consumerfinance.gov/blob/main/cfgov/v1/tests/test_meta_image.py#L14), when we want to make sure that the model gets rendered correctly.
 
     ```python
     class TestMetaImage(TestCase):
         def setUp(self):
-            self.preview_image = mommy.prepare(CFGOVImage)
-            self.social_sharing_image = mommy.prepare(CFGOVImage)
+            self.preview_image = baker.prepare(CFGOVImage)
+            self.social_sharing_image = baker.prepare(CFGOVImage)
 
         def test_meta_image_both(self):
-            page = mommy.prepare(
+            page = baker.prepare(
                 AbstractFilterPage,
                 social_sharing_image=self.social_sharing_image,
                 preview_image=self.preview_image
@@ -263,7 +263,7 @@ class Part(models.Model):
         )
 ```
 
-This property [can be tested](https://github.com/cfpb/consumerfinance.gov/blob/main/cfgov/regulations3k/tests/test_models.py#L196-L203) against a [Model Mommy-created model](#providing-test-data):
+This property [can be tested](https://github.com/cfpb/consumerfinance.gov/blob/main/cfgov/regulations3k/tests/test_models.py#L196-L203) against a [Model Bakery-created model](#providing-test-data):
 
 ```python
 from django.test import TestCase
@@ -271,7 +271,7 @@ from regulations3k.models.django import Part
 
 class RegModelTests(TestCase):
     def setUp(self):
-        self.part = mommy.make(Part)
+        self.part = baker.make(Part)
 
     def test_part_cfr_title(self):
         self.assertEqual(
@@ -294,7 +294,7 @@ Testing Django views requires responding to a `request` object. Django provides 
 
     *Note*: Requests made with `django.test.Client` include all Django request handling, including middleware. See [overriding settings](#overriding-settings) if this is a problem.
 
-    The mortgage performance tests use a [combination of fixtures and Model Mommy-created models](https://github.com/cfpb/consumerfinance.gov/blob/main/cfgov/data_research/tests/test_views.py#L47-L148) to set up for testing the timeseries view's response code and response data:
+    The mortgage performance tests use a [combination of fixtures and Model Bakery-created models](https://github.com/cfpb/consumerfinance.gov/blob/main/cfgov/data_research/tests/test_views.py#L47-L148) to set up for testing the timeseries view's response code and response data:
 
     ```python
     from django.test import TestCase
@@ -356,11 +356,11 @@ class JobListingPageTestCase(TestCase):
         self.factory = RequestFactory()
 
     def test_context_for_page_with_region_location(self):
-        region = mommy.make(Region)
-        state = mommy.make(State, region=region)
+        region = baker.make(Region)
+        state = baker.make(State, region=region)
         city = City(name='Townsville', state=state)
         region.cities.add(city)
-        page = mommy.make(JobListingPage, location=region)
+        page = baker.make(JobListingPage, location=region)
 
         test_context = page.get_context(self.factory.get('/'))
 
