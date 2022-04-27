@@ -68,51 +68,22 @@ the site and our content.
 #### Configuration
 
 Each project has its own configuration depending on the requirements of the
-tools and features that project depends on. As a general rule, we strive to
-cover the following browser list in each project.
+tools and features that project depends on. As a general rule, we aim to support 
+the following:
 
-We configure [Autoprefixer](#autoprefixer) and [Babel](#babel) to support
-the following list of browsers:
+- For JavaScript, every browser that supports Promises 
+  (browsers that have generally implemented [ES6](http://es6-features.org/)).
 
-- Latest 2 releases of all browsers including:
-    - Chrome
-    - Firefox
-    - Safari
-    - Internet Explorer
-    - Edge
-    - Opera
-    - iOS Safari
-    - Opera Mini
-    - Android Browser
-    - BlackBerry Browser
-    - Opera Mobile
-    - Chrome for Android
-    - Firefox for Android
-    - Samsung Internet
-
-http://browserl.ist/?q=last+2+versions%2C+Explorer+%3E%3D+9
-
-As well as additional Autoprefixer support for:
-
-- Internet Explorer 9
-- Internet Explorer 8
-
-http://browserl.ist/?q=last+2+versions%2C+Explorer+%3E%3D+8
+- For CSS, every browser over 1% or so of average visits. 
+  Depending on project, this may be configured through a 
+  [browserslist string](https://github.com/browserslist/browserslist) 
+  in the project's `package.json` file.
 
 ### Browser testing
 
 We use automated tests with a headless version of Chrome to ensure the majority
-of the site works as expected. For manual testing, we realistically test these
-projects locally or in a virtual environment with the following list of
-browsers:
-
-- Chrome
-- Firefox
-- Safari
-- Internet Explorer 8, 9, 10, and 11
-- Edge
-- iOS Safari
-- Chrome for Android
+of the site works as expected. For manual testing, we generally test edge-case 
+browsers as issues are suspected or arise.
 
 #### Manual testing
 
@@ -149,29 +120,11 @@ leave it running forever). Use `ctr + c` to terminate the connection.
 
 - [consumerfinance.gov](https://github.com/cfpb/consumerfinance.gov/blob/main/CONTRIBUTING.md#browser-support)
 - [Design System](https://github.com/cfpb/design-system/blob/main/CONTRIBUTING.md#browser-support)
-- [Paying for College](https://github.com/cfpb/college-costs/blob/master/CONTRIBUTING.md#browser-support)
-- [Retirement](https://github.com/cfpb/retirement/blob/main/CONTRIBUTING.md#browser-support)
-- [Complaint](https://github.com/cfpb/complaint/blob/master/CONTRIBUTING.md#browser-support)
-- [eRegs](https://github.com/cfpb/eregs-2.0/blob/master/CONTRIBUTING.md#browser-support)
 - [Salesforce/Mosaic/Submit a complaint app/Complaint portal]([GHE]/Mosaic/mosaic-toolbelt/blob/master/CONTRIBUTING.md#browser-support)
 - [cfpb-chart-builder](https://github.com/cfpb/cfpb-chart-builder/blob/main/CONTRIBUTING.md#browser-support)
 - [HMDA Platform](https://github.com/cfpb/hmda-platform/blob/master/CONTRIBUTING.md#browser-support)
 
 ## Definitions
-
-### Autoprefixer
-
-Autoprefixer parses our CSS and adds vendor prefixes to rules where necessary
-using reported feature support by [Can I Use](https://caniuse.com/). For more
-information, visit the [Autoprefixer documentation site]
-(https://autoprefixer.github.io/).
-
-### Babel
-
-Babel compiles our [ES6](http://es6-features.org/) JavaScript where necessary
-for the browsers that either don't support or have limited support for ES6
-features. For more information, visit the [Babel documentation site]
-(https://babeljs.io/).
 
 ### Interactive scripting
 
