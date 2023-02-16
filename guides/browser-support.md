@@ -46,24 +46,12 @@ it to improve the experience for the browsers that can handle it.
 
 #### Known feature differences
 
-- Scripting: We do not serve interactive scripting to IE 8 but we do deliver
-  analytics via scripting.
+- Scripting: We do not serve interactive scripting to browsers that do not support the Fetch API,
+  but we do deliver analytics via scripting.
 - Icons: We currently use icon fonts to deliver scalable icons. Browsers that
   do not support icon fonts unfortunately do not receive backups but we try to
   always pair icons with text to ensure a user can continue to interpret a
   page's content.
-
-### Automation
-
-Thankfully the world has created tools to help us track and polyfill
-disparities between browsers. We rely on a handful of of these tools to help
-us provide a level of backward compatability for modern features. As mentioned
-above, this doesn't necessarily mean feature parity. Where it's impossible or
-impractical to implement a modern feature, we fallback to standard practices
-for that browser. For example, we do not deliver interactive scripting for
-Internet Explorer 8, but we do ensure that default browser features continue to
-work so users that can't or don't want to upgrade continue to have access to
-the site and our content.
 
 #### Configuration
 
@@ -71,17 +59,18 @@ Each project has its own configuration depending on the requirements of the
 tools and features that project depends on. As a general rule, we aim to support 
 the following:
 
-- For JavaScript, every browser that supports Promises 
-  (browsers that have generally implemented [ES6](http://es6-features.org/)).
+- For JavaScript, every browser that supports the Fetch API
+  (see [caniuse fetch stats](https://caniuse.com/fetch)).
 
-- For CSS, every browser over 1% or so of average visits. 
+- For CSS, every browser over 0.5% or so of average visits. 
   Depending on project, this may be configured through a 
   [browserslist string](https://github.com/browserslist/browserslist) 
-  in the project's `package.json` file.
+  in the project's `package.json` file. In any particular repository with this string, 
+  run `npx browserslist` to get a list of browsers that get fed into the CSS build process.
 
 ### Browser testing
 
-We use automated tests with a headless version of Chrome to ensure the majority
+We use automated tests with a headless browser (generally Chrome or Electron) to ensure the majority
 of the site works as expected. For manual testing, we generally test edge-case 
 browsers as issues are suspected or arise.
 
@@ -135,8 +124,7 @@ Notifications, and Sortable Tables.
 ### Non-interactive scripting
 
 Non-interactive scripting is tooling and analytics that we utilize as
-developers but that remain hidden to the end user. Examples are Modernizr and
-Google Analytics.
+developers but that remain hidden to the end user. For example, Google Analytics.
 
 
 ## Resources
