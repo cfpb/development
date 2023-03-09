@@ -76,34 +76,18 @@ browsers as issues are suspected or arise.
 
 #### Manual testing
 
-We use a mix of [Sauce Labs](https://saucelabs.com/) and
-[localtunnel](https://localtunnel.github.io/www/) to manually test our site.
+We use [Sauce Labs](https://saucelabs.com/) to manually test our site.
 Be sure to review both the
 [testing](https://github.com/cfpb/development/blob/main/guides/front-end-testing.md)
 and [accessibility](https://github.com/cfpb/development/blob/main/guides/accessibility.md)
 guides when reviewing sites locally.
 
+Do not use reverse proxy tools like ngrok or localtunnel or you will receive angry emails.
+
 ##### Sauce Labs
 
 See [#171](https://github.com/cfpb/development/pull/171) for details on testing
 with Sauce Labs.
-
-##### localtunnel
-
-To test changes using your CFPB issued iPhone or other devices, you'll need to
-use localtunnel to expose your localhost. Start by installing localtunnel if
-you haven't already.
-
-```bash
-npm install -g localtunnel
-```
-
-Start your project's localhost and in a separate tab run `lt --port 8000`
-editing the port value to match your localhost setup. This will create a
-temporary public URL that can be accessed from any device on any connection.
-Navigate to the URL from your device and test to your heart's content, the URL
-will remain active as long as the instance is active (keep this in mind, don't
-leave it running forever). Use `ctr + c` to terminate the connection.
 
 #### Individual projects to test
 
