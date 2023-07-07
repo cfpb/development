@@ -31,6 +31,7 @@ browser support standards.
 - [Documenting your work](guides/documentation.md)
 - [Front-end testing](guides/front-end-testing.md)
 - [Git and GitHub](guides/git.md)
+- [GitHub Actions recipes](guides/github-actions.md)
 - [Installing and using Python](guides/installing-python.md)
 - [Using pipx for command-line Python tools](guides/pipx.md)
 - [Patterns for git-secrets](tools/git-secrets-patterns/README.md)
